@@ -13,7 +13,7 @@ export function Header() {
 
   return (
     <header className="absolute top-6 left-0 z-50 w-full">
-      <div className="mx-auto flex max-w-7xl items-center justify-between bg-white p-4 md:rounded-full md:shadow-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between bg-white p-4 md:rounded-full md:shadow-md">
         
         {/* Logo */}
         <Reveal delay={0.7} direction="left">

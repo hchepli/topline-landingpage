@@ -6,7 +6,7 @@ type NavProps = {
 }
 
 const NAV_ITEMS = [
-  { label: 'Home', target: 'mainPrincipal' },
+  { label: 'Home', target: 'hero' },
   { label: 'O Grupo', target: 'grupo' },
   { label: 'Empresas', target: 'empresas' },
   { label: 'Contato', target: 'mainContato' },
