@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif; 
+}
+
+:root {
+  /* =========================
+     Base Colors
+  ========================== */
+  --color-black: 0 0 0;
+  --color-white: 255 255 255;
+
+  /* =========================
+     Brand
+  ========================== */
+  --brand-primary: 37 99 235;     /* #2563EB */
+  --brand-secondary: 35 96 154;   /* #23609A */
+  --brand-dark: 15 42 68;         /* #0F2A44 */
+
+  /* =========================
+     Neutral / Gray
+  ========================== */
+  --gray-900: 0 0 0;              /* #000000 */
+  --gray-700: 68 68 68;           /* #444444 */
+  --gray-100: 241 245 249;        /* #F1F5F9 */
+
+  /* =========================
+     Text Colors (semantic)
+  ========================== */
+  --text-primary: 0 0 0;           /* black 100% */
+  --text-secondary: 0 0 0;         /* black 50% */
+  --text-muted: 0 0 0;             /* black 10% */
+
+  /* =========================
+     Backgrounds
+  ========================== */
+  --bg-primary: 255 255 255;       /* white 100% */
+  --bg-secondary: 241 245 249;     /* gray light */
+  --bg-overlay: 0 0 0;             /* black overlay */
+
+  /* =========================
+     White Variants
+  ========================== */
+  --white-70: 255 255 255;         /* 70% */
+  --white-10: 255 255 255;         /* 10% */
+
+  /* =========================
+     Borders / Dividers
+  ========================== */
+  --border-light: 0 0 0;            /* black 5% */
+}
