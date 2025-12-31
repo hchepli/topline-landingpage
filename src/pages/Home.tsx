@@ -2,6 +2,7 @@ import { Header } from "../components/sections/Header"
 import { Hero } from "../components/sections/Hero"
 import { GroupOverview } from "../components/sections/GroupOverview"
 import { Contact } from "../components/sections/Contact"
+import { Footer } from "../components/sections/Footer"
 
 export function Home() {
   return (
@@ -11,6 +12,7 @@ export function Home() {
     <GroupOverview />
 
     <Contact />
+    <Footer />
     </>
   )
 }
