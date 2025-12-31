@@ -50,7 +50,7 @@ export function Hero() {
       <img
         src={visual_1}
         alt="Visual TopLine 1"
-        className="relative z-20 w-[640px] animate-float"
+        className="relative z-10 w-[640px] animate-float"
       />
     </Reveal>
 
@@ -58,7 +58,7 @@ export function Hero() {
       <img
         src={visual_2}
         alt="Visual TopLine 2"
-        className="absolute bottom-[-50px] right-[-140px] z-10 w-[520px] animate-floatSlow"
+        className="absolute bottom-[-50px] right-[-140px] z-20 w-[520px] animate-floatSlow"
       />
     </Reveal>
   </div>

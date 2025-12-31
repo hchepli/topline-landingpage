@@ -6,7 +6,7 @@ import topflux from "../../assets/img/logo/topflux.png"
 
 export function GroupOverview() {
   return (
-    <section className="grupo min-h-screen w-full bg-[#f6f9fc] flex items-center justify-center pt-8 md:pt-10">
+    <section className="grupo min-h-screen w-full flex items-center justify-center pt-8 md:pt-10">
       <div className="w-full max-w-6xl flex flex-col items-center text-center gap-6 md:gap-8">
 
         {/* Título */}
