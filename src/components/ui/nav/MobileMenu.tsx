@@ -1,11 +1,13 @@
+import { Logo } from "../layout/Logo"
+import { Nav } from "./Nav"
+import { HeaderCTA } from "../buttons/HeaderCTA"
+
 type Props = {
   open: boolean
+  onNavigate?: () => void
 }
-import { Logo } from "../ui/layout/Logo"
-import { Nav } from "../ui/nav/Nav"
-import { HeaderCTA } from "../ui/buttons/HeaderCTA"
 
-export function MobileMenu({ open }: Props) {
+export function MobileMenu({ open, onNavigate }: Props) {
   return (
     <div
       className={`
@@ -17,16 +19,13 @@ export function MobileMenu({ open }: Props) {
       `}
     >
       {/* Logo central */}
-      <div
-        className={`
-          transition-all duration-500
-          ${open ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}
-        `}
-      >
+      <div className={`transition-all duration-500 ${open ? 'scale-100 opacity-100' : 'scale-75 opacity-0'}`}>
         <Logo />
       </div>
 
-      <Nav variant="mobile" />
+      {/* Nav móvel */}
+      <Nav variant="mobile" onNavigate={onNavigate} />
+
       <HeaderCTA />
     </div>
   )

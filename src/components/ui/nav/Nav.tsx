@@ -1,10 +1,20 @@
+import { scrollToSection } from '../../../lib/scroll'
+
 type NavProps = {
   variant?: 'desktop' | 'mobile'
+  onNavigate?: () => void
 }
 
-export function Nav({ variant = 'desktop' }: NavProps) {
+const NAV_ITEMS = [
+  { label: 'Home', target: 'mainPrincipal' },
+  { label: 'O Grupo', target: 'grupo' },
+  { label: 'Empresas', target: 'empresas' },
+  { label: 'Contato', target: 'mainContato' },
+]
+
+export function Nav({ variant = 'desktop', onNavigate }: NavProps) {
   const baseLink = `
-    relative text-sm font-medium
+    relative text-sm font-medium cursor-pointer
     transition-colors duration-200
     after:absolute
     after:left-0
@@ -17,38 +27,26 @@ export function Nav({ variant = 'desktop' }: NavProps) {
   `
 
   return (
-    <nav
-      className={
-        variant === 'desktop'
-          ? 'hidden md:flex items-center gap-8'
-          : 'flex flex-col items-center gap-10'
-      }
-    >
-      {["Home", "O Grupo", "Empresas", "Contato"].map((item) => (
-        <a
-          key={item}
-          href="#"
+    <nav className={variant === 'desktop' ? 'hidden md:flex items-center gap-8' : 'flex flex-col items-center gap-10'}>
+      {NAV_ITEMS.map((item) => (
+        <button
+          key={item.label}
+          type="button"
+          onClick={() => {
+            scrollToSection(item.target)
+            onNavigate?.() // fecha o menu mobile ao clicar
+          }}
           className={`
             ${baseLink}
             ${
               variant === 'desktop'
-                ? `
-                  text-[rgb(var(--gray-700))]
-                  hover:text-[rgb(var(--gray-900))]
-                  after:bg-[rgb(var(--gray-900))]
-                  hover:after:w-full
-                `
-                : `
-                  text-lg
-                  text-[rgb(var(--gray-900))]
-                  after:bg-[rgb(var(--gray-900))]
-                  hover:after:w-full
-                `
+                ? `text-[rgb(var(--gray-700))] hover:text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full`
+                : `text-lg text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full`
             }
           `}
         >
-          {item}
-        </a>
+          {item.label}
+        </button>
       ))}
     </nav>
   )
