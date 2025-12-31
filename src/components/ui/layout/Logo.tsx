@@ -2,7 +2,8 @@ import logo from "../../../assets/img/logo/topline.png"
 
 export function Logo() {
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-1 bg-white pr-2
+    rounded-full">
       <img
         src={logo}
         alt="TopLine Logo"

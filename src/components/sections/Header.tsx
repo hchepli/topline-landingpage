@@ -12,19 +12,20 @@ export function Header() {
   const closeMenu = () => setOpen(false) // função para fechar o menu
 
   return (
-    <header className="absolute top-6 left-0 z-50 w-full">
-      <div className="mx-auto flex max-w-6xl items-center justify-between bg-white p-4 md:rounded-full md:shadow-md">
+    <header className="fixed top-6 left-0 z-50 w-full">
+      <div className="mx-auto flex max-w-6xl items-center justify-between bg-transparent p-4 md:bg-white md:rounded-full md:shadow-md">
+
         
         {/* Logo */}
-        <Reveal delay={0.7} direction="left">
+        <Reveal delay={0.5} direction="left">
           <Logo />
         </Reveal>
 
-        <Reveal delay={0.7} direction='up'>
+        <Reveal delay={0.5} direction='up'>
           <Nav />
         </Reveal>
 
-        <Reveal className="hidden md:flex items-center gap-8" delay={0.7} direction='right'>
+        <Reveal className="hidden md:flex items-center gap-8" delay={0.5} direction='right'>
           <HeaderCTA />
         </Reveal>
 
