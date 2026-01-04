@@ -28,7 +28,7 @@ export function Hero() {
         <Reveal delay={0.9} direction="right" className="w-full">
           <div className="flex w-full flex-col gap-3 sm:flex-row">
             <PrimaryCTA />
-            <NavCTA />
+            <NavCTA title="Conhecer o Grupo" scrollTarget="grupo" delay={700}/> 
           </div>
         </Reveal>
       </div>

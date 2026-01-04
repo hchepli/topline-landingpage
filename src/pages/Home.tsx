@@ -1,8 +1,8 @@
 import { Header } from "../components/sections/Header"
 import { Hero } from "../components/sections/Hero"
-import { GroupOverview } from "../components/sections/GroupOverview"
-import { CompaniesSection } from "../components/sections/CompaniesSection"
-import { Contact } from "../components/sections/Contact"
+import { BrandGroupSection } from "../components/sections/BrandGroupSection"
+import { CompanyShowcaseSection } from "../components/sections/CompanyShowcaseSection"
+import { ContactSection } from "../components/sections/ContactSection"
 import { Footer } from "../components/sections/Footer"
 
 export function Home() {
@@ -10,9 +10,9 @@ export function Home() {
     <>
     <Header />
     <Hero />
-    <GroupOverview />
-    <CompaniesSection />
-    <Contact />
+    <BrandGroupSection />
+    <CompanyShowcaseSection />
+    <ContactSection />
     <Footer />
     </>
   )

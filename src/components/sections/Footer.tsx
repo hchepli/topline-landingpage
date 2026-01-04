@@ -1,6 +1,15 @@
 import { Reveal } from "../animations/Reveal"
 import { Logo } from "../ui/layout/Logo"
-import { Mail, Phone, MapPin, Instagram } from "lucide-react"
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react"
+import { scrollToSection } from "../../lib/scroll"
+
+
+const NAV_ITEMS = [
+  { label: "Home", target: "hero" },
+  { label: "O Grupo", target: "grupo" },
+  { label: "Empresas", target: "empresas" },
+  { label: "Contato", target: "contact" },
+]
 
 export function Footer() {
     return (
@@ -25,22 +34,34 @@ export function Footer() {
                         <div className="flex flex-col gap-3">
                             <h4 className="text-sm font-semibold text-neutral-900">Empresas</h4>
                             <ul className="flex flex-col gap-2 text-sm text-[rgb(var(--text-secondary)/60%)]">
-                                <li>TopFusion</li>
-                                <li>TopFiber</li>
-                                <li>TopFlux</li>
+                                <li><a href="https://www.topfusion.com.br" target="__blank">TopFusion</a></li>
+                                <li><a href="https://www.topfiber.ind.br/" target="__blank">TopFiber</a></li>
+                                <li><a href="https://www.topflux.com.br" target="__blank">TopFlux</a></li>
                             </ul>
                         </div>
 
                         {/* Navegação */}
-                        <div className="flex flex-col gap-3">
-                            <h4 className="text-sm font-semibold text-neutral-900">Navegação</h4>
-                            <ul className="flex flex-col gap-2 text-sm text-[rgb(var(--text-secondary)/60%)]">
-                                <li>Home</li>
-                                <li>O Grupo</li>
-                                <li>Empresas</li>
-                                <li>Contato</li>
-                            </ul>
-                        </div>
+ <div className="flex flex-col gap-3">
+      <h4 className="text-sm font-semibold text-neutral-900">Navegação</h4>
+
+      <ul className="flex flex-col gap-2 text-sm text-[rgb(var(--text-secondary)/60%)]">
+        {NAV_ITEMS.map((item) => (
+          <li key={item.target}>
+            <button
+              type="button"
+              onClick={() => scrollToSection(item.target)}
+              className="
+                text-left
+                transition-colors
+                hover:text-[rgb(var(--text-primary))]
+              "
+            >
+              {item.label}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
 
                         {/* Contatos */}
                         <div className="flex flex-col gap-3">
@@ -57,57 +78,36 @@ export function Footer() {
                                 </li>
                             </ul>
                         </div>
-
-                        {/* Social */}
                         <div className="flex flex-col gap-3 md:items-end">
                             <h4 className="text-sm font-semibold text-neutral-900">Social</h4>
                             <div className="flex gap-3">
-                                {[1, 2, 3, 4].map((_, i) => (
-                                    <button
-                                        key={i}
-                                        className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80"
-                                    >
+                                    <a href="https://www.instagram.com/topfusion_topflux_topfiber/" target="__blank" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
                                         <Instagram size={16} />
-                                    </button>
-                                ))}
+                                    </a>
+                                    <a href="https://www.facebook.com/vallchepli" target="__blank" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+                                        <Facebook size={16} />
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/chepli-topfusion-topfiber/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="__blank" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+                                        <Linkedin size={16} />
+                                    </a>
                             </div>
                         </div>
 
                     </div>
                 </Reveal>
-
-                {/* Bottom */}
-                {/* Bottom */}
                 <Reveal delay={0.3} direction="up">
                     <div className="mt-12 pt-6">
 
-                        <div className="flex flex-col items-center gap-4 text-center text-sm text-[rgb(var(--text-secondary)/60%)] md:flex-row md:justify-between md:text-left">
+                        <div className="flex flex-col items-center gap-4 text-center text-sm text-[rgb(var(--text-secondary)/60%)] md:flex-row md:justify-start md:text-left">
 
                             {/* Direitos */}
                             <span className="leading-relaxed">
                                 © 2025 TopLine Non Stop. <br className="md:hidden" />
                                 Todos os direitos reservados
                             </span>
-
-                            {/* Links legais */}
-                            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 md:justify-end">
-                                <span className="cursor-pointer hover:text-[rgb(var(--brand-secondary))] transition">
-                                    Termos e Condições
-                                </span>
-                                <span className="cursor-pointer hover:text-[rgb(var(--brand-secondary))] transition">
-                                    Política de privacidade
-                                </span>
-                                <span className="cursor-pointer hover:text-[rgb(var(--brand-secondary))] transition">
-                                    Cookies
-                                </span>
-                            </div>
-
                         </div>
-
                     </div>
                 </Reveal>
-
-
             </div>
         </footer>
     )
