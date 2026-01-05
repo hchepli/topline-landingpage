@@ -16,7 +16,7 @@ export function SectionTitle({ title, description }: SectionTitleProps) {
       </Reveal>
       {description && (
       <Reveal delay={0.3} direction="up">
-        <p className="max-w-4xl text-sm md:text-base text-[#6b7280] leading-relaxed">
+        <p className="max-w-4xl text-justify text-sm md:text-base text-[#6b7280] leading-relaxed">
           {description}
         </p>
       </Reveal>

@@ -11,7 +11,7 @@ export function Hero() {
       {/* Esquerda — Conteúdo */}
       <div className="flex w-full max-w-xl flex-col gap-5 lg:w-[50%] lg:max-w-none">
         <Reveal delay={0.3} direction="right">
-          <h1 className="font-black text-3xl leading-snug tracking-[.08rem] md:text-4xl lg:text-5xl">
+          <h1 className="font-black text-3xl leading-relaxed tracking-[.08rem] md:text-4xl lg:text-5xl">
             TOPLINE: UMA CONEXÃO FORTE{" "}
             <span className="text-[rgb(var(--brand-secondary))]">
               COM VOCÊ

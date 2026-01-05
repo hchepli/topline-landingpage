@@ -15,7 +15,7 @@ export function CompanyIntro({
           {company.name}
         </h3>
 
-        <p className="max-w-md text-sm text-neutral-500 lg:text-base">
+        <p className="max-w-md text-sm text-neutral-500 text-justify lg:text-base">
           {company.description}
         </p>
 

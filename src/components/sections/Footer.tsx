@@ -1,6 +1,5 @@
-import { Reveal } from "../animations/Reveal"
 import { Logo } from "../ui/layout/Logo"
-import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react"
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook, Youtube } from "lucide-react"
 import { scrollToSection } from "../../lib/scroll"
 
 
@@ -15,19 +14,12 @@ export function Footer() {
     return (
         <footer className="w-full">
             <div className="mx-auto max-w-7xl px-6 py-12">
-
-                {/* Top */}
-                <Reveal delay={0.1} direction="up">
                     <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                         <Logo />
                         <p className="text-sm text-[rgb(var(--text-secondary)/60%)]">
                             Gestão que sustenta decisões. Estratégia que sustenta crescimento.
                         </p>
                     </div>
-                </Reveal>
-
-                {/* Grid principal */}
-                <Reveal delay={0.2} direction="up">
                     <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-4">
 
                         {/* Empresas */}
@@ -90,12 +82,13 @@ export function Footer() {
                                     <a href="https://www.linkedin.com/in/chepli-topfusion-topfiber/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="__blank" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
                                         <Linkedin size={16} />
                                     </a>
+                                    <a href="https://www.youtube.com/@TopFusion-TopLine-TopFiber?si=sFTUntbvN7OCuPYK&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGndWxFCtMXHbM1VnYTSUtJTlpeNwbXZikwGR07BYSNaJvpHtqYnAXoAmgjqNY_aem_GksoF4Nbvum5ckGqHUeesw" target="__blank" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+                                        <Youtube size={16} />
+                                    </a>
                             </div>
                         </div>
 
                     </div>
-                </Reveal>
-                <Reveal delay={0.3} direction="up">
                     <div className="mt-12 pt-6">
 
                         <div className="flex flex-col items-center gap-4 text-center text-sm text-[rgb(var(--text-secondary)/60%)] md:flex-row md:justify-start md:text-left">
@@ -107,7 +100,6 @@ export function Footer() {
                             </span>
                         </div>
                     </div>
-                </Reveal>
             </div>
         </footer>
     )

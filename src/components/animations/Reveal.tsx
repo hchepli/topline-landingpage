@@ -1,5 +1,6 @@
-import { motion, type HTMLMotionProps } from 'framer-motion'
+import { motion, type HTMLMotionProps, useInView } from 'framer-motion'
 import type { PropsWithChildren } from 'react'
+import { useRef } from 'react'
 
 type Direction = 'up' | 'down' | 'left' | 'right'
 
@@ -14,12 +15,14 @@ type RevealProps = PropsWithChildren<{
 export function Reveal({
   children,
   delay = 0,
-  once = false,
   className,
   direction = 'up',
   distance = 32,
   ...props
 }: RevealProps) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
+
   const axis =
     direction === 'left' || direction === 'right' ? 'x' : 'y'
 
@@ -30,17 +33,11 @@ export function Reveal({
 
   return (
     <motion.div
+      ref={ref}
       {...props}
       className={className}
-      initial={{
-        opacity: 0,
-        [axis]: value,
-      }}
-      whileInView={{
-        opacity: 1,
-        [axis]: 0,
-      }}
-      viewport={{ once, amount: 0.3 }}
+      initial={{ opacity: 0, [axis]: value }}
+      animate={isInView ? { opacity: 1, [axis]: 0 } : {}}
       transition={{
         duration: 0.6,
         delay,
