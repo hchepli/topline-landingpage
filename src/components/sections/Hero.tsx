@@ -34,7 +34,7 @@ export function Hero() {
       </div>
 
       {/* Direita — Visual */}
-     <div className="relative flex w-full items-center justify-start lg:h-full lg:w-[720px] overflow-hidden">
+     <div className="relative flex w-full mt-10 lg:mt-0 items-center justify-start lg:h-full lg:w-[720px] overflow-hidden">
   {/* Wrapper que mantém a composição */}
   <div
     className="
