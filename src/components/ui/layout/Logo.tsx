@@ -7,7 +7,7 @@ export function Logo() {
       <img
         src={logo}
         alt="TopLine Logo"
-        className="w-8 md:w-10 h-auto"
+        className="w-7 md:w-10 h-auto"
       />
       <span
         className="
