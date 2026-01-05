@@ -8,7 +8,7 @@ export function ContactSection() {
       <div className="w-full max-w-6xl flex flex-col items-center text-center gap-10">
         <SectionTitle title="Contato Comercial" />
 
-        <Reveal delay={0.5} direction="up">
+        <Reveal delay={0.4} direction="up">
           <ContactCard />
         </Reveal>
       </div>

@@ -29,7 +29,7 @@ export function BrandCardGrid() {
   return (
     <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
       {brands.map((item, i) => (
-        <Reveal key={item.name} delay={0.5 + i * 0.2} direction="up">
+        <Reveal key={item.name} delay={0.3 + i * 0.2} direction="up">
           <BrandCard {...item} />
         </Reveal>
       ))}

@@ -9,23 +9,23 @@ export function Hero() {
     <div className="hero flex min-h-screen w-full flex-col-reverse items-center justify-center gap-16 px-4 lg:flex-row lg:justify-between lg:px-0">
 
       {/* Esquerda — Conteúdo */}
-      <div className="flex w-full max-w-xl flex-col gap-5 lg:w-[40%] lg:max-w-none">
-        <Reveal delay={0.4} direction="right">
+      <div className="flex w-full max-w-xl flex-col gap-5 lg:w-[50%] lg:max-w-none">
+        <Reveal delay={0.3} direction="right">
           <h1 className="font-black text-3xl leading-snug tracking-[.08rem] md:text-4xl lg:text-5xl">
-            TopLine: uma conexão forte{" "}
+            TOPLINE: UMA CONEXÃO FORTE{" "}
             <span className="text-[rgb(var(--brand-secondary))]">
-              com você
+              COM VOCÊ
             </span>
           </h1>
         </Reveal>
 
-        <Reveal delay={0.6} direction="right">
-          <p className="font-medium text-lg leading-snug tracking-[.08rem] text-[rgb(var(--text-muted)/50%)] md:text-xl lg:text-2xl">
+        <Reveal delay={0.4} direction="right">
+          <p className="font-medium text-lg lg:w-[90%] leading-snug tracking-[.08rem] text-[rgb(var(--text-muted)/50%)] md:text-xl lg:text-2xl">
             TopLine gestão empresarial, grupo TF
           </p>
         </Reveal>
 
-        <Reveal delay={0.9} direction="right" className="w-full">
+        <Reveal delay={0.6} direction="right" className="w-full lg:w-[90%]">
           <div className="flex w-full flex-col gap-3 sm:flex-row">
             <PrimaryCTA />
             <NavCTA title="Conhecer o Grupo" scrollTarget="grupo" delay={700}/> 
@@ -46,21 +46,18 @@ export function Hero() {
       lg:scale-[1]
     "
   >
-    <Reveal delay={0.6} direction="left">
+    <Reveal delay={0.3} direction="left">
       <img
         src={visual_1}
         alt="Visual TopLine 1"
-        className="relative z-10 w-[640px] animate-float"
+        className="relative z-10 w-[450px] animate-float"
       />
     </Reveal>
-
-    <Reveal direction="left">
       <img
         src={visual_2}
         alt="Visual TopLine 2"
-        className="absolute bottom-[-50px] right-[-140px] z-20 w-[520px] animate-floatSlow"
+        className="absolute bottom-[-20px] right-[-140px] z-20 w-[300px] animate-floatSlow"
       />
-    </Reveal>
   </div>
 </div>
 
