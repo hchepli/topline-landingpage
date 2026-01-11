@@ -18,10 +18,17 @@ export function CompanyFeatureCard({
           flex flex-col gap-2 rounded-xl p-3 text-sm
           transition-transform duration-300 ease-out
           hover:translate-x-[2px] hover:-translate-y-[2px]
+
+          md:scale-[0.9]
+          lg:scale-[0.9]
+          xl:scale-[0.9]
+          2xl:scale-[1]
+
           ${card.featured
             ? "bg-[rgb(var(--brand-secondary))] text-white max-w-[260px]"
             : "border border-neutral-200 bg-white max-w-[220px]"
           }
+
           lg:p-4 lg:text-base
           ${card.featured ? "lg:max-w-[300px]" : "lg:max-w-[250px]"}
         `}

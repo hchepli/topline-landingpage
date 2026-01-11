@@ -17,7 +17,7 @@ const companies = [{ name: "TopFusion", description: "A TopFusion é uma indúst
 
 export function CompanyShowcaseSection() {
   return (
-    <section className="empresas flex w-full flex-col gap-24 px-4 pt-20 lg:min-h-screen lg:gap-32 lg:px-0 lg:pt-24">
+    <section className="empresas flex mx-auto max-w-7xl px-6 flex-col gap-24 pt-20 lg:min-h-screen lg:gap-32 lg:pt-24">
       <SectionHeader
         title="Grupo TF"
         description="Conheça as empresas que fazem parte do nosso ecossistema."

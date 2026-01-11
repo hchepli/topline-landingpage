@@ -6,7 +6,7 @@ export function CompanyFeatureGrid({
   cards: any[]
 }) {
   return (
-    <div className="flex w-full flex-wrap justify-center gap-4 lg:w-1/2 lg:justify-end lg:gap-6">
+    <div className="flex w-full flex-wrap justify-center gap-4 xl:w-[70%] xl:justify-end xl:gap-6">
       {cards.map((card, index) => (
         <CompanyFeatureCard
           key={card.title}
