@@ -12,7 +12,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -28,6 +28,23 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(var(--brand-secondary)/80% );
 }
+
+/* Scrollbar horizontal fina para mobile */
+@media (max-width: 768px) {
+  nav::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  nav::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  nav::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--brand-secondary) );
+    border-radius: 999px;
+  }
+}
+
 
 
 :root {
