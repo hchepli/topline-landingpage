@@ -2,14 +2,18 @@ import logo from "../../../assets/img/logo/topline.png"
 
 export function Logo() {
   return (
-    <div className="flex items-center gap-1 bg-white pr-2
-    rounded-full">
+    <a
+      href="#hero"
+      className="flex items-center gap-1 bg-white pr-2 rounded-full"
+      aria-label="Ir para a página inicial"
+    >
       <img
         src={logo}
-        alt="TopLine Logo"
+        alt="TopLine"
         className="w-7 md:w-10 h-auto"
       />
-      <span
+
+      <strong
         className="
           text-xl md:text-2xl
           font-extrabold
@@ -17,7 +21,7 @@ export function Logo() {
         "
       >
         TopLine
-      </span>
-    </div>
+      </strong>
+    </a>
   )
 }

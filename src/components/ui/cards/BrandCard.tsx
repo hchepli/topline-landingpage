@@ -9,16 +9,16 @@ type BrandCardProps = {
   target: string
 }
 
-
 export function BrandCard({ img, name, url, target }: BrandCardProps) {
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={() => scrollToSection(target)}
-      onKeyDown={(e) => e.key === "Enter" && scrollToSection(target)}
+    <a
+      href={`#${target}`}
+      onClick={(e) => {
+        e.preventDefault()
+        scrollToSection(target)
+      }}
       className="
-        relative cursor-pointer
+        relative cursor-pointer block
         rounded-2xl bg-white
         border border-[rgb(var(--brand-secondary))]
         shadow-sm hover:shadow-lg
@@ -34,19 +34,26 @@ export function BrandCard({ img, name, url, target }: BrandCardProps) {
       <div className="flex flex-col items-center gap-4 md:gap-5 p-5 md:p-7">
         <img
           src={img}
-          alt={name}
+          alt={`Logotipo da ${name}`}
           className="h-20 w-20 md:h-24 md:w-24 object-contain"
         />
+
         <div className="flex flex-col items-center gap-2">
           <h3 className="text-lg md:text-xl font-semibold text-[#1f2937]">
             {name}
           </h3>
           <div className="h-[2px] w-14 md:w-16 rounded-full bg-[rgb(var(--brand-secondary))]" />
         </div>
-        <div onClick={(e) => e.stopPropagation()}>
+
+        {/* CTA externo mantém comportamento */}
+        <div
+          onClick={(e) => {
+            e.stopPropagation()
+          }}
+        >
           <OutboundCTA href={url} label="Visitar site" />
         </div>
       </div>
-    </div>
+    </a>
   )
 }

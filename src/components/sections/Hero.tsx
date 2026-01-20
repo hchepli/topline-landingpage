@@ -6,10 +6,10 @@ import visual_2 from "../../assets/img/logo/visual_2.png"
 
 export function Hero() {
   return (
-    <div className="hero flex min-h-screen max-w-7xl flex-col-reverse mx-auto items-center gap-16 px-4 min-[1100px]:flex-row max-[1100px]:justify-center xl:justify-between lg:px-6">
+    <section className="hero flex min-h-screen max-w-7xl flex-col-reverse mx-auto items-center gap-16 px-4 min-[1100px]:flex-row max-[1100px]:justify-center xl:justify-between lg:px-6" aria-labelledby="hero-title">
       <div className="flex w-full max-w-xl flex-col gap-5 min-[1100px]:w-[40%] lg:max-w-none">
         <Reveal delay={0.3} direction="right">
-          <h1 className="font-black text-2xl leading-relaxed tracking-[.08rem] md:text-3xl lg:text-4xl">
+          <h1 id="hero-title"  className="font-black text-2xl leading-relaxed tracking-[.08rem] md:text-3xl lg:text-4xl">
             TOPLINE: UMA CONEXÃO FORTE{" "}
             <span className="text-[rgb(var(--brand-secondary))]">
               COM VOCÊ
@@ -22,10 +22,10 @@ export function Hero() {
           </p>
         </Reveal>
         <Reveal delay={0.6} direction="right" className="w-full lg:w-[90%]">
-          <div className="flex w-full flex-col gap-3 sm:flex-row">
+          <nav aria-label="Ações principais" className="flex w-full flex-col gap-3 sm:flex-row">
             <PrimaryCTA />
             <NavCTA title="Conhecer o Grupo" scrollTarget="grupo" delay={700}/> 
-          </div>
+          </nav>
         </Reveal>
       </div>
 
@@ -41,20 +41,24 @@ export function Hero() {
     "
   >
     <Reveal delay={0.3} direction="left">
+      <figure>
       <img
         src={visual_1}
         alt="Visual TopLine 1"
         className="relative z-10 w-[350px] xl:w-[450px] animate-float"
       />
+      </figure>
     </Reveal>
+      <figure>
       <img
         src={visual_2}
         alt="Visual TopLine 2"
         className="absolute bottom-[-20px] right-[-100px] z-20 w-[200px] xl:w-[300px] xl:right-[-140px] animate-floatSlow"
       />
+      </figure>
   </div>
 </div>
 
-    </div>
+    </section>
   )
 }

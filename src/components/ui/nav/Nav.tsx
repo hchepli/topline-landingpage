@@ -27,27 +27,35 @@ export function Nav({ variant = 'desktop', onNavigate }: NavProps) {
   `
 
   return (
-    <nav className={variant === 'desktop' ? 'hidden md:flex items-center gap-8' : 'flex flex-col items-center gap-10'}>
+    <ul
+      className={
+        variant === 'desktop'
+          ? 'hidden md:flex items-center gap-8'
+          : 'flex flex-col items-center gap-10'
+      }
+    >
       {NAV_ITEMS.map((item) => (
-        <button
-          key={item.label}
-          type="button"
-          onClick={() => {
-            scrollToSection(item.target)
-            onNavigate?.() // fecha o menu mobile ao clicar
-          }}
-          className={`
-            ${baseLink}
-            ${
-              variant === 'desktop'
-                ? `text-[rgb(var(--gray-700))] hover:text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full`
-                : `text-lg text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full`
-            }
-          `}
-        >
-          {item.label}
-        </button>
+        <li key={item.target}>
+          <a
+            href={`#${item.target}`}
+            onClick={(e) => {
+              e.preventDefault()
+              scrollToSection(item.target)
+              onNavigate?.()
+            }}
+            className={`
+              ${baseLink}
+              ${
+                variant === 'desktop'
+                  ? 'text-[rgb(var(--gray-700))] hover:text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full'
+                  : 'text-lg text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full'
+              }
+            `}
+          >
+            {item.label}
+          </a>
+        </li>
       ))}
-    </nav>
+    </ul>
   )
 }

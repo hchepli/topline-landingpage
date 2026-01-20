@@ -10,7 +10,9 @@ type Props = {
 
 export function MobileMenu({ open, onNavigate }: Props) {
   return (
-    <div
+    <nav
+      aria-label="Menu principal mobile"
+      aria-hidden={!open}
       className={`
         fixed inset-0 z-[60]
         flex flex-col items-center justify-center gap-10
@@ -19,7 +21,9 @@ export function MobileMenu({ open, onNavigate }: Props) {
         ${open ? "translate-x-0" : "translate-x-full"}
       `}
     >
+      {/* Close button */}
       <button
+        type="button"
         onClick={onNavigate}
         className="absolute top-6 right-6 z-[70] rounded-full p-2 hover:bg-neutral-100"
         aria-label="Fechar menu"
@@ -27,19 +31,22 @@ export function MobileMenu({ open, onNavigate }: Props) {
         <X className="h-auto w-10" />
       </button>
 
-      {/* Logo */}
-      <div
+      {/* Header / Brand */}
+      <header
         className={`transition-all duration-500 ${
           open ? "scale-100 opacity-100" : "scale-75 opacity-0"
         }`}
       >
         <Logo />
-      </div>
+      </header>
 
-      {/* Nav móvel */}
+      {/* Navegação */}
       <Nav variant="mobile" onNavigate={onNavigate} />
 
-      <HeaderCTA />
-    </div>
+      {/* CTA */}
+      <div>
+        <HeaderCTA />
+      </div>
+    </nav>
   )
 }

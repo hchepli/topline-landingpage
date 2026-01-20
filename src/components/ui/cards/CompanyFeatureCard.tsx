@@ -12,7 +12,7 @@ export function CompanyFeatureCard({
 
   return (
     <Reveal direction="up" delay={delay}>
-      <div
+      <article
         className={`
           group
           flex flex-col gap-2 rounded-xl p-3 text-sm
@@ -24,9 +24,10 @@ export function CompanyFeatureCard({
           xl:scale-[0.9]
           2xl:scale-[1]
 
-          ${card.featured
-            ? "bg-[rgb(var(--brand-secondary))] text-white max-w-[260px]"
-            : "border border-neutral-200 bg-white max-w-[220px]"
+          ${
+            card.featured
+              ? "bg-[rgb(var(--brand-secondary))] text-white max-w-[260px]"
+              : "border border-neutral-200 bg-white max-w-[220px]"
           }
 
           lg:p-4 lg:text-base
@@ -39,9 +40,10 @@ export function CompanyFeatureCard({
             transition-transform duration-300 ease-out
             group-hover:translate-x-[1px] group-hover:-translate-y-[1px]
             lg:h-10 lg:w-10
-            ${card.featured
-              ? "bg-white/20"
-              : "bg-[rgb(var(--brand-secondary))]/10"
+            ${
+              card.featured
+                ? "bg-white/20"
+                : "bg-[rgb(var(--brand-secondary))]/10"
             }
           `}
         >
@@ -65,7 +67,7 @@ export function CompanyFeatureCard({
             {card.description}
           </p>
         </div>
-      </div>
+      </article>
     </Reveal>
   )
 }

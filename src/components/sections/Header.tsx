@@ -11,9 +11,8 @@ export function Header() {
   const [hidden, setHidden] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
 
-  // 🔹 Scroll logic (mobile only)
   useEffect(() => {
-    if (open) return // NÃO reage a scroll com menu aberto
+    if (open) return
 
     const onScroll = () => {
       const currentScrollY = window.scrollY

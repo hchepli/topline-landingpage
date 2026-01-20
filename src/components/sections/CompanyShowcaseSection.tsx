@@ -21,15 +21,21 @@ const companies = [{ image: topfusion, name: "TopFusion", description: "A TopFus
 
 export function CompanyShowcaseSection() {
   return (
-    <section className="empresas flex mx-auto max-w-7xl px-6 flex-col gap-24 pt-20 lg:min-h-screen lg:gap-32 lg:pt-24">
+    <section aria-labelledby="empresas-title" className="empresas flex mx-auto max-w-7xl px-6 flex-col gap-24 pt-20 lg:min-h-screen lg:gap-32 lg:pt-24">
       <SectionHeader
+      id="empresas-title"
         title="Grupo TF"
         description="Conheça as empresas que fazem parte do nosso ecossistema."
       />
 
-      {companies.map((company, index) => (
-        <CompanyBlock key={company.name} company={company} index={index} />
-      ))}
+      <ul className="flex flex-col gap-24 lg:gap-32">
+  {companies.map((company, index) => (
+    <li key={company.name}>
+      <CompanyBlock company={company} index={index} />
+    </li>
+  ))}
+</ul>
+
     </section>
   )
 }

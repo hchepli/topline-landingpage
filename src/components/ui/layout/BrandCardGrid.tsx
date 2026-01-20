@@ -27,12 +27,18 @@ export function BrandCardGrid() {
   ]
 
   return (
-    <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-      {brands.map((item, i) => (
-        <Reveal key={item.name} delay={0.3 + i * 0.2} direction="up">
-          <BrandCard {...item} />
-        </Reveal>
-      ))}
-    </div>
+<ul
+  className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10"
+  aria-label="Empresas do Grupo TF"
+>
+  {brands.map((item, i) => (
+    <li key={item.name}>
+      <Reveal delay={0.3 + i * 0.2} direction="up">
+        <BrandCard {...item} />
+      </Reveal>
+    </li>
+  ))}
+</ul>
+
   )
 }
