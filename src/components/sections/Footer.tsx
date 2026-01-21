@@ -99,7 +99,7 @@ export function Footer() {
               <a href="https://www.instagram.com/topfusion_topflux_topfiber/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
                 <Instagram size={16} />
               </a>
-              <a href="https://www.facebook.com/vallchepli" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+              <a href="https://www.facebook.com/profile.php?id=100070448310668" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
                 <Facebook size={16} />
               </a>
               <a href="https://www.linkedin.com/in/chepli-topfusion-topfiber/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
