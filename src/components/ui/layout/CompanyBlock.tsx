@@ -11,7 +11,7 @@ export function CompanyBlock({
 }) {
   return (
     <article
-      className="flex w-full flex-col items-center gap-12 xl:flex-row xl:items-start xl:justify-between xl:gap-20"
+      className="flex w-full flex-col items-center gap-12 lg:flex-row xl:items-start xl:justify-between xl:gap-20"
       aria-labelledby={`company-${company.name}-title`}
     >
       <CompanyIntro
