@@ -16,7 +16,8 @@ export function Hero() {
         className="
           absolute
           top-0
-          h-[100vh]
+          h-[110vh]
+          lg:h-[100vh]
           xl:h-[90vh]
           w-[100%]
           bg-[#0F2240]
