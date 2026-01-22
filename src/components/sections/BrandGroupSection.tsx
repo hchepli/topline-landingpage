@@ -3,7 +3,7 @@ import { BrandCardGrid } from "../ui/layout/BrandCardGrid"
 
 export function BrandGroupSection() {
   return (
-    <section aria-labelledby="grupo-title" className="grupo min-h-screen w-full flex items-center justify-center md:pt-10">
+    <section aria-labelledby="grupo-title" className="grupo min-h-[90vh] w-full flex items-center justify-center md:pt-10">
       <div className="w-full max-w-6xl flex flex-col items-center text-center gap-6 md:gap-8">
         <SectionTitle
         id="grupo-title"

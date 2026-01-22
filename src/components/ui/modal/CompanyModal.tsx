@@ -67,7 +67,7 @@ export function CompanyModal({
         </header>
 
         {/* Body */}
-        <div className="flex h-[60vh] flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row">
           {/* Sidebar */}
           <aside className="w-full border-b md:w-72 md:border-b-0 md:border-r">
             <nav
@@ -112,13 +112,12 @@ export function CompanyModal({
               <div className="mt-6 h-40 w-full max-w-md rounded-xl border border-dashed" />
             </article>
           </main>
-        </div>
-
-        <footer className="w-full flex justify-center md:justify-end">
+                  <footer className="absolute bottom-1 right-1 ">
           <div className="p-6">
             <NavCTA title={company.buttonLabel} href={company.href} />
           </div>
         </footer>
+        </div>
       </section>
     </div>
   )

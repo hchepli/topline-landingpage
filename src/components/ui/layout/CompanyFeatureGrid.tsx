@@ -40,13 +40,17 @@ export function CompanyFeatureGrid({ company }: { company: Company }) {
           </button>
         </Reveal>
 
-        {company.cards.slice(0, 4).map((card, index) => (
-          <CompanyFeatureCard
-            key={card.title}
-            card={card}
-            index={index}
-          />
-        ))}
+<div
+  className="
+    flex flex-wrap justify-center gap-3
+    lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-6
+  "
+>
+  {company.cards.slice(0, 4).map((card, index) => (
+    <CompanyFeatureCard key={card.title} card={card} index={index} />
+  ))}
+</div>
+
       </section>
 
       {open && (

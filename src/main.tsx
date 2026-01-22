@@ -7,7 +7,7 @@ import "./index.css"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <main className="bg-[rgb(--gray-100)] min-h-screen px-[5%] sm:px-[10%]">
+    <main className="bg-[rgb(--gray-100)] min-h-screen">
     <RouterProvider router={router} />
     </main>
   </React.StrictMode>
