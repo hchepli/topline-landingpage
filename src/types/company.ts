@@ -5,6 +5,13 @@ export type CompanyCard = {
   description?: string
   icon: LucideIcon
   featured?: boolean
+  products: Product[]
+}
+
+export type Product = {
+  image?: string
+  title: string
+  description: string
 }
 
 export type Company = {

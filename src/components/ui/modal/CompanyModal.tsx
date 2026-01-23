@@ -24,7 +24,7 @@ export function CompanyModal({
     setTimeout(onClose, 200)
   }
 
-  const activeCard = company.cards[activeIndex]
+  const activeCard = company.cards?.[activeIndex]
 
   return (
     <div
@@ -39,11 +39,19 @@ export function CompanyModal({
         aria-labelledby={`${id}-title`}
         id={id}
         onClick={(e) => e.stopPropagation()}
-        className={`relative max-h-[90vh] w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white transition-all duration-200 ${
-          visible
+        className={`
+          relative
+          w-full max-w-5xl
+          max-h-[90vh]
+          bg-white
+          rounded-2xl
+          flex flex-col
+          overflow-hidden
+          transition-all duration-200
+          ${visible
             ? "scale-100 translate-y-0 opacity-100"
-            : "scale-95 translate-y-4 opacity-0"
-        }`}
+            : "scale-95 translate-y-4 opacity-0"}
+        `}
       >
         {/* Close */}
         <button
@@ -55,7 +63,7 @@ export function CompanyModal({
         </button>
 
         {/* Header */}
-        <header className="border-b p-6 flex items-center gap-2">
+        <header className="shrink-0 border-b p-6 flex items-center gap-3">
           <img
             className="w-[75px] h-auto"
             src={company.image}
@@ -67,12 +75,12 @@ export function CompanyModal({
         </header>
 
         {/* Body */}
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-1 min-h-0 flex-col md:flex-row">
           {/* Sidebar */}
-          <aside className="w-full border-b md:w-72 md:border-b-0 md:border-r">
+          <aside className="shrink-0 w-full md:w-72 border-b md:border-b-0 md:border-r">
             <nav
               aria-label={`Categorias da ${company.name}`}
-              className="p-2 md:p-4 md:gap-2 flex flex-row overflow-x-auto md:flex-col md:overflow-x-hidden"
+              className="p-3 md:p-4 flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-x-hidden"
             >
               {company.cards.map((card, index) => (
                 <button
@@ -80,44 +88,70 @@ export function CompanyModal({
                   onClick={() => setActiveIndex(index)}
                   aria-selected={activeIndex === index}
                   className={`
-                    relative flex min-w-[150px] md:min-w-0 items-center gap-3 px-4 py-3 text-left
+                    flex min-w-[150px] md:min-w-0 items-center gap-3 px-4 py-3 text-left
                     transition-all duration-200
                     ${
                       activeIndex === index
-                        ? "bg-muted font-medium text-primary md:border-l-4 md:border-[rgb(var(--brand-secondary))] translate-x-[5px]"
+                        ? "bg-muted font-medium text-primary md:border-l-4 md:border-[rgb(var(--brand-secondary))]"
                         : "hover:bg-muted/60 md:border-l-4 border-transparent"
                     }
                   `}
                 >
                   <card.icon className="h-5 w-5 shrink-0" />
-                  <span className="text-sm transition-transform duration-200">
-                    {card.title}
-                  </span>
+                  <span className="text-sm">{card.title}</span>
                 </button>
               ))}
             </nav>
           </aside>
 
           {/* Content */}
-          <main className="flex flex-1 items-center justify-center p-6">
-            <article className="text-center">
-              <h3 className="text-lg font-medium">
-                {activeCard.title}
-              </h3>
-              <p className="mt-2 max-w-md text-sm text-muted-foreground">
-                Aqui você poderá exibir produtos, banners ou informações
-                específicas desta categoria.
-              </p>
+          <main className="flex flex-1 min-h-0 p-6">
+            {activeCard?.products && activeCard.products.length > 0 ? (
+              <div className="flex-1 min-h-0 overflow-y-auto pr-2">
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {activeCard.products.map((product, index) => (
+                    <div
+                      key={`${product.title}-${index}`}
+                      className="flex flex-col gap-3 rounded-xl border p-4 transition hover:shadow-md"
+                    >
+                      {product.image ? (
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="h-28 w-full rounded-lg object-contain bg-muted"
+                        />
+                      ) : (
+                        <div className="flex h-28 w-full items-center justify-center rounded-lg bg-muted text-sm text-muted-foreground">
+                          Sem imagem
+                        </div>
+                      )}
 
-              <div className="mt-6 h-40 w-full max-w-md rounded-xl border border-dashed" />
-            </article>
+                      <div>
+                        <h4 className="font-medium">
+                          {product.title}
+                        </h4>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          {product.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <p className="text-sm text-muted-foreground">
+                Nenhum produto disponível para esta categoria.
+              </p>
+            )}
           </main>
-                  <footer className="absolute bottom-1 right-1 ">
-          <div className="p-6">
+        </div>
+
+        {/* Footer */}
+        <footer className="shrink-0 border-t p-6 flex justify-center min-[700px]:justify-end">
+          <div className="w-full min-[700px]:w-auto">
             <NavCTA title={company.buttonLabel} href={company.href} />
           </div>
         </footer>
-        </div>
       </section>
     </div>
   )

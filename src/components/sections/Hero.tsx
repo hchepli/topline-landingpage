@@ -17,11 +17,11 @@ export function Hero() {
           absolute
           top-0
           h-[110vh]
-          lg:h-[100vh]
+          md:h-[100vh]
           xl:h-[90vh]
           w-[100%]
           bg-[#0F2240]
-          rounded-bl-[48px] md:rounded-bl-[96px] lg:rounded-bl-[300px]
+          rounded-bl-0 md:rounded-bl-[96px] lg:rounded-bl-[300px]
           z-0
         "
       />
@@ -60,7 +60,7 @@ export function Hero() {
                 CONEXÃO FORTE
               </span>
 
-              <span className="block text-[rgb(var(--brand-secondary))]">
+              <span className="block text-[rgb(var(--brand-primary))]">
                 COM VOCÊ
               </span>
             </h1>
