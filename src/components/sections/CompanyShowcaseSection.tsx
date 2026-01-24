@@ -19,6 +19,14 @@ import {
 import topfusion from "../../assets/img/logo/topfusion.png"
 import topfiber from "../../assets/img/logo/topfiber.png"
 import topflux from "../../assets/img/logo/topflux.png"
+import joelhoTopFire from "../../assets/img/products/fire/joelho.png"
+import teTopFire from "../../assets/img/products/fire/te.png"
+import tuboTopFire from "../../assets/img/products/fire/tubo.png"
+import adaptadorTopGas from "../../assets/img/products/gas/adaptador.png"
+import multicamadaTopGas from "../../assets/img/products/gas/multicamada-gas.png"
+import altavazaoTopFlux from "../../assets/img/products/valvula/altavazao.png"
+import ajustavelTopFlux from "../../assets/img/products/valvula/ajustavel.png"
+import pressaoTopFlux from "../../assets/img/products/valvula/pressao.png"
 
 export const companies = [
   {
@@ -36,7 +44,7 @@ export const companies = [
       icon: Fuel,
       products: [
         {
-          image: "", // inserir URL se disponível
+          image: multicamadaTopGas, // inserir URL se disponível
           title: "Tubo Multicamadas para Gás",
           description:
             "Tubo TOPGAS PE/AL/PE com conexões em latão, ideal para sistemas de gás até 5 bar de pressão.", // linha Topfusion para gás
@@ -48,7 +56,7 @@ export const companies = [
             "Conexão de latão para sistemas de gás, garantindo estanqueidade e durabilidade.", 
         },
         {
-          image: "",
+          image: adaptadorTopGas,
           title: "Adaptador para Rede de Gás",
           description:
             "Adaptador para conexão entre diferentes diâmetros em rede de gás TOPGAS.",
@@ -112,19 +120,19 @@ export const companies = [
       featured: true,
       products: [
         {
-          image: "",
+          image: tuboTopFire,
           title: "Tubo TopFire PP-R",
           description:
             "Tubo em PP-R classe 2 para redes hidráulicas de combate a incêndio conforme normas.",
         },
         {
-          image: "",
+          image: joelhoTopFire,
           title: "Joelho 90° TopFire",
           description:
             "Conexão joelho para desvio em redes de incêndio com alta resistência térmica.",
         },
         {
-          image: "",
+          image: teTopFire,
           title: "Tê PP-R TopFire",
           description:
             "Tê em PP-R para ramificações em rede de combate a incêndio.",
@@ -310,19 +318,19 @@ export const companies = [
       icon: Sliders,
       products: [
         {
-          image: "",
+          image: pressaoTopFlux,
           title: "Válvula Redutora de Pressão PRV",
           description:
             "Redução e estabilização da pressão em redes hidráulicas.",
         },
         {
-          image: "",
+          image: ajustavelTopFlux,
           title: "Válvula Redutora Ajustável",
           description:
             "Permite regulagem fina da pressão conforme necessidade do sistema.",
         },
         {
-          image: "",
+          image: altavazaoTopFlux,
           title: "PRV para Alta Vazão",
           description:
             "Indicada para sistemas industriais e grandes adutoras.",
