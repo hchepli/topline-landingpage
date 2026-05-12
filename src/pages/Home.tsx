@@ -5,6 +5,8 @@ import { CompanyShowcaseSection } from "../components/sections/CompanyShowcaseSe
 import { ContactSection } from "../components/sections/ContactSection"
 import { Footer } from "../components/sections/Footer"
 import { LayoutContainer } from "../components/ui/layout/LayoutContainer"
+import { ServicesSection } from "../components/sections/ServicesSection"
+import { DepoimentsSection } from "../components/sections/DepoimentsSection"
 
 export function Home() {
   return (
@@ -12,8 +14,10 @@ export function Home() {
     <Header />
     <Hero />
     <LayoutContainer>
+      <ServicesSection />
       <BrandGroupSection />
       <CompanyShowcaseSection />
+      <DepoimentsSection />
       <ContactSection />
     </LayoutContainer>
     <Footer />

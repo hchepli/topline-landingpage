@@ -2,7 +2,7 @@ import { Reveal } from "../../animations/Reveal"
 
 type SectionHeaderProps = {
     title: string;
-    description: string;
+    description?: string;
     id?: string;
 }
 
