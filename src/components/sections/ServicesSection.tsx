@@ -35,10 +35,10 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <div className="mx-auto max-w-7xl px-6">
+    <div className="flex flex-col gap-10 mx-auto max-w-7xl px-6">
       <SectionHeader title="Oque a TopLine pode fazer por você?" id="services-title" />
 
-      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2">
         {services.map((service) => (
           <ServiceCard
             key={service.title}
@@ -50,16 +50,26 @@ export function ServicesSection() {
         ))}
       </div>
 
-      <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
-        <DiagnosticCta
-          text="Quer saber qual destes pontos mais travam sua empresa hoje?"
-          buttonLabel="Solicitar diagnóstico"
-          href="#diagnostico"
-        />
+      <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-stretch">
+        <div className="flex-1">
+          <DiagnosticCta
+            text="Quer saber qual destes pontos mais travam sua empresa hoje?"
+            buttonLabel="Solicitar diagnóstico"
+            href="#diagnostico"
+          />
+        </div>
+        <div className="flex">
         <WhatsAppCta
           label="Falar Agora"
           href="https://wa.me/SEUNUMERO"
         />
+        </div>
+        <div className="flex">
+        <WhatsAppCta
+          label="Falar Agora"
+          href="https://wa.me/SEUNUMERO"
+        />
+        </div>
       </div>
     </div>
   );

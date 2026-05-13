@@ -52,14 +52,13 @@ export function DepoimentsSection() {
 
 
   return (
-    <div className="mx-auto max-w-7xl px-6">
+    <div className="h-[95dvh] flex flex-col justify-center gap-5 mx-auto max-w-7xl px-6">
       <SectionHeader
         title="Resultados reais de empresas que confiam na TopLine"
         id="depoiments-title"
       />
 
-      {/* Slider */}
-      <div className="mt-8 overflow-hidden">
+      <div className=" overflow-hidden mt-4">
         <div
           className="flex gap-4 transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(calc(-${current} * (100% / ${VISIBLE} + 16px / ${VISIBLE})))` }}
@@ -73,7 +72,7 @@ export function DepoimentsSection() {
       </div>
 
       {/* Dots */}
-      <div className="mt-6 flex justify-center gap-2">
+      <div className=" flex justify-center gap-2">
         {testimonials.map((_, i) => (
           <button
             key={i}
@@ -86,7 +85,7 @@ export function DepoimentsSection() {
       </div>
 
       {/* CTA */}
-      <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+      <div className="mt-14 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
         <DiagnosticCta
           text="Quer alcançar esse nível de gestão na sua empresa?"
           buttonLabel="Quero gestão profissional"
