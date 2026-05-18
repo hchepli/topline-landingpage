@@ -35,7 +35,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <div className="flex flex-col gap-10 mx-auto max-w-7xl px-6">
+    <div className="services flex flex-col gap-10 mx-auto max-w-7xl px-6">
       <SectionHeader title="Oque a TopLine pode fazer por você?" id="services-title" />
 
       <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2">

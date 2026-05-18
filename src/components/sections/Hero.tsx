@@ -79,8 +79,8 @@ export function Hero() {
             >
               <PrimaryCTA />
               <NavCTA
-                title="Conhecer o Grupo"
-                scrollTarget="grupo"
+                title="Nossos Serviços"
+                scrollTarget="services"
                 variant="inverted"
                 delay={700}
               />

@@ -52,7 +52,7 @@ export function DepoimentsSection() {
 
 
   return (
-    <div className="h-[95dvh] flex flex-col justify-center gap-5 mx-auto max-w-7xl px-6">
+    <div className="h-[85dvh] depoiments-title flex flex-col justify-center gap-5 mx-auto max-w-7xl px-6">
       <SectionHeader
         title="Resultados reais de empresas que confiam na TopLine"
         id="depoiments-title"
