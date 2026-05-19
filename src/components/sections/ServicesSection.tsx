@@ -1,75 +1,50 @@
-// components/sections/ServicesSection.tsx
-
-import { BarChart2, Target, Settings2, Users } from "lucide-react";
 import { SectionHeader } from "../ui/layout/SectionHeader";
 import { ServiceCard } from "../ui/cards/ServiceCard";
 import { DiagnosticCta } from "../ui/cta/DiagnosticCta";
 import { WhatsAppCta } from "../ui/cta/WhatsAppCta";
-
-const services = [
-  {
-    icon: BarChart2,
-    title: "Gestão Financeira",
-    description: "Tenha controle total do fluxo de caixa, custos e resultados para decidir com segurança.",
-    highlight: true,
-  },
-  {
-    icon: Target,
-    title: "Gestão Estratégica",
-    description: "Planejamento, metas e indicadores claros para sua empresa crescer com direção.",
-    highlight: false,
-  },
-  {
-    icon: Settings2,
-    title: "Gestão de Processos",
-    description: "Organização das rotinas e processos para ganhar eficiência e reduzir desperdícios.",
-    highlight: false,
-  },
-  {
-    icon: Users,
-    title: "Apoio à Gestão de Pessoas",
-    description: "Estruturação da equipe e apoio à liderança para um time mais produtivo.",
-    highlight: false,
-  },
-];
+import { services } from "../../data/chpsmart"
+import { Reveal } from "../animations/Reveal";
 
 export function ServicesSection() {
   return (
-    <div className="services flex flex-col gap-10 mx-auto max-w-7xl px-6">
-      <SectionHeader title="Oque a TopLine pode fazer por você?" id="services-title" />
+    <div className="services flex flex-col justify-center min-h-[80dvh] gap-10 mx-auto max-w-7xl px-6">
+      <SectionHeader title="Oque a CHP Smart pode fazer por você?" id="services-title" />
 
-      <div className=" grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {services.map((service) => (
-          <ServiceCard
-            key={service.title}
-            icon={service.icon}
-            title={service.title}
-            description={service.description}
-            highlight={service.highlight}
-          />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {services.map((service, i) => (
+          <Reveal key={service.title} delay={0.2 + i * 0.15} direction="up">
+            <ServiceCard
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+              highlight={service.highlight}
+            />
+          </Reveal>
         ))}
       </div>
 
       <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-stretch">
-        <div className="flex-1">
+        <Reveal delay={0.2} direction="right" className="flex-1">
           <DiagnosticCta
             text="Quer saber qual destes pontos mais travam sua empresa hoje?"
             buttonLabel="Solicitar diagnóstico"
             href="#diagnostico"
           />
-        </div>
-        <div className="flex">
-        <WhatsAppCta
-          label="Falar Agora"
-          href="https://wa.me/SEUNUMERO"
-        />
-        </div>
-        <div className="flex">
-        <WhatsAppCta
-          label="Falar Agora"
-          href="https://wa.me/SEUNUMERO"
-        />
-        </div>
+        </Reveal>
+
+        <Reveal delay={0.35} direction="left" className="flex">
+          <WhatsAppCta
+            label="Falar Agora"
+            href="https://wa.me/SEUNUMERO"
+          />
+        </Reveal>
+
+        <Reveal delay={0.5} direction="left" className="flex">
+          <WhatsAppCta
+            label="Falar Agora"
+            href="https://wa.me/5511911021278"
+          />
+        </Reveal>
       </div>
     </div>
   );

@@ -1,78 +1,45 @@
-// components/sections/DepoimentsSection.tsx
-
 "use client";
 
 import { useState } from "react";
 import { SectionHeader } from "../ui/layout/SectionHeader";
 import { DiagnosticCta } from "../ui/cta/DiagnosticCta";
 import { TestimonialCard } from "../ui/cards/TestimonialCard";
-
-const testimonials = [
-  {
-    quote: "A TopLine trouxe clareza para processos que antes eram confusos. Em poucos meses, conseguimos organizar a gestão financeira e tomar decisões com muito mais segurança.",
-    clientSince: "Cliente desde 2023",
-    name: "Ricardo Almeida",
-    role: "Diretor Administrativo e Financeiro",
-    company: "Da Grupo Vértice Logística",
-  },
-  {
-    quote: "A TopLine trouxe clareza para processos que antes eram confusos. Em poucos meses, conseguimos organizar a gestão financeira e tomar decisões com muito mais segurança.",
-    clientSince: "Cliente desde 2023",
-    name: "Ricardo Almeida",
-    role: "Diretor Administrativo e Financeiro",
-    company: "Da Grupo Vértice Logística",
-  },
-  {
-    quote: "A TopLine trouxe clareza para processos que antes eram confusos. Em poucos meses, conseguimos organizar a gestão financeira e tomar decisões com muito mais segurança.",
-    clientSince: "Cliente desde 2023",
-    name: "Ricardo Almeida",
-    role: "Diretor Administrativo e Financeiro",
-    company: "Da Grupo Vértice Logística",
-  },
-  {
-    quote: "A TopLine trouxe clareza para processos que antes eram confusos. Em poucos meses, conseguimos organizar a gestão financeira e tomar decisões com muito mais segurança.",
-    clientSince: "Cliente desde 2023",
-    name: "Ricardo Almeida",
-    role: "Diretor Administrativo e Financeiro",
-    company: "Da Grupo Vértice Logística",
-  },
-  {
-    quote: "A TopLine trouxe clareza para processos que antes eram confusos. Em poucos meses, conseguimos organizar a gestão financeira e tomar decisões com muito mais segurança.",
-    clientSince: "Cliente desde 2023",
-    name: "Ricardo Almeida",
-    role: "Diretor Administrativo e Financeiro",
-    company: "Da Grupo Vértice Logística",
-  },
-];
+import { Reveal } from "../animations/Reveal";
+import { testimonials } from "../../data/chpsmart"
 
 const VISIBLE = 3;
 
 export function DepoimentsSection() {
   const [current, setCurrent] = useState(0);
 
-
   return (
-    <div className="h-[85dvh] depoiments-title flex flex-col justify-center gap-5 mx-auto max-w-7xl px-6">
+    <div className="min-h-[90dvh] depoiments-title flex flex-col justify-center gap-5 mx-auto max-w-7xl px-6">
       <SectionHeader
-        title="Resultados reais de empresas que confiam na TopLine"
+        title="Resultados reais de empresas que confiam na CHP Smart"
         id="depoiments-title"
       />
 
-      <div className=" overflow-hidden mt-4">
+      <div className="overflow-hidden mt-4">
         <div
           className="flex gap-4 transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(calc(-${current} * (100% / ${VISIBLE} + 16px / ${VISIBLE})))` }}
         >
           {testimonials.map((t, i) => (
-            <div key={i} className="w-full shrink-0" style={{ width: `calc((100% - ${(VISIBLE - 1) * 16}px) / ${VISIBLE})` }}>
+            <Reveal
+              key={i}
+              delay={0.2 + i * 0.15}
+              direction="up"
+              className="w-full shrink-0"
+              style={{ width: `calc((100% - ${(VISIBLE - 1) * 16}px) / ${VISIBLE})` }}
+            >
               <TestimonialCard {...t} />
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
 
       {/* Dots */}
-      <div className=" flex justify-center gap-2">
+      <div className="flex justify-center gap-2">
         {testimonials.map((_, i) => (
           <button
             key={i}
@@ -86,11 +53,13 @@ export function DepoimentsSection() {
 
       {/* CTA */}
       <div className="mt-14 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
-        <DiagnosticCta
-          text="Quer alcançar esse nível de gestão na sua empresa?"
-          buttonLabel="Quero gestão profissional"
-          href="#diagnostico"
-        />
+        <Reveal delay={0.2} direction="right">
+          <DiagnosticCta
+            text="Quer alcançar esse nível de gestão na sua empresa?"
+            buttonLabel="Quero gestão profissional"
+            href="#diagnostico"
+          />
+        </Reveal>
       </div>
     </div>
   );

@@ -3,13 +3,13 @@ import logo from "../../../assets/img/logo/topline.png"
 export function Logo() {
   return (
     <a
-      href="#hero"
+      href="/"
       className="flex items-center gap-1 bg-white pr-2 rounded-full"
       aria-label="Ir para a página inicial"
     >
       <img
         src={logo}
-        alt="TopLine"
+        alt="CHP Smart"
         className="w-7 md:w-10 h-auto"
       />
 
@@ -20,7 +20,7 @@ export function Logo() {
           text-[rgb(var(--gray-900))]
         "
       >
-        TopLine
+        CHP Smart
       </strong>
     </a>
   )

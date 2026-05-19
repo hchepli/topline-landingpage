@@ -11,10 +11,11 @@ import {
 import { scrollToSection } from "../../lib/scroll"
 
 const NAV_ITEMS = [
-  { label: "Home", target: "hero" },
-  { label: "O Grupo", target: "grupo" },
-  { label: "Empresas", target: "empresas" },
-  { label: "Contato", target: "contact" },
+  { label: 'Home', target: 'hero' },
+  { label: 'Serviços', target: 'services' },
+  { label: 'Empresas', target: 'empresas' },
+  { label: 'Depoimentos', target: 'depoiments-title' },
+  { label: 'Contato', target: 'contact' },
 ]
 
 export function Footer() {
@@ -23,7 +24,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12">
 
         {/* HEADER */}
-        <header className="flex flex-col gap-4 md:gap-6">
+        <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <Logo />
           <p className="max-w-xl text-sm text-[rgb(var(--text-secondary)/60%)]">
             Gestão que sustenta decisões. Estratégia que sustenta crescimento.
@@ -96,10 +97,10 @@ export function Footer() {
           <section className="flex flex-col gap-3 md:items-start lg:items-end">
             <h4 className="text-sm font-semibold text-neutral-900">Social</h4>
             <div className="flex gap-3">
-              <a href="https://www.instagram.com/topfusion_topflux_topfiber/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+              <a href="https://www.instagram.com/chp_smart/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
                 <Instagram size={16} />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=100070448310668" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+              <a href="https://www.facebook.com/topline.chp.si" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
                 <Facebook size={16} />
               </a>
               <a href="https://www.linkedin.com/in/chepli-topfusion-topfiber/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
@@ -116,7 +117,7 @@ export function Footer() {
         <div className="mt-12 pt-6">
           <div className="flex flex-col items-center gap-4 text-center text-sm text-[rgb(var(--text-secondary)/60%)] md:items-start md:text-left">
             <small className="leading-relaxed">
-              © 2025 TopLine Non Stop.
+              © 2026 CHP Smart.
               <br className="md:hidden" />
               Todos os direitos reservados
             </small>

@@ -50,25 +50,25 @@ export function Hero() {
           <Reveal delay={0.3} direction="right">
             <h1
               id="hero-title"
-              className="font-black text-white text-2xl leading-snug tracking-[.08rem] md:text-3xl lg:text-4xl"
+              className="font-black text-white text-3xl leading-snug tracking-[.08rem] xl:text-5xl"
             >
               <span className="block min-[400px]:inline min-[1100px]:block">
-                TOPLINE: UMA{" "}
+                Você cuida do{" "}
               </span>
 
               <span className="block min-[400px]:inline min-[1100px]:block">
-                CONEXÃO FORTE
+                negócio. <span className="text-[rgb(var(--brand-primary))]">A gestão</span>
               </span>
 
               <span className="block text-[rgb(var(--brand-primary))]">
-                COM VOCÊ
+                é com a gente.
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.4} direction="right">
-            <p className="font-medium text-lg lg:w-[90%] leading-snug tracking-[.08rem] text-[rgb(var(--color-white)/50%)] md:text-xl lg:text-2xl">
-              TopLine gestão empresarial, grupo TF
+            <p className="font-medium text-lg lg:w-[90%] leading-snug tracking-[.08rem] text-[rgb(var(--color-white)/50%)] lg:text-xl">
+              Tenha controle financeiro e indicadores claros para decidir com segurança.
             </p>
           </Reveal>
 

@@ -1,5 +1,6 @@
 import { SectionTitle } from "../ui/layout/SectionTitle"
 import { BrandCardGrid } from "../ui/layout/BrandCardGrid"
+import { Reveal } from "../animations/Reveal"
 
 export function BrandGroupSection() {
   return (
@@ -12,11 +13,11 @@ export function BrandGroupSection() {
         />
 
         <BrandCardGrid />
-        <div className="flex">
-          <button className="border border-[rgb(var(--brand-secondary))] hover:border-none text-black px-6 py-3 rounded-full hover:translate-y-[-5px] hover:scale-[1.03] hover:bg-[rgb(var(--brand-secondary))] hover:text-white  duration-300 transition-all">
+        <Reveal direction="up" delay={0.3} className="flex">
+          <a href="/empresas" className="border border-[rgb(var(--brand-secondary))] hover:border-none text-black px-6 py-3 rounded-full hover:translate-y-[-5px] hover:scale-[1.03] hover:bg-[rgb(var(--brand-secondary))] hover:text-white  duration-300 transition-all">
             Ver Mais Empresas
-          </button>
-        </div>
+          </a>
+        </Reveal>
       </div>
     </section>
   )
