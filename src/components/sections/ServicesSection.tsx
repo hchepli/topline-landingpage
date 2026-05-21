@@ -23,23 +23,16 @@ export function ServicesSection() {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-stretch">
-        <Reveal delay={0.2} direction="right" className="flex-1">
+      <div className="mt-10 flex flex-col items-stretch gap-3 lg:flex-row">
+        <Reveal delay={0.2} direction="right">
           <DiagnosticCta
-            text="Quer saber qual destes pontos mais travam sua empresa hoje?"
-            buttonLabel="Solicitar diagnóstico"
-            href="#diagnostico"
+            text="Quer alcançar esse nível de gestão na sua empresa?"
+            buttonLabel="Quero gestão profissional"
+            target="diagnostico"
           />
         </Reveal>
 
         <Reveal delay={0.35} direction="left" className="flex">
-          <WhatsAppCta
-            label="Falar Agora"
-            href="https://wa.me/SEUNUMERO"
-          />
-        </Reveal>
-
-        <Reveal delay={0.5} direction="left" className="flex">
           <WhatsAppCta
             label="Falar Agora"
             href="https://wa.me/5511911021278"

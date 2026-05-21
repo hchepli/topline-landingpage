@@ -68,12 +68,12 @@ export function DepoimentsSection() {
       </div>
 
       {/* CTA */}
-      <div className="mt-14 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+      <div className="mt-14 flex flex-col items-center gap-3 lg:flex-row lg:justify-between">
         <Reveal delay={0.2} direction="right">
           <DiagnosticCta
             text="Quer alcançar esse nível de gestão na sua empresa?"
             buttonLabel="Quero gestão profissional"
-            href="#diagnostico"
+            target="diagnostico"
           />
         </Reveal>
       </div>

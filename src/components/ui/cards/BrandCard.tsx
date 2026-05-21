@@ -1,22 +1,15 @@
 import { SquareArrowOutUpRight } from "lucide-react"
 import { OutboundCTA } from "../buttons/OutboundCTA"
-import { scrollToSection } from "../../../lib/scroll"
 
 type BrandCardProps = {
   img: string
   name: string
   url: string
-  target: string
 }
 
-export function BrandCard({ img, name, url, target }: BrandCardProps) {
+export function BrandCard({ img, name, url }: BrandCardProps) {
   return (
-    <a
-      href={`#${target}`}
-      onClick={(e) => {
-        e.preventDefault()
-        scrollToSection(target)
-      }}
+    <div
       className="
         relative cursor-pointer block
         rounded-2xl bg-white
@@ -54,6 +47,6 @@ export function BrandCard({ img, name, url, target }: BrandCardProps) {
           <OutboundCTA href={url} label="Visitar site" />
         </div>
       </div>
-    </a>
+    </div>
   )
 }

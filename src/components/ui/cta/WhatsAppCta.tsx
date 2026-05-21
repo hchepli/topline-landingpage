@@ -10,7 +10,7 @@ export function WhatsAppCta({ label, href }: WhatsAppCtaProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-full w-full shrink-0 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-6 py-4 text-sm font-semibold text-gray-800 transition-opacity hover:opacity-80"
+      className=" whitespace-nowrap flex h-full w-full shrink-0 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-6 py-4 text-sm font-semibold text-gray-800 transition-opacity hover:opacity-80"
     >
       {label}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 text-green-500">
