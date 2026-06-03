@@ -1,6 +1,6 @@
 import { SectionTitle } from "../ui/layout/SectionTitle"
 import { BrandCardGrid } from "../ui/layout/BrandCardGrid"
-import { Reveal } from "../animations/Reveal"
+// import { Reveal } from "../animations/Reveal"
 
 export function BrandGroupSection() {
   return (
@@ -8,19 +8,19 @@ export function BrandGroupSection() {
       <div className="w-full max-w-6xl flex flex-col items-center text-center gap-6 md:gap-8">
         <SectionTitle
         id="grupo-title"
-          title="Grupo TF"
-          description="Com mais de duas décadas de história, o Grupo TF integra empresas líderes em soluções para a construção civil. Atuando por meio das indústrias TopFusion, TopFlux e TopFiber, o grupo combina engenharia de projetos, gestão comercial e inovação para atender grandes clientes e expandir sua presença em todo o território nacional."
+          title="Grupo IVM"
+          description="O Grupo IVM integra empresas líderes em soluções para a construção civil. Atuando por meio das indústrias IVM Italy, BRVValvulas, Roddex e Forthy, o grupo combina engenharia de projetos, gestão comercial e inovação para atender grandes clientes e expandir sua presença em todo o território nacional."
         />
 
         <BrandCardGrid />
-<Reveal direction="up" delay={0.3} className="flex justify-center w-full">
+{/* <Reveal direction="up" delay={0.3} className="flex justify-center w-full">
     <a
     href="/empresas"
     className="border border-[rgb(var(--brand-secondary))] hover:border-none text-black px-6 py-3 rounded-full hover:translate-y-[-5px] hover:scale-[1.03] hover:bg-[rgb(var(--brand-secondary))] hover:text-white duration-300 transition-all text-sm md:text-base whitespace-nowrap"
   >
     Ver Mais Empresas
   </a>
-</Reveal>
+</Reveal>  */}
       </div>
     </section>
   )

@@ -73,7 +73,7 @@ export function ContactSection() {
             </p>
             <div className="flex justify-center items-start flex-col">
               <h4 className="text-start text-[rgb(var(--text-secondary)/0.5)]">Email:</h4>
-              <p>exemplo@gmail.com</p>
+              <p>chepli@italy.com.br</p>
             </div>
             <div className="flex justify-center items-start flex-col">
               <h4 className="text-start text-[rgb(var(--text-secondary)/0.5)]">Telefone:</h4>

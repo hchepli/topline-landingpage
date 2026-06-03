@@ -6,10 +6,10 @@ export function ContactDetails() {
       <div className="flex items-center gap-2 justify-center">
         <Mail size={16} />
         <a
-          href="mailto:chepli@toplinesp.com.br"
+          href="mailto:chepli@italy.com.br"
           className="hover:underline"
         >
-          chepli@toplinesp.com.br
+          chepli@italy.com.br
         </a>
       </div>
 

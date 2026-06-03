@@ -9,7 +9,6 @@ const NAV_ITEMS = [
   { label: 'Home', target: 'hero' },
   { label: 'Serviços', target: 'services' },
   { label: 'Empresas', target: 'empresas' },
-  { label: 'Depoimentos', target: 'depoiments-title' },
   { label: 'Contato', target: 'contact' },
 ]
 

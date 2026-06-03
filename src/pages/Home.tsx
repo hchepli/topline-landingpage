@@ -5,7 +5,7 @@ import { ContactSection } from "../components/sections/ContactSection"
 import { Footer } from "../components/sections/Footer"
 import { LayoutContainer } from "../components/ui/layout/LayoutContainer"
 import { ServicesSection } from "../components/sections/ServicesSection"
-import { DepoimentsSection } from "../components/sections/DepoimentsSection"
+import { CompanyShowcaseSection } from "../components/sections/CompanyShowcaseSection"
 
 export function Home() {
   return (
@@ -15,7 +15,7 @@ export function Home() {
     <LayoutContainer>
       <ServicesSection />
       <BrandGroupSection />
-      <DepoimentsSection />
+      <CompanyShowcaseSection />
       <ContactSection />
     </LayoutContainer>
     <Footer />

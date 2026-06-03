@@ -1,405 +1,428 @@
 import {
-  Droplet, Wind, Flame, Fuel, Grid2x2, Grid3x3,
-  Sliders, Gauge, ArrowLeftRight, Settings, Wrench, Waves, Cloud,
+  Droplet, Flame, Gauge, Settings, Wrench, Waves, Grid2x2
 } from "lucide-react"
 
-import topfusion from "../assets/img/logo/topfusion.png"
-import topfiber from "../assets/img/logo/topfiber.png"
-import topflux from "../assets/img/logo/topflux.png"
-import joelhoTopFire from "../assets/img/products/fire/joelho.png"
-import teTopFire from "../assets/img/products/fire/te.png"
-import tuboTopFire from "../assets/img/products/fire/tubo.png"
-import adaptadorTopGas from "../assets/img/products/gas/adaptador.png"
-import multicamadaTopGas from "../assets/img/products/gas/multicamada-gas.png"
-import altavazaoTopFlux from "../assets/img/products/valvula/altavazao.png"
-import ajustavelTopFlux from "../assets/img/products/valvula/ajustavel.png"
-import pressaoTopFlux from "../assets/img/products/valvula/pressao.png"
-
+import ivmitaly from "../assets/img/logo/ivmitaly.png"
+import forthy from "../assets/img/logo/forthy.png"
+import brv from "../assets/img/logo/brv.png"
+import roddex from "../assets/img/logo/roddex.png"
 export const companies = [
   {
-  image: topfusion,
-  name: "TopFusion",
+  image: ivmitaly,
+  name: "IVM Italy",
   description:
-    "A TopFusion é uma indústria brasileira especializada em sistemas técnicos para aplicações hidráulicas e industriais, com foco em desempenho, confiabilidade e durabilidade.",
-  buttonLabel: "Conhecer Sistemas e Aplicações",
-  href: "https://topfusion.com.br",
-  target: "topfusion",
+    "A IVM Italy desenvolve válvulas, registros e soluções hidráulicas para saneamento, gás e aplicações industriais, combinando tecnologia de forjamento, alta resistência e rigoroso controle de qualidade.",
+  buttonLabel: "Conhecer Linha Industrial e Saneamento",
+  href: "https://italy.com.br",
+  target: "italy",
   cards: [
     {
-      title: "Top Gás",
-      description: "Soluções seguras para condução de gás em aplicações técnicas e industriais.",
-      icon: Fuel,
-      products: [
-        {
-          image: multicamadaTopGas, // inserir URL se disponível
-          title: "Tubo Multicamadas para Gás",
-          description:
-            "Tubo TOPGAS PE/AL/PE com conexões em latão, ideal para sistemas de gás até 5 bar de pressão.", // linha Topfusion para gás
-        },
-        {
-          image: "",
-          title: "Conexão em Latão para Gás",
-          description:
-            "Conexão de latão para sistemas de gás, garantindo estanqueidade e durabilidade.", 
-        },
-        {
-          image: adaptadorTopGas,
-          title: "Adaptador para Rede de Gás",
-          description:
-            "Adaptador para conexão entre diferentes diâmetros em rede de gás TOPGAS.",
-        },
-      ],
-    },
-    {
-      title: "Top Hidro",
-      description: "Sistemas em PP-R para água quente e fria em instalações hidráulicas.",
-      icon: Droplet,
+      title: "Linha Industrial",
+      description: "Válvulas e componentes para aplicações industriais de alta exigência.",
+      icon: Settings,
       products: [
         {
           image: "",
-          title: "Tubo Água Fria TopHidro",
-          description:
-            "Tubo PP-R para água fria PN-12,5 disponível em vários diâmetros (20–160 mm).", // linha Tophidro
+          title: "Válvula Esfera 3 Vias",
+          description: "Controle e direcionamento de fluxo para sistemas industriais."
         },
         {
           image: "",
-          title: "Tubo Água Quente TopHidro",
-          description:
-            "Tubo PP-R para água quente com alta resistência térmica e durabilidade.",
+          title: "Válvula Eliminadora de Ar",
+          description: "Elimina bolsas de ar em sistemas pressurizados."
         },
         {
           image: "",
-          title: "União PP-R TopHidro",
-          description:
-            "Conexão união para sistemas hidráulicos PP-R, garantindo junta estanque.",
-        },
-      ],
+          title: "Filtro Y Industrial",
+          description: "Proteção de equipamentos contra partículas e impurezas."
+        }
+      ]
     },
     {
-      title: "Top Air",
-      description: "Soluções em PP-R para redes de ar comprimido industriais.",
-      icon: Wind,
-      products: [
-        {
-          image: "",
-          title: "Joelho 45° TopAir",
-          description:
-            "Joelho em PPR para redes de ar comprimido, projetado para mudança de direção com baixa perda de carga.", // joelho TopAir
-        },
-        {
-          image: "",
-          title: "CAP 160 mm TopAir",
-          description:
-            "Tampa PP-R para fechamento seguro de tubulações de ar comprimido.",
-        },
-        {
-          image: "",
-          title: "Tubo em PPR 50 mm TopAir",
-          description:
-            "Tubo PP-R para ar comprimido em variadas bitolas até 160 mm.",
-        },
-      ],
-    },
-    {
-      title: "Top Fire",
-      description: "Tubulações para sistemas de combate e prevenção a incêndio.",
+      title: "Linha Gás",
+      description: "Segurança e vedação para instalações de gás.",
       icon: Flame,
       featured: true,
       products: [
         {
-          image: tuboTopFire,
-          title: "Tubo TopFire PP-R",
-          description:
-            "Tubo em PP-R classe 2 para redes hidráulicas de combate a incêndio conforme normas.",
+          image: "",
+          title: "Válvula Esfera para Gás",
+          description: "Vedação confiável para redes residenciais e industriais."
         },
         {
-          image: joelhoTopFire,
-          title: "Joelho 90° TopFire",
-          description:
-            "Conexão joelho para desvio em redes de incêndio com alta resistência térmica.",
+          image: "",
+          title: "Válvula Angular para Gás",
+          description: "Instalação prática em pontos de derivação."
         },
         {
-          image: teTopFire,
-          title: "Tê PP-R TopFire",
-          description:
-            "Tê em PP-R para ramificações em rede de combate a incêndio.",
-        },
-      ],
+          image: "",
+          title: "Registro para Gás",
+          description: "Controle seguro do fornecimento."
+        }
+      ]
     },
     {
-      title: "Top Vacuum",
-      description: "Sistemas para condução a vácuo em aplicações industriais.",
-      icon: Cloud,
+      title: "Saneamento",
+      description: "Produtos homologados para redes públicas de água.",
+      icon: Droplet,
       products: [
         {
           image: "",
-          title: "Tubo TopVacuum PP-R",
-          description:
-            "Tubo em PP-R para condução a vácuo, resistente até cerca de 12 kgf/cm².", // info TopVacuum
+          title: "Válvula Esfera PEAD",
+          description: "Aplicação em sistemas de abastecimento e distribuição."
         },
         {
           image: "",
-          title: "Curva sobrepasso TopVacuum",
-          description:
-            "Curva especializada para transposição de linhas de vácuo sem interferência.",
+          title: "Cavalete para Hidrômetro",
+          description: "Solução para medição e distribuição de água."
         },
         {
           image: "",
-          title: "Conexão T TopVacuum",
-          description:
-            "Conector em T para redes a vácuo, garantindo vedação por termofusão.",
-        },
-      ],
+          title: "Registro de Gaveta",
+          description: "Controle e isolamento de trechos da rede."
+        }
+      ]
     },
     {
-      title: "Top Water",
-      description: "Tubulações em PEAD para água potável, adução e saneamento.",
-      icon: Waves,
-      products: [
-        {
-          image: "",
-          title: "Tubo PEAD TopWater",
-          description:
-            "Tubo em polietileno de alta densidade para redes de água potável.", // TopWater
-        },
-        {
-          image: "",
-          title: "Tubo PEAD 110 mm",
-          description:
-            "Tubo PEAD em diâmetro 110 mm para adução e saneamento.",
-        },
-        {
-          image: "",
-          title: "Conexão PEAD TopWater",
-          description:
-            "Conexão PEAD para redes de água/ esgoto, resistente a impactos.",
-        },
-      ],
+  title: "Controle de Fluxo",
+  description: "Soluções para regulagem e direcionamento de fluidos.",
+  icon: Gauge,
+  products: [
+    {
+      image: "",
+      title: "Válvula Retenção",
+      description: "Impede o retorno do fluxo na tubulação."
     },
     {
-      title: "Top Oil",
-      description: "Soluções para condução de óleos e fluídos hidráulicos.",
-      icon: Sliders,
-      products: [
-        {
-          image: "",
-          title: "Tubo TopOil PE-RT",
-          description:
-            "Tubo para condução de óleos e fluídos hidráulicos (vegetais, minerais e sintéticos).",
-        },
-        {
-          image: "",
-          title: "Conexão para TopOil",
-          description:
-            "Conexões específicas para sistemas de óleo hidráulico.",
-        },
-        {
-          image: "",
-          title: "Adaptador TopOil",
-          description:
-            "Adaptador para transição de diâmetros em sistemas de óleo.",
-        },
-      ],
+      image: "",
+      title: "Válvula Controladora",
+      description: "Regulagem eficiente para diferentes aplicações."
     },
     {
-      title: "Ferramentas & Acessórios",
-      description: "Ferramentas de termofusão e acessórios para instalação.",
-      icon: Wrench,
-      products: [
-        {
-          image: "",
-          title: "Termofusora 20–63 mm",
-          description:
-            "Termofusora elétrica 220 V para fusão de tubos e conexões PPR até 63 mm.",
-        },
-        {
-          image: "",
-          title: "Termofusora 75–110 mm",
-          description:
-            "Termofusora robusta para diâmetros médios até 110 mm.P",
-        },
-        {
-          image: "",
-          title: "Tesoura Corta Tubos",
-          description:
-            "Ferramenta de corte para tubos PP-R durante a instalação.",
-        },
-      ],
-    },
-  ],
+      image: "",
+      title: "Válvula de Alívio",
+      description: "Proteção contra sobrepressão."
+    }
+  ]
+}
+  ]
 },
 {
-  image: topfiber,
-  name: "TopFiber",
+  image: forthy,
+  name: "Forthy",
   description:
-    "A TopFiber desenvolve soluções em fibra de vidro para reforço estrutural, atendendo obras que exigem resistência, durabilidade e alto desempenho técnico.",
-  buttonLabel: "Ver Soluções em Fibra Estrutural",
-  href: "https://topfiber.ind.br",
-  target: "topfiber",
+    "A Forthy desenvolve kits cavalete, conjuntos hidráulicos e soluções para saneamento, atendendo concessionárias, construtoras e obras de infraestrutura em todo o Brasil.",
+  buttonLabel: "Ver Kits Cavalete e Soluções",
+  href: "https://www.forthy.com.br",
+  target: "forthy",
   cards: [
     {
-      title: "Vergalhões de Fibra de Vidro",
-      description: "Reforço estrutural leve, resistente e anticorrosivo.",
-      icon: Grid2x2,
-      products: [
-        {
-          image: "",
-          title: "Vergalhão GFRP 8 mm",
-          description:
-            "Vergalhão em fibra de vidro (GFRP) para substituição do aço em estruturas sujeitas à corrosão.",
-        },
-        {
-          image: "",
-          title: "Vergalhão GFRP 10 mm",
-          description:
-            "Alta resistência à tração, ideal para obras industriais e ambientes agressivos.",
-        },
-        {
-          image: "",
-          title: "Vergalhão GFRP 12 mm",
-          description:
-            "Solução estrutural leve, com longa vida útil e baixa manutenção.",
-        },
-      ],
-    },
-    {
-      title: "Telas de Fibra de Vidro",
-      description: "Distribuição de cargas e controle de fissuras.",
-      icon: Grid3x3,
+      title: "Kits Cavalete Residenciais",
+      description: "Conjuntos completos para ligação de água.",
+      icon: Droplet,
       featured: true,
       products: [
         {
           image: "",
-          title: "Tela Estrutural GFRP",
-          description:
-            "Tela em fibra de vidro para reforço de lajes, pisos industriais e pavimentos.",
+          title: "Kit Cavalete Padrão SABESP",
+          description: "Atende normas técnicas para instalações residenciais."
         },
         {
           image: "",
-          title: "Tela para Revestimentos",
-          description:
-            "Controle de fissuras em argamassas, rebocos e fachadas.",
+          title: "Kit Cavalete Compacto",
+          description: "Instalação prática para pequenos empreendimentos."
         },
         {
           image: "",
-          title: "Tela Técnica Sob Medida",
-          description:
-            "Produção personalizada conforme projeto estrutural.",
-        },
-      ],
+          title: "Kit Cavalete Completo",
+          description: "Conjunto pronto para medição e distribuição."
+        }
+      ]
     },
-  ],
-},
- {
-  image: topflux,
-  name: "TopFlux",
-  description:
-    "A TopFlux desenvolve válvulas e soluções de controle de fluxo hidráulico, garantindo precisão, segurança e eficiência.",
-  buttonLabel: "Ver Soluções em Controle de Fluxo",
-  href: "https://topflux.com.br",
-  target: "topflux",
-  cards: [
     {
-      title: "Válvulas Redutoras de Pressão",
-      description: "Controle preciso e proteção do sistema hidráulico.",
-      icon: Sliders,
+      title: "Saneamento",
+      description: "Soluções para redes públicas e privadas.",
+      icon: Waves,
       products: [
         {
-          image: pressaoTopFlux,
-          title: "Válvula Redutora de Pressão PRV",
-          description:
-            "Redução e estabilização da pressão em redes hidráulicas.",
+          image: "",
+          title: "Conjunto de Medição",
+          description: "Preparado para sistemas de abastecimento."
         },
         {
-          image: ajustavelTopFlux,
-          title: "Válvula Redutora Ajustável",
-          description:
-            "Permite regulagem fina da pressão conforme necessidade do sistema.",
+          image: "",
+          title: "Tubulação Inox",
+          description: "Alta durabilidade e resistência."
         },
         {
-          image: altavazaoTopFlux,
-          title: "PRV para Alta Vazão",
-          description:
-            "Indicada para sistemas industriais e grandes adutoras.",
-        },
-      ],
+          image: "",
+          title: "Conexões Técnicas",
+          description: "Compatibilidade com diferentes projetos."
+        }
+      ]
     },
     {
-      title: "Válvulas de Controle de Nível",
-      description: "Automação segura para reservatórios e tanques.",
+      title: "Componentes Hidráulicos",
+      description: "Itens para montagem e manutenção.",
+      icon: Wrench,
+      products: [
+        {
+          image: "",
+          title: "Filtro Y",
+          description: "Proteção contra partículas sólidas."
+        },
+        {
+          image: "",
+          title: "Válvula de Bloqueio",
+          description: "Controle e interrupção de fluxo."
+        },
+        {
+          image: "",
+          title: "Registro de Manobra",
+          description: "Operação simples e segura."
+        }
+      ]
+    },
+    {
+  title: "Infraestrutura Urbana",
+  description: "Soluções para obras públicas e concessionárias.",
+  icon: Settings,
+  products: [
+    {
+      image: "",
+      title: "Abrigo para Hidrômetro",
+      description: "Proteção para sistemas de medição."
+    },
+    {
+      image: "",
+      title: "Conjunto de Ligação",
+      description: "Instalação segura em redes urbanas."
+    },
+    {
+      image: "",
+      title: "Kit Técnico para Concessionárias",
+      description: "Atendimento aos padrões operacionais."
+    }
+  ]
+},
+  ]
+},
+{
+  image: brv,
+  name: "BRV",
+  description:
+    "A BRV desenvolve válvulas, registros e soluções para saneamento, gás e aplicações industriais, com foco em desempenho, resistência e confiabilidade operacional.",
+  buttonLabel: "Explorar Catálogo BRV",
+  href: "https://www.brvvalvulas.com.br",
+  target: "brv",
+  cards: [
+    {
+      title: "Linha Industrial",
+      description: "Produtos para controle e proteção de sistemas.",
+      icon: Settings,
+      products: [
+        {
+          image: "",
+          title: "Registro Gaveta Industrial",
+          description: "Isolamento seguro de linhas hidráulicas."
+        },
+        {
+          image: "",
+          title: "Válvula Eliminadora de Ar",
+          description: "Eficiência operacional em redes pressurizadas."
+        },
+        {
+          image: "",
+          title: "Válvula Esfera 3 Vias",
+          description: "Controle e direcionamento de fluxo."
+        }
+      ]
+    },
+    {
+      title: "Linha Gás",
+      description: "Soluções certificadas para condução de gás.",
+      icon: Flame,
+      featured: true,
+      products: [
+        {
+          image: "",
+          title: "Válvula Angular para Gás",
+          description: "Instalações residenciais e comerciais."
+        },
+        {
+          image: "",
+          title: "Válvula Passagem Total",
+          description: "Maior vazão e menor perda de carga."
+        },
+        {
+          image: "",
+          title: "Registro para Gás",
+          description: "Controle seguro da distribuição."
+        }
+      ]
+    },
+    {
+      title: "Controle de Pressão",
+      description: "Proteção e estabilidade para sistemas hidráulicos.",
       icon: Gauge,
       products: [
         {
           image: "",
-          title: "Válvula de Boia Hidráulica",
-          description:
-            "Controle automático de nível sem necessidade de energia elétrica.",
+          title: "Válvula Redutora de Pressão",
+          description: "Regulagem e estabilização da pressão da rede."
         },
         {
           image: "",
-          title: "Válvula de Nível Modulante",
-          description:
-            "Regulagem progressiva do fluxo conforme o nível do reservatório.",
+          title: "Redutora Industrial",
+          description: "Aplicações de maior porte."
         },
         {
           image: "",
-          title: "Válvula de Nível Industrial",
-          description:
-            "Aplicações robustas em sistemas de grande porte.",
-        },
-      ],
+          title: "Conjunto Regulador",
+          description: "Controle hidráulico de precisão."
+        }
+      ]
     },
     {
-      title: "Válvulas de Controle e Seção",
-      description: "Direcionamento e interrupção eficiente do fluxo.",
-      icon: ArrowLeftRight,
-      products: [
-        {
-          image: "",
-          title: "Válvula Gaveta",
-          description:
-            "Isolamento total do fluxo em redes hidráulicas.",
-        },
-        {
-          image: "",
-          title: "Válvula Borboleta",
-          description:
-            "Controle rápido e eficiente de abertura e fechamento.",
-        },
-        {
-          image: "",
-          title: "Válvula de Seccionamento",
-          description:
-            "Manutenção segura de trechos da rede.",
-        },
-      ],
+  title: "Saneamento",
+  description: "Produtos voltados para abastecimento e distribuição de água.",
+  icon: Droplet,
+  products: [
+    {
+      image: "",
+      title: "Registro Gaveta para Rede",
+      description: "Controle operacional em sistemas de saneamento."
     },
     {
-      title: "Soluções Sob Medida",
-      description: "Projetos personalizados com suporte técnico especializado.",
+      image: "",
+      title: "Válvula PEAD",
+      description: "Aplicação em redes de distribuição."
+    },
+    {
+      image: "",
+      title: "Conjunto de Manobra",
+      description: "Operação segura de trechos da rede."
+    }
+  ]
+},
+  ]
+},
+{
+  image: roddex,
+  name: "Roddex",
+  description:
+    "A Roddex desenvolve metais sanitários, acessórios para banheiro, cozinha e soluções para hotelaria, combinando design moderno, durabilidade e tecnologia para ambientes residenciais e corporativos.",
+  buttonLabel: "Conhecer Linhas para Banheiro e Hotelaria",
+  href: "https://www.roddex.com.br",
+  target: "roddex",
+  cards: [
+    {
+      title: "Linha Hotelaria",
+      description:
+        "Produtos desenvolvidos para hotéis, pousadas e empreendimentos de alto padrão.",
       icon: Settings,
       featured: true,
       products: [
         {
           image: "",
-          title: "Válvula Especial Customizada",
+          title: "Cabide para Roupas",
           description:
-            "Projeto sob demanda conforme especificações do cliente.",
+            "Acessório resistente e elegante para ambientes hoteleiros."
         },
         {
           image: "",
-          title: "Conjunto Hidráulico Integrado",
+          title: "Suporte para Saco Higiênico",
           description:
-            "Solução completa para controle e proteção do sistema.",
+            "Acabamento discreto e funcional para banheiros corporativos."
         },
         {
           image: "",
-          title: "Consultoria Técnica TopFlux",
+          title: "Porta Malas para Hotel",
           description:
-            "Engenharia aplicada para dimensionamento e escolha da válvula ideal.",
-        },
-      ],
+            "Solução prática para acomodação e conforto dos hóspedes."
+        }
+      ]
     },
-  ],
+
+    {
+      title: "Metais para Banheiro",
+      description:
+        "Torneiras, válvulas e acessórios com acabamento premium.",
+      icon: Droplet,
+      products: [
+        {
+          image: "",
+          title: "Válvula para Lavatório Click",
+          description:
+            "Sistema de acionamento moderno com excelente vedação."
+        },
+        {
+          image: "",
+          title: "Torneira Sensorizada",
+          description:
+            "Maior higiene e economia de água para ambientes de alto fluxo."
+        },
+        {
+          image: "",
+          title: "Válvula para Mictório Sensorizada",
+          description:
+            "Acionamento automático para uso comercial e corporativo."
+        }
+      ]
+    },
+
+    {
+      title: "Chuveiros e Duchas",
+      description:
+        "Soluções para conforto, praticidade e design.",
+      icon: Waves,
+      products: [
+        {
+          image: "",
+          title: "Chuveiro Tipo Ducha com Braço",
+          description:
+            "Design sofisticado e distribuição uniforme da água."
+        },
+        {
+          image: "",
+          title: "Ducha Higiênica com Registro",
+          description:
+            "Kit completo para instalação residencial ou corporativa."
+        },
+        {
+          image: "",
+          title: "Desviador para Chuveiro",
+          description:
+            "Controle eficiente entre diferentes pontos de saída."
+        }
+      ]
+    },
+    {
+      title: "Cozinha",
+      description:
+        "Misturadores, torneiras e acessórios para cozinhas modernas.",
+      icon: Flame,
+      products: [
+        {
+          image: "",
+          title: "Misturador Monocomando Gourmet",
+          description:
+            "Controle preciso de temperatura e vazão."
+        },
+        {
+          image: "",
+          title: "Torneira Gourmet Flexível",
+          description:
+            "Maior alcance e praticidade no dia a dia."
+        },
+        {
+          image: "",
+          title: "Válvula Americana para Pia",
+          description:
+            "Resistência e acabamento para cubas de cozinha."
+        }
+      ]
+    },
+  ]
 },
 ]

@@ -43,6 +43,7 @@ export function CompanyModal({
           relative
           w-full max-w-5xl
           max-h-[90vh]
+          min-h-[65vh]
           bg-white
           rounded-2xl
           flex flex-col

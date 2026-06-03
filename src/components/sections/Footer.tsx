@@ -14,7 +14,6 @@ const NAV_ITEMS = [
   { label: 'Home', target: 'hero' },
   { label: 'Serviços', target: 'services' },
   { label: 'Empresas', target: 'empresas' },
-  { label: 'Depoimentos', target: 'depoiments-title' },
   { label: 'Contato', target: 'contact' },
 ]
 
@@ -39,18 +38,23 @@ export function Footer() {
             <h4 className="text-sm font-semibold text-neutral-900">Empresas</h4>
             <ul className="flex flex-col gap-2 text-sm text-[rgb(var(--text-secondary)/60%)]">
               <li>
-                <a href="https://www.topfusion.com.br" target="_blank" rel="noopener noreferrer">
-                  TopFusion
+                <a href="https://www.italy.com.br" target="_blank" rel="noopener noreferrer">
+                  IVM Italy
                 </a>
               </li>
               <li>
-                <a href="https://www.topfiber.ind.br/" target="_blank" rel="noopener noreferrer">
-                  TopFiber
+                <a href="https://www.forthy.com.br/" target="_blank" rel="noopener noreferrer">
+                  Forthy
                 </a>
               </li>
               <li>
-                <a href="https://www.topflux.com.br" target="_blank" rel="noopener noreferrer">
-                  TopFlux
+                <a href="https://www.brvvalvulas.com.br" target="_blank" rel="noopener noreferrer">
+                  BRVValvulas
+                </a>
+              </li>
+              <li>
+                <a href="https://www.roddex.com.br" target="_blank" rel="noopener noreferrer">
+                  Roddex
                 </a>
               </li>
             </ul>
@@ -80,7 +84,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2 text-sm text-[rgb(var(--text-secondary)/60%)]">
               <li className="flex items-center gap-2">
                 <Mail size={16} />
-                <span>chepli@toplinesp.com.br</span>
+                <span>chepli@italy.com.br</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} />
