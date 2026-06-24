@@ -1,11 +1,41 @@
 import {
-  Droplet, Flame, Gauge, Settings, Wrench, Waves, Grid2x2
+  Droplet, Flame, Gauge, Settings, Wrench, Waves,
 } from "lucide-react"
 
 import ivmitaly from "../assets/img/logo/ivmitaly.png"
 import forthy from "../assets/img/logo/forthy.png"
 import brv from "../assets/img/logo/brv.png"
 import roddex from "../assets/img/logo/roddex.png"
+
+import brvGasEsferaAngular from "../assets/img/products/brv/gas/esfera-angular.jpg"
+import brvGasPassagemTotal from "../assets/img/products/brv/gas/passagem-total.jpg"
+import brvIndustrialEsfera3Vias from "../assets/img/products/brv/industrial/esfera-3-vias.jpg"
+import brvIndustrialRegistroGaveta from "../assets/img/products/brv/industrial/registro-gaveta.jpg"
+import brvPressaoRedutoraPressao from "../assets/img/products/brv/pressao/redutora-pressao.jpg"
+import brvSaneamentoRegistroGaveta from "../assets/img/products/brv/saneamento/registro-gaveta.jpg"
+import brvSaneamentoValvulaPead from "../assets/img/products/brv/saneamento/valvula-pead.jpg"
+
+import ivmGasValvulaAngular from "../assets/img/products/ivm/gas/valvula-angular.png"
+import ivmGasValvulaEsfera from "../assets/img/products/ivm/gas/valvula-esfera.jpg"
+import ivmIndustrialValvulaY from "../assets/img/products/ivm/industrial/valvula-y.jpg"
+import ivmIndustrialValvulaEliminadoraDeAr from "../assets/img/products/ivm/industrial/valvula-eliminadora-de-ar.jpg"
+import ivmIndustrialValvulaEsfera3ViasFemeaIndustrial from "../assets/img/products/ivm/industrial/valvula-esfera-3-vias-femea-industrial.jpg"
+import ivmSaneamentoRegistroGaveta from "../assets/img/products/ivm/saneamento/registro-gaveta.jpg"
+import ivmSaneamentoValvulaEsferaPead from "../assets/img/products/ivm/saneamento/valvula-esfera-macho-x-adaptador-p-tubo-pead-saneamento.jpg"
+import ivmFluxoValvulaRetencao from "../assets/img/products/ivm/fluxo/valvula-retencao-horizontal-portinhola.jpg"
+
+import roddexChuveiroChuveiroComDucha from "../assets/img/products/roddexx/chuveiro/chuveiro-com-duxa.png"
+import roddexChuveiroDesviador from "../assets/img/products/roddexx/chuveiro/desviador.png"
+import roddexChuveiroDuchaHigienica from "../assets/img/products/roddexx/chuveiro/ducha-higienica.png"
+import roddexCozinhaTorneiraMonocamada from "../assets/img/products/roddexx/cozinha/torneira-monocamada.png"
+import roddexCozinhaValvulaAmericana from "../assets/img/products/roddexx/cozinha/valvula-americana.png"
+import roddexHotelCabide from "../assets/img/products/roddexx/hotel/cabide.png"
+import roddexHotelPortaMalas from "../assets/img/products/roddexx/hotel/porta-malas.png"
+import roddexHotelSacoHigienico from "../assets/img/products/roddexx/hotel/saco-higienico.png"
+import roddexBanheiroLavatorioValvula from "../assets/img/products/roddexx/banheiro/lavatorio-valvula.png"
+import roddexBanheiroMictorio from "../assets/img/products/roddexx/banheiro/mictorio.png"
+import roddexBanheiroTorneira from "../assets/img/products/roddexx/banheiro/torneira.png" 
+
 export const companies = [
   {
   image: ivmitaly,
@@ -22,17 +52,17 @@ export const companies = [
       icon: Settings,
       products: [
         {
-          image: "",
+          image: ivmIndustrialValvulaEsfera3ViasFemeaIndustrial,
           title: "Válvula Esfera 3 Vias",
           description: "Controle e direcionamento de fluxo para sistemas industriais."
         },
         {
-          image: "",
+          image: ivmIndustrialValvulaEliminadoraDeAr,
           title: "Válvula Eliminadora de Ar",
           description: "Elimina bolsas de ar em sistemas pressurizados."
         },
         {
-          image: "",
+          image: ivmIndustrialValvulaY,
           title: "Filtro Y Industrial",
           description: "Proteção de equipamentos contra partículas e impurezas."
         }
@@ -45,12 +75,12 @@ export const companies = [
       featured: true,
       products: [
         {
-          image: "",
+          image: ivmGasValvulaEsfera,
           title: "Válvula Esfera para Gás",
           description: "Vedação confiável para redes residenciais e industriais."
         },
         {
-          image: "",
+          image: ivmGasValvulaAngular,
           title: "Válvula Angular para Gás",
           description: "Instalação prática em pontos de derivação."
         },
@@ -67,7 +97,7 @@ export const companies = [
       icon: Droplet,
       products: [
         {
-          image: "",
+          image: ivmSaneamentoValvulaEsferaPead,
           title: "Válvula Esfera PEAD",
           description: "Aplicação em sistemas de abastecimento e distribuição."
         },
@@ -77,7 +107,7 @@ export const companies = [
           description: "Solução para medição e distribuição de água."
         },
         {
-          image: "",
+          image: ivmSaneamentoRegistroGaveta,
           title: "Registro de Gaveta",
           description: "Controle e isolamento de trechos da rede."
         }
@@ -89,7 +119,7 @@ export const companies = [
   icon: Gauge,
   products: [
     {
-      image: "",
+      image: ivmFluxoValvulaRetencao,
       title: "Válvula Retenção",
       description: "Impede o retorno do fluxo na tubulação."
     },
@@ -222,7 +252,7 @@ export const companies = [
       icon: Settings,
       products: [
         {
-          image: "",
+          image: brvIndustrialRegistroGaveta,
           title: "Registro Gaveta Industrial",
           description: "Isolamento seguro de linhas hidráulicas."
         },
@@ -232,7 +262,7 @@ export const companies = [
           description: "Eficiência operacional em redes pressurizadas."
         },
         {
-          image: "",
+          image: brvIndustrialEsfera3Vias,
           title: "Válvula Esfera 3 Vias",
           description: "Controle e direcionamento de fluxo."
         }
@@ -245,12 +275,12 @@ export const companies = [
       featured: true,
       products: [
         {
-          image: "",
+          image: brvGasEsferaAngular,
           title: "Válvula Angular para Gás",
           description: "Instalações residenciais e comerciais."
         },
         {
-          image: "",
+          image: brvGasPassagemTotal,
           title: "Válvula Passagem Total",
           description: "Maior vazão e menor perda de carga."
         },
@@ -267,7 +297,7 @@ export const companies = [
       icon: Gauge,
       products: [
         {
-          image: "",
+          image: brvPressaoRedutoraPressao,
           title: "Válvula Redutora de Pressão",
           description: "Regulagem e estabilização da pressão da rede."
         },
@@ -289,12 +319,12 @@ export const companies = [
   icon: Droplet,
   products: [
     {
-      image: "",
+      image: brvSaneamentoRegistroGaveta,
       title: "Registro Gaveta para Rede",
       description: "Controle operacional em sistemas de saneamento."
     },
     {
-      image: "",
+      image: brvSaneamentoValvulaPead,
       title: "Válvula PEAD",
       description: "Aplicação em redes de distribuição."
     },
@@ -324,19 +354,19 @@ export const companies = [
       featured: true,
       products: [
         {
-          image: "",
+          image: roddexHotelCabide,
           title: "Cabide para Roupas",
           description:
             "Acessório resistente e elegante para ambientes hoteleiros."
         },
         {
-          image: "",
+          image: roddexHotelSacoHigienico,
           title: "Suporte para Saco Higiênico",
           description:
             "Acabamento discreto e funcional para banheiros corporativos."
         },
         {
-          image: "",
+          image: roddexHotelPortaMalas,
           title: "Porta Malas para Hotel",
           description:
             "Solução prática para acomodação e conforto dos hóspedes."
@@ -351,19 +381,19 @@ export const companies = [
       icon: Droplet,
       products: [
         {
-          image: "",
+          image: roddexBanheiroLavatorioValvula,
           title: "Válvula para Lavatório Click",
           description:
             "Sistema de acionamento moderno com excelente vedação."
         },
         {
-          image: "",
+          image: roddexBanheiroTorneira,
           title: "Torneira Sensorizada",
           description:
             "Maior higiene e economia de água para ambientes de alto fluxo."
         },
         {
-          image: "",
+          image: roddexBanheiroMictorio,
           title: "Válvula para Mictório Sensorizada",
           description:
             "Acionamento automático para uso comercial e corporativo."
@@ -378,19 +408,19 @@ export const companies = [
       icon: Waves,
       products: [
         {
-          image: "",
+          image: roddexChuveiroChuveiroComDucha,
           title: "Chuveiro Tipo Ducha com Braço",
           description:
             "Design sofisticado e distribuição uniforme da água."
         },
         {
-          image: "",
+          image: roddexChuveiroDuchaHigienica,
           title: "Ducha Higiênica com Registro",
           description:
             "Kit completo para instalação residencial ou corporativa."
         },
         {
-          image: "",
+          image: roddexChuveiroDesviador,
           title: "Desviador para Chuveiro",
           description:
             "Controle eficiente entre diferentes pontos de saída."
@@ -404,7 +434,7 @@ export const companies = [
       icon: Flame,
       products: [
         {
-          image: "",
+          image: roddexCozinhaTorneiraMonocamada,
           title: "Misturador Monocomando Gourmet",
           description:
             "Controle preciso de temperatura e vazão."
@@ -416,7 +446,7 @@ export const companies = [
             "Maior alcance e praticidade no dia a dia."
         },
         {
-          image: "",
+          image: roddexCozinhaValvulaAmericana,
           title: "Válvula Americana para Pia",
           description:
             "Resistência e acabamento para cubas de cozinha."
