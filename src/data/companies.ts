@@ -6,6 +6,7 @@ import ivmitaly from "../assets/img/logo/ivmitaly.png"
 import forthy from "../assets/img/logo/forthy.png"
 import brv from "../assets/img/logo/brv.png"
 import roddex from "../assets/img/logo/roddex.png"
+import bermad from "../assets/img/logo/Layer_11.svg"
 
 import brvGasEsferaAngular from "../assets/img/products/brv/gas/esfera-angular.jpg"
 import brvGasPassagemTotal from "../assets/img/products/brv/gas/passagem-total.jpg"
@@ -453,6 +454,125 @@ export const companies = [
         }
       ]
     },
+  ]
+},
+{
+  image: bermad,
+  name: "Bermad",
+  description:
+    "A Bermad é referência mundial em válvulas hidráulicas de controle, oferecendo soluções inteligentes para abastecimento de água, irrigação, combate a incêndio e aplicações industriais, com foco em eficiência, confiabilidade e automação.",
+  buttonLabel: "Conhecer Soluções Bermad",
+  href: "https://www.bermad.com/pt-br/",
+  target: "bermad",
+  cards: [
+    {
+      title: "Abastecimento de Água",
+      description:
+        "Soluções para controle, redução e gerenciamento de pressão em redes de distribuição.",
+      icon: Droplet,
+      featured: true,
+      products: [
+        {
+          image: "",
+          title: "Modelo 720 - Válvula Redutora de Pressão",
+          description:
+            "Mantém a pressão de saída constante em sistemas de abastecimento."
+        },
+        {
+          image: "",
+          title: "Modelo 735 - Válvula Sustentadora de Pressão",
+          description:
+            "Protege a rede mantendo a pressão mínima a montante."
+        },
+        {
+          image: "",
+          title: "Modelo 700 SIGMA EN/ES",
+          description:
+            "Válvula hidráulica de controle para diversas aplicações em redes de água."
+        }
+      ]
+    },
+
+    {
+      title: "Controle de Nível",
+      description:
+        "Válvulas automáticas para reservatórios e tanques.",
+      icon: Waves,
+      products: [
+        {
+          image: "",
+          title: "Modelo 750-66 - Válvula de Controle de Nível",
+          description:
+            "Controle automático do nível de reservatórios."
+        },
+        {
+          image: "",
+          title: "Modelo 750-65",
+          description:
+            "Controle hidráulico preciso para enchimento de tanques."
+        },
+        {
+          image: "",
+          title: "Modelo 757",
+          description:
+            "Controle modular para reservatórios de grande porte."
+        }
+      ]
+    },
+
+    {
+      title: "Proteção da Rede",
+      description:
+        "Equipamentos para segurança operacional e prevenção de danos hidráulicos.",
+      icon: Gauge,
+      products: [
+        {
+          image: "",
+          title: "Modelo 730 - Válvula de Alívio de Pressão",
+          description:
+            "Protege tubulações contra sobrepressão."
+        },
+        {
+          image: "",
+          title: "Modelo 735-M",
+          description:
+            "Válvula combinada para sustentação e alívio de pressão."
+        },
+        {
+          image: "",
+          title: "Modelo 790",
+          description:
+            "Válvula de controle multifuncional para proteção hidráulica."
+        }
+      ]
+    },
+
+    {
+      title: "Irrigação",
+      description:
+        "Soluções para automação e controle em sistemas de irrigação agrícola.",
+      icon: Settings,
+      products: [
+        {
+          image: "",
+          title: "Modelo IR-120-55",
+          description:
+            "Válvula hidráulica para sistemas de irrigação."
+        },
+        {
+          image: "",
+          title: "Modelo IR-420",
+          description:
+            "Controle automático de setores de irrigação."
+        },
+        {
+          image: "",
+          title: "Modelo IR-900-M0",
+          description:
+            "Válvula de controle para aplicações agrícolas de alta eficiência."
+        }
+      ]
+    }
   ]
 },
 ]
