@@ -6,6 +6,7 @@ import ivmitaly from "../assets/img/logo/ivmitaly.png"
 import forthy from "../assets/img/logo/forthy.png"
 import brv from "../assets/img/logo/brv.png"
 import roddex from "../assets/img/logo/roddex.png"
+import bermad from "../assets/img/logo/Layer_11.svg"
 
 import brvGasEsferaAngular from "../assets/img/products/brv/gas/esfera-angular.jpg"
 import brvGasPassagemTotal from "../assets/img/products/brv/gas/passagem-total.jpg"
@@ -34,7 +35,19 @@ import roddexHotelPortaMalas from "../assets/img/products/roddexx/hotel/porta-ma
 import roddexHotelSacoHigienico from "../assets/img/products/roddexx/hotel/saco-higienico.png"
 import roddexBanheiroLavatorioValvula from "../assets/img/products/roddexx/banheiro/lavatorio-valvula.png"
 import roddexBanheiroMictorio from "../assets/img/products/roddexx/banheiro/mictorio.png"
-import roddexBanheiroTorneira from "../assets/img/products/roddexx/banheiro/torneira.png" 
+import roddexBanheiroTorneira from "../assets/img/products/roddexx/banheiro/torneira.png"
+
+import forthyKitCavaleteDN25 from "../assets/img/products/forthy/kit-cavaletes/Kit-Cavalete-Simples-DN25-1-V6.jpg"
+import forthyKitCavaleteDN80 from "../assets/img/products/forthy/kit-cavaletes/Site-Kit-Cavalete-Simples-DN80-3-com-filtro-V6.jpg"
+import forthyKitReducaoDN25XDN20 from "../assets/img/products/forthy/kit-com-reducao/DN25XDN20.jpg"
+import forthyKitReducaoDN40XDN25 from "../assets/img/products/forthy/kit-com-reducao/Site-Kit-Cavalete-Simples-Red-DN40-X-DN25-1-e-meia-X-1-V6.jpg"
+import forthyKitReducaoDN80XDN50 from "../assets/img/products/forthy/kit-com-reducao/Site-Kit-Cavalete-Simples-Red-DN80-X-DN50-3-X-2-com-filtro-V6.jpg"
+import forthyBuchaReducao from "../assets/img/products/forthy/conexao/Bucha-de-Reducao.jpg"
+import forthyCotovelo90Femea from "../assets/img/products/forthy/conexao/Cotovelo-90-Femea.jpg"
+import forthyFlangeSextavado from "../assets/img/products/forthy/conexao/Flange-com-Sextavado.jpg"
+import forthyLuvaFemea from "../assets/img/products/forthy/conexao2/Luva-Femea-1.jpg"
+import forthyNipleDuplo from "../assets/img/products/forthy/conexao2/Niple-Duplo.jpg"
+import forthyUniaoAssentoPlano from "../assets/img/products/forthy/conexao2/Uniao-Assento-Plano.jpg"
 
 export const companies = [
   {
@@ -145,97 +158,100 @@ export const companies = [
   buttonLabel: "Ver Kits Cavalete e Soluções",
   href: "https://www.forthy.com.br",
   target: "forthy",
-  cards: [
-    {
-      title: "Kits Cavalete Residenciais",
-      description: "Conjuntos completos para ligação de água.",
-      icon: Droplet,
-      featured: true,
-      products: [
-        {
-          image: "",
-          title: "Kit Cavalete Padrão SABESP",
-          description: "Atende normas técnicas para instalações residenciais."
-        },
-        {
-          image: "",
-          title: "Kit Cavalete Compacto",
-          description: "Instalação prática para pequenos empreendimentos."
-        },
-        {
-          image: "",
-          title: "Kit Cavalete Completo",
-          description: "Conjunto pronto para medição e distribuição."
-        }
-      ]
-    },
-    {
-      title: "Saneamento",
-      description: "Soluções para redes públicas e privadas.",
-      icon: Waves,
-      products: [
-        {
-          image: "",
-          title: "Conjunto de Medição",
-          description: "Preparado para sistemas de abastecimento."
-        },
-        {
-          image: "",
-          title: "Tubulação Inox",
-          description: "Alta durabilidade e resistência."
-        },
-        {
-          image: "",
-          title: "Conexões Técnicas",
-          description: "Compatibilidade com diferentes projetos."
-        }
-      ]
-    },
-    {
-      title: "Componentes Hidráulicos",
-      description: "Itens para montagem e manutenção.",
-      icon: Wrench,
-      products: [
-        {
-          image: "",
-          title: "Filtro Y",
-          description: "Proteção contra partículas sólidas."
-        },
-        {
-          image: "",
-          title: "Válvula de Bloqueio",
-          description: "Controle e interrupção de fluxo."
-        },
-        {
-          image: "",
-          title: "Registro de Manobra",
-          description: "Operação simples e segura."
-        }
-      ]
-    },
-    {
-  title: "Infraestrutura Urbana",
-  description: "Soluções para obras públicas e concessionárias.",
-  icon: Settings,
-  products: [
-    {
-      image: "",
-      title: "Abrigo para Hidrômetro",
-      description: "Proteção para sistemas de medição."
-    },
-    {
-      image: "",
-      title: "Conjunto de Ligação",
-      description: "Instalação segura em redes urbanas."
-    },
-    {
-      image: "",
-      title: "Kit Técnico para Concessionárias",
-      description: "Atendimento aos padrões operacionais."
-    }
-  ]
-},
-  ]
+cards: [
+  {
+    title: "Kits Cavalete",
+    description: "Kits completos para ligação de água conforme normas técnicas.",
+    icon: Droplet,
+    featured: true,
+    products: [
+      {
+        image: forthyKitCavaleteDN25,
+        title: "Kit Cavalete Simples DN25 1″ V6",
+        description: "Kit para ligação de água em instalações residenciais."
+      },
+      {
+        image: "",
+        title: "Kit Cavalete Simples DN40 1.1/2″ V6",
+        description: "Modelo para redes de maior vazão."
+      },
+      {
+        image: forthyKitCavaleteDN80,
+        title: "Kit Cavalete Simples DN80 3″ com Filtro V6",
+        description: "Kit completo para aplicações de maior porte."
+      }
+    ]
+  },
+
+  {
+    title: "Kits com Redução",
+    description: "Modelos com redução para diferentes diâmetros de tubulação.",
+    icon: Settings,
+    products: [
+      {
+        image: forthyKitReducaoDN25XDN20,
+        title: "Kit Cavalete Simples com Redução DN25 x DN20 1″ x 3/4″ V6",
+        description: "Ideal para adaptações em ligações de água."
+      },
+      {
+        image: forthyKitReducaoDN40XDN25,
+        title: "Kit Cavalete Simples com Redução DN40 x DN25 1.1/2″ x 1″ V6",
+        description: "Permite adequação entre diferentes bitolas."
+      },
+      {
+        image: forthyKitReducaoDN80XDN50,
+        title: "Kit Cavalete Simples com Redução DN80 x DN50 3″ x 2″ com Filtro V6",
+        description: "Solução para instalações de alta capacidade."
+      }
+    ]
+  },
+
+  {
+    title: "Conexões",
+    description: "Componentes para montagem de sistemas hidráulicos.",
+    icon: Wrench,
+    products: [
+      {
+        image: forthyBuchaReducao,
+        title: "Bucha de Redução",
+        description: "Adaptação entre diferentes diâmetros de tubulação."
+      },
+      {
+        image: forthyCotovelo90Femea,
+        title: "Cotovelo 90º Fêmea x Fêmea",
+        description: "Mudança de direção com vedação segura."
+      },
+      {
+        image: forthyFlangeSextavado,
+        title: "Flange com Sextavado",
+        description: "Fixação e montagem em sistemas hidráulicos."
+      }
+    ]
+  },
+
+  {
+    title: "Conexões Especiais",
+    description: "Peças para complementação e montagem de instalações.",
+    icon: Waves,
+    products: [
+      {
+        image: forthyLuvaFemea,
+        title: "Luva Fêmea",
+        description: "Conexão para união de tubulações."
+      },
+      {
+        image: forthyNipleDuplo,
+        title: "Niple Duplo",
+        description: "Peça para interligação entre conexões roscáveis."
+      },
+      {
+        image: forthyUniaoAssentoPlano,
+        title: "União Assento Plano",
+        description: "Facilita a montagem e manutenção de sistemas hidráulicos."
+      }
+    ]
+  }
+]
 },
 {
   image: brv,
@@ -453,6 +469,125 @@ export const companies = [
         }
       ]
     },
+  ]
+},
+{
+  image: bermad,
+  name: "Bermad",
+  description:
+    "A Bermad é referência mundial em válvulas hidráulicas de controle, oferecendo soluções inteligentes para abastecimento de água, irrigação, combate a incêndio e aplicações industriais, com foco em eficiência, confiabilidade e automação.",
+  buttonLabel: "Conhecer Soluções Bermad",
+  href: "https://www.bermad.com/pt-br/",
+  target: "bermad",
+  cards: [
+    {
+      title: "Abastecimento de Água",
+      description:
+        "Soluções para controle, redução e gerenciamento de pressão em redes de distribuição.",
+      icon: Droplet,
+      featured: true,
+      products: [
+        {
+          image: "",
+          title: "Modelo 720 - Válvula Redutora de Pressão",
+          description:
+            "Mantém a pressão de saída constante em sistemas de abastecimento."
+        },
+        {
+          image: "",
+          title: "Modelo 735 - Válvula Sustentadora de Pressão",
+          description:
+            "Protege a rede mantendo a pressão mínima a montante."
+        },
+        {
+          image: "",
+          title: "Modelo 700 SIGMA EN/ES",
+          description:
+            "Válvula hidráulica de controle para diversas aplicações em redes de água."
+        }
+      ]
+    },
+
+    {
+      title: "Controle de Nível",
+      description:
+        "Válvulas automáticas para reservatórios e tanques.",
+      icon: Waves,
+      products: [
+        {
+          image: "",
+          title: "Modelo 750-66 - Válvula de Controle de Nível",
+          description:
+            "Controle automático do nível de reservatórios."
+        },
+        {
+          image: "",
+          title: "Modelo 750-65",
+          description:
+            "Controle hidráulico preciso para enchimento de tanques."
+        },
+        {
+          image: "",
+          title: "Modelo 757",
+          description:
+            "Controle modular para reservatórios de grande porte."
+        }
+      ]
+    },
+
+    {
+      title: "Proteção da Rede",
+      description:
+        "Equipamentos para segurança operacional e prevenção de danos hidráulicos.",
+      icon: Gauge,
+      products: [
+        {
+          image: "",
+          title: "Modelo 730 - Válvula de Alívio de Pressão",
+          description:
+            "Protege tubulações contra sobrepressão."
+        },
+        {
+          image: "",
+          title: "Modelo 735-M",
+          description:
+            "Válvula combinada para sustentação e alívio de pressão."
+        },
+        {
+          image: "",
+          title: "Modelo 790",
+          description:
+            "Válvula de controle multifuncional para proteção hidráulica."
+        }
+      ]
+    },
+
+    {
+      title: "Irrigação",
+      description:
+        "Soluções para automação e controle em sistemas de irrigação agrícola.",
+      icon: Settings,
+      products: [
+        {
+          image: "",
+          title: "Modelo IR-120-55",
+          description:
+            "Válvula hidráulica para sistemas de irrigação."
+        },
+        {
+          image: "",
+          title: "Modelo IR-420",
+          description:
+            "Controle automático de setores de irrigação."
+        },
+        {
+          image: "",
+          title: "Modelo IR-900-M0",
+          description:
+            "Válvula de controle para aplicações agrícolas de alta eficiência."
+        }
+      ]
+    }
   ]
 },
 ]

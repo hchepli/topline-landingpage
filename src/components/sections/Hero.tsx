@@ -50,25 +50,25 @@ export function Hero() {
           <Reveal delay={0.3} direction="right">
             <h1
               id="hero-title"
-              className="font-black text-white text-3xl leading-snug tracking-[.08rem] xl:text-5xl"
+              className="font-black uppercase text-white text-3xl leading-snug tracking-[.09rem] xl:text-5xl"
             >
               <span className="block min-[400px]:inline min-[1100px]:block">
-                Você cuida do{" "}
+                A força por{" "}
               </span>
 
               <span className="block min-[400px]:inline min-[1100px]:block">
-                negócio. <span className="text-[rgb(var(--brand-primary))]">A gestão</span>
+                trás de <span className="text-[rgb(var(--brand-primary))]">grandes</span>
               </span>
 
               <span className="block text-[rgb(var(--brand-primary))]">
-                é com a gente.
+                marcas
               </span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.4} direction="right">
             <p className="font-medium text-lg lg:w-[90%] leading-snug tracking-[.08rem] text-[rgb(var(--color-white)/50%)] lg:text-xl">
-              Tenha controle financeiro e indicadores claros para decidir com segurança.
+              Conectamos gestão estratégica e tecnologia para impulsionar empresas parceiras.
             </p>
           </Reveal>
 

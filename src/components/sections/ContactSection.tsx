@@ -53,7 +53,7 @@ export function ContactSection() {
       aria-labelledby="contact-title"
     >
       <div className="w-full max-w-6xl flex flex-col items-center text-center gap-10 px-4 sm:px-6">
-        <SectionTitle title="Contato Comercial" id="contact-title" />
+        <SectionTitle title="Contato" id="contact-title" />
 
         <Reveal delay={0.4} direction="up">
           <address className="not-italic">
@@ -65,11 +65,11 @@ export function ContactSection() {
 
           <Reveal delay={0.2} direction="right" className="flex w-full lg:w-[45%] justify-center items-start gap-8 flex-col">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl text-start font-semibold">
-              Vamos conversar sobre a gestão{" "}
-              <span className="text-[rgb(var(--brand-secondary))]">da sua empresa</span>
+              Fale com o time{" "}
+              <span className="text-[rgb(var(--brand-secondary))]">CHPSmart</span>
             </h3>
             <p className="text-start text-[rgb(var(--text-secondary)/0.5)] w-full sm:w-[83%]">
-              Entenda como a CHP Smart pode ajudar você a ter mais clareza, organização e segurança nas decisões do dia a dia.
+              Entre em contato para dúvidas institucionais, parcerias ou comunicações com as marcas do grupo.
             </p>
             <div className="flex justify-center items-start flex-col">
               <h4 className="text-start text-[rgb(var(--text-secondary)/0.5)]">Email:</h4>
@@ -105,7 +105,7 @@ export function ContactSection() {
                   id="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Como eu posso te chamar?"
+                  placeholder="Como gostaria de ser chamado?"
                   className="w-full h-12 rounded-lg border border-black/30 bg-white px-4 text-sm outline-none focus:border-black transition"
                 />
               </div>
@@ -119,7 +119,7 @@ export function ContactSection() {
                   id="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="Por onde eu te respondo?"
+                  placeholder="Seu melhor email de contato"
                   className="w-full h-12 rounded-lg border border-black/30 bg-white px-4 text-sm outline-none focus:border-black transition"
                 />
               </div>
@@ -132,7 +132,7 @@ export function ContactSection() {
                   id="message"
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="Qual é o principal desafio da sua empresa hoje?"
+                  placeholder="Escreva sua mensagem aqui..."
                   className="w-full h-36 resize-none rounded-lg border border-black/30 bg-white px-4 py-3 text-sm outline-none focus:border-black transition"
                 />
               </div>
@@ -145,7 +145,7 @@ export function ContactSection() {
                 >
                   <span className="absolute inset-0 bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out rounded-full" aria-hidden="true" />
                   <span className="relative z-10">
-                    {loading ? "Enviando..." : "Quero Conversar"}
+                    {loading ? "Enviando..." : "Enviar Mensagem"}
                   </span>
                   <div className="relative z-10 flex justify-center items-center bg-white text-black p-3 rounded-full transition-colors duration-300 group-hover:bg-black group-hover:text-white">
                     <ArrowUpRight />
