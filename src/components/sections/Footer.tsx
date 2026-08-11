@@ -84,7 +84,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2 text-sm text-[rgb(var(--text-secondary)/60%)]">
               <li className="flex items-center gap-2">
                 <Mail size={16} />
-                <span>chepli@italy.com.br</span>
+                <span>chepli@chpsmart.com.br</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} />

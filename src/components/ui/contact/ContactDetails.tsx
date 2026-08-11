@@ -9,7 +9,7 @@ export function ContactDetails() {
           href="mailto:chepli@italy.com.br"
           className="hover:underline"
         >
-          chepli@italy.com.br
+          chepli@chpsmart.com.br
         </a>
       </div>
 
