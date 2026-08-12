@@ -49,6 +49,18 @@ import forthyLuvaFemea from "../assets/img/products/forthy/conexao2/Luva-Femea-1
 import forthyNipleDuplo from "../assets/img/products/forthy/conexao2/Niple-Duplo.jpg"
 import forthyUniaoAssentoPlano from "../assets/img/products/forthy/conexao2/Uniao-Assento-Plano.jpg"
 
+import bermad720RedutoraPressao from "../assets/img/products/bermad/720-valvularedutoradepressao.jpg"
+import bermad700Sigma from "../assets/img/products/bermad/modelo-700.jpg"
+import bermad730AlivioPressao from "../assets/img/products/bermad/modelo-730.jpg"
+import bermad735M from "../assets/img/products/bermad/modelo-735-m.jpg"
+import bermad75065 from "../assets/img/products/bermad/modelo-750-65.jpg"
+import bermad75066 from "../assets/img/products/bermad/modelo-750-66.jpg"
+import bermad757 from "../assets/img/products/bermad/modelo-757.jpg"
+import bermadIR12055 from "../assets/img/products/bermad/modelo-IR-120-55.jpg"
+import bermadIR420 from "../assets/img/products/bermad/modelo-IR-420.jpg"
+import bermadIR900M0 from "../assets/img/products/bermad/modelo-IR-900-M0.jpg"
+import bermad735 from "../assets/img/products/bermad/modelo735.jpg"
+
 export const companies = [
   {
   image: ivmitaly,
@@ -488,19 +500,19 @@ cards: [
       featured: true,
       products: [
         {
-          image: "",
+          image: bermad720RedutoraPressao,
           title: "Modelo 720 - Válvula Redutora de Pressão",
           description:
             "Mantém a pressão de saída constante em sistemas de abastecimento."
         },
         {
-          image: "",
+          image: bermad735,
           title: "Modelo 735 - Válvula Sustentadora de Pressão",
           description:
             "Protege a rede mantendo a pressão mínima a montante."
         },
         {
-          image: "",
+          image: bermad700Sigma,
           title: "Modelo 700 SIGMA EN/ES",
           description:
             "Válvula hidráulica de controle para diversas aplicações em redes de água."
@@ -515,19 +527,19 @@ cards: [
       icon: Waves,
       products: [
         {
-          image: "",
+          image: bermad75066,
           title: "Modelo 750-66 - Válvula de Controle de Nível",
           description:
             "Controle automático do nível de reservatórios."
         },
         {
-          image: "",
+          image: bermad75065,
           title: "Modelo 750-65",
           description:
             "Controle hidráulico preciso para enchimento de tanques."
         },
         {
-          image: "",
+          image: bermad757,
           title: "Modelo 757",
           description:
             "Controle modular para reservatórios de grande porte."
@@ -542,19 +554,19 @@ cards: [
       icon: Gauge,
       products: [
         {
-          image: "",
+          image: bermad730AlivioPressao,
           title: "Modelo 730 - Válvula de Alívio de Pressão",
           description:
             "Protege tubulações contra sobrepressão."
         },
         {
-          image: "",
+          image: bermad735M,
           title: "Modelo 735-M",
           description:
             "Válvula combinada para sustentação e alívio de pressão."
         },
         {
-          image: "",
+          image: "#",
           title: "Modelo 790",
           description:
             "Válvula de controle multifuncional para proteção hidráulica."
@@ -569,19 +581,19 @@ cards: [
       icon: Settings,
       products: [
         {
-          image: "",
+          image: bermadIR12055,
           title: "Modelo IR-120-55",
           description:
             "Válvula hidráulica para sistemas de irrigação."
         },
         {
-          image: "",
+          image: bermadIR420,
           title: "Modelo IR-420",
           description:
             "Controle automático de setores de irrigação."
         },
         {
-          image: "",
+          image: bermadIR900M0,
           title: "Modelo IR-900-M0",
           description:
             "Válvula de controle para aplicações agrícolas de alta eficiência."
