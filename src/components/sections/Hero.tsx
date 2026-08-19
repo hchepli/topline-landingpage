@@ -1,8 +1,8 @@
 import { Reveal } from "../animations/Reveal"
 import { NavCTA } from "../ui/buttons/NavCTA"
 import { PrimaryCTA } from "../ui/buttons/PrimaryCTA"
-import visual_1 from "../../assets/img/logo/visual_1.png"
-import visual_2 from "../../assets/img/logo/visual_2.png"
+import visual_1 from "../../assets/img/logo/visual_1.webp"
+import visual_2 from "../../assets/img/logo/visual_2.webp"
 
 export function Hero() {
   return (

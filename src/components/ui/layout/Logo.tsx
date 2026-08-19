@@ -1,4 +1,4 @@
-import logo from "../../../assets/img/logo/topline.png"
+import logo from "../../../assets/img/logo/topline.webp"
 
 export function Logo() {
   return (

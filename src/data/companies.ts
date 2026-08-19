@@ -2,64 +2,64 @@ import {
   Droplet, Flame, Gauge, Settings, Wrench, Waves,
 } from "lucide-react"
 
-import ivmitaly from "../assets/img/logo/ivmitaly.png"
-import forthy from "../assets/img/logo/forthy.png"
-import brv from "../assets/img/logo/brv.png"
-import roddex from "../assets/img/logo/roddex.png"
+import ivmitaly from "../assets/img/logo/ivmitaly.webp"
+import forthy from "../assets/img/logo/forthy.webp"
+import brv from "../assets/img/logo/brv.webp"
+import roddex from "../assets/img/logo/roddex.webp"
 import bermad from "../assets/img/logo/Layer_11.svg"
 
-import brvGasEsferaAngular from "../assets/img/products/brv/gas/esfera-angular.jpg"
-import brvGasPassagemTotal from "../assets/img/products/brv/gas/passagem-total.jpg"
-import brvIndustrialEsfera3Vias from "../assets/img/products/brv/industrial/esfera-3-vias.jpg"
-import brvIndustrialRegistroGaveta from "../assets/img/products/brv/industrial/registro-gaveta.jpg"
-import brvPressaoRedutoraPressao from "../assets/img/products/brv/pressao/redutora-pressao.jpg"
-import brvSaneamentoRegistroGaveta from "../assets/img/products/brv/saneamento/registro-gaveta.jpg"
-import brvSaneamentoValvulaPead from "../assets/img/products/brv/saneamento/valvula-pead.jpg"
+import brvGasEsferaAngular from "../assets/img/products/brv/gas/esfera-angular.webp"
+import brvGasPassagemTotal from "../assets/img/products/brv/gas/passagem-total.webp"
+import brvIndustrialEsfera3Vias from "../assets/img/products/brv/industrial/esfera-3-vias.webp"
+import brvIndustrialRegistroGaveta from "../assets/img/products/brv/industrial/registro-gaveta.webp"
+import brvPressaoRedutoraPressao from "../assets/img/products/brv/pressao/redutora-pressao.webp"
+import brvSaneamentoRegistroGaveta from "../assets/img/products/brv/saneamento/registro-gaveta.webp"
+import brvSaneamentoValvulaPead from "../assets/img/products/brv/saneamento/valvula-pead.webp"
 
-import ivmGasValvulaAngular from "../assets/img/products/ivm/gas/valvula-angular.png"
-import ivmGasValvulaEsfera from "../assets/img/products/ivm/gas/valvula-esfera.jpg"
-import ivmIndustrialValvulaY from "../assets/img/products/ivm/industrial/valvula-y.jpg"
-import ivmIndustrialValvulaEliminadoraDeAr from "../assets/img/products/ivm/industrial/valvula-eliminadora-de-ar.jpg"
-import ivmIndustrialValvulaEsfera3ViasFemeaIndustrial from "../assets/img/products/ivm/industrial/valvula-esfera-3-vias-femea-industrial.jpg"
-import ivmSaneamentoRegistroGaveta from "../assets/img/products/ivm/saneamento/registro-gaveta.jpg"
-import ivmSaneamentoValvulaEsferaPead from "../assets/img/products/ivm/saneamento/valvula-esfera-macho-x-adaptador-p-tubo-pead-saneamento.jpg"
-import ivmFluxoValvulaRetencao from "../assets/img/products/ivm/fluxo/valvula-retencao-horizontal-portinhola.jpg"
+import ivmGasValvulaAngular from "../assets/img/products/ivm/gas/valvula-angular.webp"
+import ivmGasValvulaEsfera from "../assets/img/products/ivm/gas/valvula-esfera.webp"
+import ivmIndustrialValvulaY from "../assets/img/products/ivm/industrial/valvula-y.webp"
+import ivmIndustrialValvulaEliminadoraDeAr from "../assets/img/products/ivm/industrial/valvula-eliminadora-de-ar.webp"
+import ivmIndustrialValvulaEsfera3ViasFemeaIndustrial from "../assets/img/products/ivm/industrial/valvula-esfera-3-vias-femea-industrial.webp"
+import ivmSaneamentoRegistroGaveta from "../assets/img/products/ivm/saneamento/registro-gaveta.webp"
+import ivmSaneamentoValvulaEsferaPead from "../assets/img/products/ivm/saneamento/valvula-esfera-macho-x-adaptador-p-tubo-pead-saneamento.webp"
+import ivmFluxoValvulaRetencao from "../assets/img/products/ivm/fluxo/valvula-retencao-horizontal-portinhola.webp"
 
-import roddexChuveiroChuveiroComDucha from "../assets/img/products/roddexx/chuveiro/chuveiro-com-duxa.png"
-import roddexChuveiroDesviador from "../assets/img/products/roddexx/chuveiro/desviador.png"
-import roddexChuveiroDuchaHigienica from "../assets/img/products/roddexx/chuveiro/ducha-higienica.png"
-import roddexCozinhaTorneiraMonocamada from "../assets/img/products/roddexx/cozinha/torneira-monocamada.png"
-import roddexCozinhaValvulaAmericana from "../assets/img/products/roddexx/cozinha/valvula-americana.png"
-import roddexHotelCabide from "../assets/img/products/roddexx/hotel/cabide.png"
-import roddexHotelPortaMalas from "../assets/img/products/roddexx/hotel/porta-malas.png"
-import roddexHotelSacoHigienico from "../assets/img/products/roddexx/hotel/saco-higienico.png"
-import roddexBanheiroLavatorioValvula from "../assets/img/products/roddexx/banheiro/lavatorio-valvula.png"
-import roddexBanheiroMictorio from "../assets/img/products/roddexx/banheiro/mictorio.png"
-import roddexBanheiroTorneira from "../assets/img/products/roddexx/banheiro/torneira.png"
+import roddexChuveiroChuveiroComDucha from "../assets/img/products/roddexx/chuveiro/chuveiro-com-duxa.webp"
+import roddexChuveiroDesviador from "../assets/img/products/roddexx/chuveiro/desviador.webp"
+import roddexChuveiroDuchaHigienica from "../assets/img/products/roddexx/chuveiro/ducha-higienica.webp"
+import roddexCozinhaTorneiraMonocamada from "../assets/img/products/roddexx/cozinha/torneira-monocamada.webp"
+import roddexCozinhaValvulaAmericana from "../assets/img/products/roddexx/cozinha/valvula-americana.webp"
+import roddexHotelCabide from "../assets/img/products/roddexx/hotel/cabide.webp"
+import roddexHotelPortaMalas from "../assets/img/products/roddexx/hotel/porta-malas.webp"
+import roddexHotelSacoHigienico from "../assets/img/products/roddexx/hotel/saco-higienico.webp"
+import roddexBanheiroLavatorioValvula from "../assets/img/products/roddexx/banheiro/lavatorio-valvula.webp"
+import roddexBanheiroMictorio from "../assets/img/products/roddexx/banheiro/mictorio.webp"
+import roddexBanheiroTorneira from "../assets/img/products/roddexx/banheiro/torneira.webp"
 
-import forthyKitCavaleteDN25 from "../assets/img/products/forthy/kit-cavaletes/Kit-Cavalete-Simples-DN25-1-V6.jpg"
-import forthyKitCavaleteDN80 from "../assets/img/products/forthy/kit-cavaletes/Site-Kit-Cavalete-Simples-DN80-3-com-filtro-V6.jpg"
+import forthyKitCavaleteDN25 from "../assets/img/products/forthy/kit-cavaletes/Kit-Cavalete-Simples-DN25-1-V6.webp"
+import forthyKitCavaleteDN80 from "../assets/img/products/forthy/kit-cavaletes/Site-Kit-Cavalete-Simples-DN80-3-com-filtro-V6.webp"
 import forthyKitReducaoDN25XDN20 from "../assets/img/products/forthy/kit-com-reducao/DN25XDN20.jpg"
-import forthyKitReducaoDN40XDN25 from "../assets/img/products/forthy/kit-com-reducao/Site-Kit-Cavalete-Simples-Red-DN40-X-DN25-1-e-meia-X-1-V6.jpg"
-import forthyKitReducaoDN80XDN50 from "../assets/img/products/forthy/kit-com-reducao/Site-Kit-Cavalete-Simples-Red-DN80-X-DN50-3-X-2-com-filtro-V6.jpg"
-import forthyBuchaReducao from "../assets/img/products/forthy/conexao/Bucha-de-Reducao.jpg"
-import forthyCotovelo90Femea from "../assets/img/products/forthy/conexao/Cotovelo-90-Femea.jpg"
-import forthyFlangeSextavado from "../assets/img/products/forthy/conexao/Flange-com-Sextavado.jpg"
-import forthyLuvaFemea from "../assets/img/products/forthy/conexao2/Luva-Femea-1.jpg"
-import forthyNipleDuplo from "../assets/img/products/forthy/conexao2/Niple-Duplo.jpg"
-import forthyUniaoAssentoPlano from "../assets/img/products/forthy/conexao2/Uniao-Assento-Plano.jpg"
+import forthyKitReducaoDN40XDN25 from "../assets/img/products/forthy/kit-com-reducao/Site-Kit-Cavalete-Simples-Red-DN40-X-DN25-1-e-meia-X-1-V6.webp"
+import forthyKitReducaoDN80XDN50 from "../assets/img/products/forthy/kit-com-reducao/Site-Kit-Cavalete-Simples-Red-DN80-X-DN50-3-X-2-com-filtro-V6.webp"
+import forthyBuchaReducao from "../assets/img/products/forthy/conexao/Bucha-de-Reducao.webp"
+import forthyCotovelo90Femea from "../assets/img/products/forthy/conexao/Cotovelo-90-Femea.webp"
+import forthyFlangeSextavado from "../assets/img/products/forthy/conexao/Flange-com-Sextavado.webp"
+import forthyLuvaFemea from "../assets/img/products/forthy/conexao2/Luva-Femea-1.webp"
+import forthyNipleDuplo from "../assets/img/products/forthy/conexao2/Niple-Duplo.webp"
+import forthyUniaoAssentoPlano from "../assets/img/products/forthy/conexao2/Uniao-Assento-Plano.webp"
 
-import bermad720RedutoraPressao from "../assets/img/products/bermad/720-valvularedutoradepressao.jpg"
-import bermad700Sigma from "../assets/img/products/bermad/modelo-700.jpg"
-import bermad730AlivioPressao from "../assets/img/products/bermad/modelo-730.jpg"
-import bermad735M from "../assets/img/products/bermad/modelo-735-m.jpg"
-import bermad75065 from "../assets/img/products/bermad/modelo-750-65.jpg"
-import bermad75066 from "../assets/img/products/bermad/modelo-750-66.jpg"
-import bermad757 from "../assets/img/products/bermad/modelo-757.jpg"
-import bermadIR12055 from "../assets/img/products/bermad/modelo-IR-120-55.jpg"
-import bermadIR420 from "../assets/img/products/bermad/modelo-IR-420.jpg"
-import bermadIR900M0 from "../assets/img/products/bermad/modelo-IR-900-M0.jpg"
-import bermad735 from "../assets/img/products/bermad/modelo735.jpg"
+import bermad720RedutoraPressao from "../assets/img/products/bermad/720-valvularedutoradepressao.webp"
+import bermad700Sigma from "../assets/img/products/bermad/modelo-700.webp"
+import bermad730AlivioPressao from "../assets/img/products/bermad/modelo-730.webp"
+import bermad735M from "../assets/img/products/bermad/modelo-735-m.webp"
+import bermad75065 from "../assets/img/products/bermad/modelo-750-65.webp"
+import bermad75066 from "../assets/img/products/bermad/modelo-750-66.webp"
+import bermad757 from "../assets/img/products/bermad/modelo-757.webp"
+import bermadIR12055 from "../assets/img/products/bermad/modelo-IR-120-55.webp"
+import bermadIR420 from "../assets/img/products/bermad/modelo-IR-420.webp"
+import bermadIR900M0 from "../assets/img/products/bermad/modelo-IR-900-M0.webp"
+import bermad735 from "../assets/img/products/bermad/modelo735.webp"
 
 export const companies = [
   {
@@ -201,7 +201,7 @@ cards: [
     icon: Settings,
     products: [
       {
-        image: forthyKitReducaoDN25XDN20,
+        image: "",
         title: "Kit Cavalete Simples com Redução DN25 x DN20 1″ x 3/4″ V6",
         description: "Ideal para adaptações em ligações de água."
       },
@@ -566,7 +566,7 @@ cards: [
             "Válvula combinada para sustentação e alívio de pressão."
         },
         {
-          image: "#",
+          image: "",
           title: "Modelo 790",
           description:
             "Válvula de controle multifuncional para proteção hidráulica."

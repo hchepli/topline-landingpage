@@ -1,5 +1,5 @@
 import { Instagram, Youtube, Linkedin, Facebook, Globe } from "lucide-react";
-import logo from "../assets/img/logo/topline.png";
+import logo from "../assets/img/logo/topline.webp";
 
 export function Links() {
   const socialLinks = [

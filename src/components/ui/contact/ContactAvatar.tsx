@@ -1,4 +1,4 @@
-import avatar from "../../../assets/img/avatar.png"
+import avatar from "../../../assets/img/avatar.webp"
 
 export function ContactAvatar() {
   return (
