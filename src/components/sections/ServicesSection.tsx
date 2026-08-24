@@ -18,42 +18,48 @@ const about = [
     title: "Handover Comercial Estruturado",
     description:
       "Organizamos a transição entre vendas e operação para que cada negócio entre pronto para execução — sem retrabalho, sem custo escondido.",
-    highlight: true,
+    variant: "blue" as const,
+    order: "sm:order-1",
   },
   {
     icon: TrendingUp,
     title: "Gestão Comercial Integrada",
     description:
       "Conectamos estratégia de vendas à engenharia de aplicação, do mapeamento de oportunidades ao mix ideal de soluções.",
-    highlight: false,
+    variant: "none" as const,
+    order: "sm:order-2",
   },
   {
     icon: ShieldCheck,
     title: "Validação Técnica na Venda",
     description:
       "Venda sem validação técnica vira retrabalho. Garantimos alinhamento entre vendas, engenharia e operação antes de qualquer proposta.",
-    highlight: false,
+    variant: "yellow" as const,
+    order: "sm:order-4",
   },
   {
     icon: Users,
     title: "Liderança de Equipes Comerciais",
     description:
       "Gerenciamento de representantes e supervisores para ampliar a presença da marca em todo território nacional com eficiência.",
-    highlight: false,
+    variant: "none" as const,
+    order: "sm:order-3",
   },
   {
     icon: Cpu,
     title: "Engenharia de Aplicação",
     description:
       "Atuação técnica em sistemas hidráulicos e pneumáticos com foco em performance comercial e segurança na entrega.",
-    highlight: false,
+    variant: "green" as const,
+    order: "sm:order-5",
   },
   {
     icon: BarChart2,
     title: "Expansão de Receita e Mix",
     description:
       "Desenvolvimento de mercado com grandes clientes — redes, distribuidores, construtoras e empresas de engenharia.",
-    highlight: false,
+    variant: "none" as const,
+    order: "sm:order-6",
   },
 ];
 
@@ -63,16 +69,21 @@ export function ServicesSection() {
       <SectionHeader title="Um Pouco Mais Sobre Nós" id="about-title" />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {about.map((item, i) => (
-          <Reveal key={item.title} delay={0.2 + i * 0.15} direction="up">
-            <ServiceCard
-              icon={item.icon}
-              title={item.title}
-              description={item.description}
-              highlight={item.highlight}
-            />
-          </Reveal>
-        ))}
+  {about.map((item, i) => (
+    <Reveal
+      key={item.title}
+      delay={0.2 + i * 0.15}
+      direction="up"
+      className={item.order}
+    >
+      <ServiceCard
+        icon={item.icon}
+        title={item.title}
+        description={item.description}
+        variant={item.variant}
+      />
+    </Reveal>
+  ))}
       </div>
             <div className="mt-10 flex flex-col items-stretch gap-3 lg:flex-row">
         <Reveal delay={0.2} direction="right">

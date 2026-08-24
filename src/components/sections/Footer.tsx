@@ -107,10 +107,10 @@ export function Footer() {
               <a href="https://www.facebook.com/topline.chp.si" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
                 <Facebook size={16} />
               </a>
-              <a href="https://www.linkedin.com/in/chepli-topfusion-topfiber/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+              <a href="https://www.linkedin.com/in/chp-smart/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
                 <Linkedin size={16} />
               </a>
-              <a href="https://www.youtube.com/@TopFusion-TopLine-TopFiber" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+              <a href="https://www.youtube.com/@chpsmart" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
                 <Youtube size={16} />
               </a>
             </div>
@@ -118,12 +118,13 @@ export function Footer() {
         </div>
 
         {/* FOOTER BOTTOM */}
-        <div className="mt-12 pt-6">
-          <div className="flex flex-col items-center gap-4 text-center text-sm text-[rgb(var(--text-secondary)/60%)] md:items-start md:text-left">
-            <small className="leading-relaxed">
-              © 2026 CHP Smart.
-              <br className="md:hidden" />
+        <div className="mt-12 pt-6  border-t bordeer-black/60 ">
+          <div className="w-full justify-center flex flex-col items-center gap-1 text-center text-sm text-[rgb(var(--text-secondary)/60%)]">
+                      <small className="leading-relaxed">
               Todos os direitos reservados
+            </small>
+            <small className="leading-relaxed">
+              © 2026 CHP Smart - CNPJ: 45.455.738/0001-81
             </small>
           </div>
         </div>
