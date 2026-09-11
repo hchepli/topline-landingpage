@@ -8,8 +8,8 @@ export function BrandGroupSection() {
       <div className="w-full max-w-6xl flex flex-col items-center text-center gap-6 md:gap-8">
         <SectionTitle
         id="grupo-title"
-          title="Grupo IVM"
-          description="O Grupo IVM integra empresas líderes em soluções para a construção civil. Atuando por meio das indústrias IVM Italy, BRVValvulas, Roddex e Forthy, o grupo combina engenharia de projetos, gestão comercial e inovação para atender grandes clientes e expandir sua presença em todo o território nacional."
+          title="Grupo Italy"
+          description="O Grupo Italy integra empresas líderes em soluções para a construção civil. Atuando por meio das indústrias IVM Italy, BRVValvulas, Roddex e Forthy, o grupo combina engenharia de projetos, gestão comercial e inovação para atender grandes clientes e expandir sua presença em todo o território nacional."
         />
 
         <BrandCardGrid />

@@ -8,7 +8,7 @@ export function CompanyShowcaseSection() {
     <section aria-labelledby="empresas-title" className="empresas flex mx-auto max-w-7xl px-6 flex-col gap-24 pt-20 lg:min-h-screen lg:gap-32 lg:pt-24">
       <SectionHeader
       id="empresas-title"
-        title="Conheça Melhor as Empresas do Grupo IVM"
+        title="Conheça Melhor as Empresas do Grupo Italy"
         description="Veja todas as empresas que fazem parte do nosso ecossistema."
       />
 

@@ -6,10 +6,11 @@ type NavProps = {
 }
 
 const NAV_ITEMS = [
-  { label: 'Home', target: 'hero' },
-  { label: 'Serviços', target: 'services' },
-  { label: 'Empresas', target: 'empresas' },
-  { label: 'Contato', target: 'contact' },
+  { label: 'Home', href: '/', type: 'page' },
+  { label: 'Serviços', target: 'services', type: 'section' },
+  { label: 'Empresas', target: 'empresas', type: 'section' },
+  { label: 'Sobre Nós', href: '/sobre', type: 'page' },
+  { label: 'Contato', target: 'contact', type: 'section' },
 ]
 
 export function Nav({ variant = 'desktop', onNavigate }: NavProps) {
@@ -35,22 +36,24 @@ export function Nav({ variant = 'desktop', onNavigate }: NavProps) {
       }
     >
       {NAV_ITEMS.map((item) => (
-        <li key={item.target}>
+        <li key={item.label}>
           <a
-            href={`#${item.target}`}
+            href={item.type === 'page' ? item.href : `#${item.target}`}
             onClick={(e) => {
-              e.preventDefault()
-              scrollToSection(item.target)
+              if (item.type === 'section') {
+                e.preventDefault()
+                scrollToSection(item.target!)
+              }
+
               onNavigate?.()
             }}
             className={`
-              ${baseLink}
-              ${
-                variant === 'desktop'
-                  ? 'text-[rgb(var(--gray-700))] hover:text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full'
-                  : 'text-lg text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full'
+        ${baseLink}
+        ${variant === 'desktop'
+                ? 'text-[rgb(var(--gray-700))] hover:text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full'
+                : 'text-lg text-[rgb(var(--gray-900))] after:bg-[rgb(var(--gray-900))] hover:after:w-full'
               }
-            `}
+      `}
           >
             {item.label}
           </a>

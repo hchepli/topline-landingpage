@@ -53,15 +53,15 @@ export function Hero() {
               className="font-black uppercase text-white text-3xl leading-snug tracking-[.09rem] xl:text-5xl"
             >
               <span className="block min-[400px]:inline min-[1100px]:block">
-                A força por{" "}
+                CHP Smart{" "}
               </span>
 
               <span className="block min-[400px]:inline min-[1100px]:block">
-                trás de <span className="text-[rgb(var(--brand-primary))]">grandes</span>
+                Inteligência <span className="text-[rgb(var(--brand-primary))]"> que</span>
               </span>
 
               <span className="block text-[rgb(var(--brand-primary))]">
-                marcas
+                 conecta negócios.
               </span>
             </h1>
           </Reveal>

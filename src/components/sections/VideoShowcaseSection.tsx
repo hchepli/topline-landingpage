@@ -391,8 +391,8 @@ export function VideoShowcaseSection() {
           {/* Título */}
           <SectionTitle
             id="videos-title"
-            title="Conheça o Grupo IVM em Vídeos"
-            description="Confira alguns vídeos que mostram de perto o trabalho e a essência do Grupo IVM."
+            title="Conheça o Grupo Italy em Vídeos"
+            description="Confira alguns vídeos que mostram de perto o trabalho e a essência do Grupo Italy."
           />
 
           {/* Carrossel */}

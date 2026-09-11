@@ -5,7 +5,7 @@ export function ContactIdentity() {
         Valdenilson Chepli
       </strong>
       <span className="text-sm font-medium text-[rgb(var(--text-secondary)/60%)]">
-        National Sales Manager, IVM Group
+        National Sales Manager, Italy Group
       </span>
     </p>
   )

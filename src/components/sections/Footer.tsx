@@ -1,3 +1,4 @@
+
 import { Logo } from "../ui/layout/Logo"
 import {
   Mail,
@@ -11,10 +12,11 @@ import {
 import { scrollToSection } from "../../lib/scroll"
 
 const NAV_ITEMS = [
-  { label: 'Home', target: 'hero' },
-  { label: 'Serviços', target: 'services' },
-  { label: 'Empresas', target: 'empresas' },
-  { label: 'Contato', target: 'contact' },
+  { label: 'Home', target: 'hero', type: 'section' },
+  { label: 'Serviços', target: 'services', type: 'section' },
+  { label: 'Empresas', target: 'empresas', type: 'section' },
+  { label: 'Sobre Nós', href: '/sobre', type: 'page' },
+  { label: 'Contato', target: 'contact', type: 'section' },
 ]
 
 export function Footer() {
@@ -25,6 +27,7 @@ export function Footer() {
         {/* HEADER */}
         <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <Logo />
+
           <p className="max-w-xl text-sm text-[rgb(var(--text-secondary)/60%)]">
             Gestão que sustenta decisões. Estratégia que sustenta crescimento.
           </p>
@@ -35,25 +38,47 @@ export function Footer() {
 
           {/* Empresas */}
           <section className="flex flex-col gap-3">
-            <h4 className="text-sm font-semibold text-neutral-900">Empresas</h4>
+            <h4 className="text-sm font-semibold text-neutral-900">
+              Empresas
+            </h4>
+
             <ul className="flex flex-col gap-2 text-sm text-[rgb(var(--text-secondary)/60%)]">
               <li>
-                <a href="https://www.italy.com.br" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.italy.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   IVM Italy
                 </a>
               </li>
+
               <li>
-                <a href="https://www.forthy.com.br/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.forthy.com.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Forthy
                 </a>
               </li>
+
               <li>
-                <a href="https://www.brvvalvulas.com.br" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.brvvalvulas.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   BRVValvulas
                 </a>
               </li>
+
               <li>
-                <a href="https://www.roddex.com.br" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.roddex.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Roddex
                 </a>
               </li>
@@ -61,18 +86,33 @@ export function Footer() {
           </section>
 
           {/* Navegação */}
-          <nav className="flex flex-col gap-3" aria-label="Navegação do rodapé">
-            <h4 className="text-sm font-semibold text-neutral-900">Navegação</h4>
+          <nav
+            className="flex flex-col gap-3"
+            aria-label="Navegação do rodapé"
+          >
+            <h4 className="text-sm font-semibold text-neutral-900">
+              Navegação
+            </h4>
+
             <ul className="flex flex-col gap-2 text-sm text-[rgb(var(--text-secondary)/60%)]">
               {NAV_ITEMS.map((item) => (
-                <li key={item.target}>
-                  <button
-                    type="button"
-                    onClick={() => scrollToSection(item.target)}
-                    className="text-left transition-colors hover:text-[rgb(var(--text-primary))]"
-                  >
-                    {item.label}
-                  </button>
+                <li key={item.label}>
+                  {item.type === 'page' ? (
+                    <a
+                      href={item.href}
+                      className="text-left transition-colors hover:text-[rgb(var(--text-primary))]"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => scrollToSection(item.target!)}
+                      className="text-left transition-colors hover:text-[rgb(var(--text-primary))]"
+                    >
+                      {item.label}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
@@ -80,16 +120,21 @@ export function Footer() {
 
           {/* Contatos */}
           <address className="flex flex-col gap-3 not-italic">
-            <h4 className="text-sm font-semibold text-neutral-900">Contatos</h4>
+            <h4 className="text-sm font-semibold text-neutral-900">
+              Contatos
+            </h4>
+
             <ul className="flex flex-col gap-2 text-sm text-[rgb(var(--text-secondary)/60%)]">
               <li className="flex items-center gap-2">
                 <Mail size={16} />
                 <span>chepli@chpsmart.com.br</span>
               </li>
+
               <li className="flex items-center gap-2">
                 <Phone size={16} />
                 <span>+55 (11) 91102-1278</span>
               </li>
+
               <li className="flex items-center gap-2">
                 <MapPin size={16} />
                 <span>São Paulo, SP</span>
@@ -99,18 +144,44 @@ export function Footer() {
 
           {/* Social */}
           <section className="flex flex-col gap-3 md:items-start lg:items-end">
-            <h4 className="text-sm font-semibold text-neutral-900">Social</h4>
+            <h4 className="text-sm font-semibold text-neutral-900">
+              Social
+            </h4>
+
             <div className="flex gap-3">
-              <a href="https://www.instagram.com/chp_smart/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+              <a
+                href="https://www.instagram.com/chp_smart/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80"
+              >
                 <Instagram size={16} />
               </a>
-              <a href="https://www.facebook.com/topline.chp.si" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+
+              <a
+                href="https://www.facebook.com/topline.chp.si"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80"
+              >
                 <Facebook size={16} />
               </a>
-              <a href="https://www.linkedin.com/in/chp-smart/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+
+              <a
+                href="https://www.linkedin.com/in/chp-smart/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80"
+              >
                 <Linkedin size={16} />
               </a>
-              <a href="https://www.youtube.com/@chpsmart" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80">
+
+              <a
+                href="https://www.youtube.com/@chpsmart"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80"
+              >
                 <Youtube size={16} />
               </a>
             </div>
@@ -118,11 +189,12 @@ export function Footer() {
         </div>
 
         {/* FOOTER BOTTOM */}
-        <div className="mt-12 pt-6  border-t bordeer-black/60 ">
-          <div className="w-full justify-center flex flex-col items-center gap-1 text-center text-sm text-[rgb(var(--text-secondary)/60%)]">
-                      <small className="leading-relaxed">
+        <div className="mt-12 border-t border-black/60 pt-6">
+          <div className="flex w-full flex-col items-center justify-center gap-1 text-center text-sm text-[rgb(var(--text-secondary)/60%)]">
+            <small className="leading-relaxed">
               Todos os direitos reservados
             </small>
+
             <small className="leading-relaxed">
               © 2026 CHP Smart - CNPJ: 45.455.738/0001-81
             </small>
