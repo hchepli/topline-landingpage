@@ -1,33 +1,48 @@
-import { Reveal } from "../../animations/Reveal"
-import { NavCTA } from "../../ui/buttons/NavCTA"
+import { Company } from "../../../types/company"
+import { NavCTA } from "../buttons/NavCTA"
 
 export function CompanyIntro({
   company,
-  index,
   titleId,
 }: {
-  company: any
+  company: Company
   index: number
   titleId: string
 }) {
   return (
-    <Reveal direction="left" delay={0.2 + index * 0.2}>
-      <header
-        className={`${company.target} scroll-mt-28 flex w-full flex-col items-start gap-3 lg:gap-4`}
-      >
-        <h3
-          id={titleId}
-          className="text-xl font-semibold border-b-2 border-[rgb(var(--brand-secondary))] lg:text-2xl"
-        >
-          {company.name}
-        </h3>
+    <div className="w-full rounded-3xl bg-muted/40 p-8 lg:p-12">
+      <div className="flex flex-col gap-10 lg:flex-row lg:items-center">
+        {/* Logo em destaque */}
+        <div className="flex shrink-0 items-center justify-center rounded-2xl bg-white p-8 shadow-sm lg:w-64">
+          <img
+            src={company.image}
+            alt={`Logo da ${company.name}`}
+            className="h-16 w-auto object-contain lg:h-20"
+          />
+        </div>
 
-        <p className="max-w-md text-sm text-neutral-500 text-justify lg:text-base">
-          {company.description}
-        </p>
+        {/* Conteúdo */}
+        <div className="flex flex-1 flex-col gap-4">
+          <span className="text-xs font-medium uppercase tracking-wider text-[rgb(var(--brand-secondary))]">
+            Empresa parceira CHP Smart
+          </span>
 
-        <NavCTA title={company.buttonLabel} href={company.href} />
-      </header>
-    </Reveal>
+          <h1
+            id={titleId}
+            className="text-3xl font-bold leading-tight text-primary lg:text-4xl"
+          >
+            {company.name}
+          </h1>
+
+          <p className="max-w-2xl text-justify leading-relaxed text-muted-foreground">
+            {company.description}
+          </p>
+
+          <div className="pt-2">
+            <NavCTA title={company.buttonLabel} href={company.href} />
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
