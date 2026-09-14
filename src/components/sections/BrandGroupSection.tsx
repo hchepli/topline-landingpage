@@ -1,6 +1,6 @@
 import { SectionTitle } from "../ui/layout/SectionTitle"
 import { BrandCardGrid } from "../ui/layout/BrandCardGrid"
-// import { Reveal } from "../animations/Reveal"
+import { Reveal } from "../animations/Reveal"
 
 export function BrandGroupSection() {
   return (
@@ -13,14 +13,14 @@ export function BrandGroupSection() {
         />
 
         <BrandCardGrid />
-{/* <Reveal direction="up" delay={0.3} className="flex justify-center w-full">
+<Reveal direction="up" delay={0.3} className="flex justify-center w-full">
     <a
     href="/empresas"
     className="border border-[rgb(var(--brand-secondary))] hover:border-none text-black px-6 py-3 rounded-full hover:translate-y-[-5px] hover:scale-[1.03] hover:bg-[rgb(var(--brand-secondary))] hover:text-white duration-300 transition-all text-sm md:text-base whitespace-nowrap"
   >
     Ver Mais Empresas
   </a>
-</Reveal>  */}
+</Reveal>
       </div>
     </section>
   )

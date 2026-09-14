@@ -24,25 +24,27 @@ export function BrandCardGrid() {
         className="marquee-track flex items-stretch gap-10 md:gap-[3rem] w-max"
         aria-label="Empresas do Grupo TF"
       >
-        {duplicated.map((company, i) => (
-          <li key={`${company.name}-${i}`} className="shrink-0">
-            {i < companies.length ? (
-              <Reveal delay={0.3 + i * 0.2} direction="up">
-                <BrandCard
-                  img={company.image}
-                  name={company.name}
-                  url={company.href}
-                />
-              </Reveal>
-            ) : (
-              <BrandCard
-                img={company.image}
-                name={company.name}
-                url={company.href}
-              />
-            )}
-          </li>
-        ))}
+{duplicated.map((company, i) => (
+  <li key={`${company.name}-${i}`} className="shrink-0">
+    {i < companies.length ? (
+      <Reveal delay={0.3 + i * 0.2} direction="up">
+        <BrandCard
+          img={company.image}
+          name={company.name}
+          url={company.href}
+          target={company.target}
+        />
+      </Reveal>
+    ) : (
+      <BrandCard
+        img={company.image}
+        name={company.name}
+        url={company.href}
+        target={company.target}
+      />
+    )}
+  </li>
+))}
       </ul>
     </div>
   )

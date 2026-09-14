@@ -1,15 +1,24 @@
 import { SquareArrowOutUpRight } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 import { OutboundCTA } from "../buttons/OutboundCTA"
 
 type BrandCardProps = {
   img: string
   name: string
   url: string
+  target: string
 }
 
-export function BrandCard({ img, name, url }: BrandCardProps) {
+export function BrandCard({ img, name, url, target }: BrandCardProps) {
+  const navigate = useNavigate()
+
+  function handleCardClick() {
+    navigate(`/empresas/${target}`)
+  }
+
   return (
     <div
+      onClick={handleCardClick}
       className="
         relative cursor-pointer block
         rounded-2xl bg-white
@@ -38,12 +47,7 @@ export function BrandCard({ img, name, url }: BrandCardProps) {
           <div className="h-[2px] w-14 md:w-16 rounded-full bg-[rgb(var(--brand-secondary))]" />
         </div>
 
-        {/* CTA externo mantém comportamento */}
-        <div
-          onClick={(e) => {
-            e.stopPropagation()
-          }}
-        >
+        <div onClick={(e) => e.stopPropagation()}>
           <OutboundCTA href={url} label="Visitar site" />
         </div>
       </div>

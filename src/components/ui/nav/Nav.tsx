@@ -8,7 +8,7 @@ type NavProps = {
 const NAV_ITEMS = [
   { label: 'Home', href: '/', type: 'page' },
   { label: 'Serviços', target: 'services', type: 'section' },
-  { label: 'Empresas', target: 'empresas', type: 'section' },
+  { label: 'Empresas', href: '/empresas', type: 'page' },
   { label: 'Sobre Nós', href: '/sobre', type: 'page' },
   { label: 'Contato', target: 'contact', type: 'section' },
 ]

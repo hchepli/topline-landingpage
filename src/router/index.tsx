@@ -3,6 +3,7 @@ import { Home } from "../pages/Home"
 import { Links } from "../pages/Links"
 import { Companies } from "../pages/Companies"
 import { AboutUs } from "../pages/AboutUs"
+import { CompanyPage } from "../pages/PageCompany"
 
 export const router = createBrowserRouter([
   {
@@ -22,5 +23,7 @@ export const router = createBrowserRouter([
     element: <AboutUs />
   },
   {
+    path: "/empresas/:target",
+    element: <CompanyPage />
   }
 ])
