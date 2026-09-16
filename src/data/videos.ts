@@ -51,6 +51,18 @@ export const videos: VideoItem[] = [
     src: "/videos/video-08.mp4",
     companyTarget: "italy",
   },
+  {
+    id: "video-09",
+    src: "/videos/video-09.mp4",
+    companyTarget: "forthy",
+    featured: true,
+  },
+  {
+    id: "video-16",
+    src: "/videos/video-16.mp4",
+    companyTarget: "italy",
+    featured: true,
+  }
 ]
 
 export function getVideosByCompany(companyTarget: string): VideoItem[] {
