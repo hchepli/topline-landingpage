@@ -5,8 +5,9 @@ import { ContactSection } from "../components/sections/ContactSection"
 import { Footer } from "../components/sections/Footer"
 import { LayoutContainer } from "../components/ui/layout/LayoutContainer"
 import { ServicesSection } from "../components/sections/ServicesSection"
-import { CompanyShowcaseSection } from "../components/sections/CompanyShowcaseSection"
 import { VideoShowcaseSection } from "../components/sections/VideoShowcaseSection"
+import { getFeaturedVideos } from "../data/videos"
+
 
 export function Home() {
   return (
@@ -16,8 +17,11 @@ export function Home() {
       <LayoutContainer>
         <ServicesSection />
         <BrandGroupSection />
-        <CompanyShowcaseSection />
-        <VideoShowcaseSection />
+              <VideoShowcaseSection
+        videos={getFeaturedVideos()}
+        title="Conheça o Grupo Italy em Vídeos"
+        description="Confira alguns vídeos que mostram de perto o trabalho de nossas empresas parceiras."
+      />
         <ContactSection />
       </LayoutContainer>
       <Footer />

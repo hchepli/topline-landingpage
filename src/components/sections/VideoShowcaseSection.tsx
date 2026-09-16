@@ -10,11 +10,23 @@ import {
 } from "lucide-react"
 
 import { SectionTitle } from "../ui/layout/SectionTitle"
-import { videos } from "../../data/videos"
+import { VideoItem } from "../../data/videos"
 
 const VIDEO_DURATION = 6000
 
-export function VideoShowcaseSection() {
+interface VideoShowcaseSectionProps {
+  videos: VideoItem[]
+  title?: string
+  description?: string
+  sectionId?: string
+}
+
+export function VideoShowcaseSection({
+  videos,
+  title = "Conheça a CHP Smart em Vídeos",
+  description = "Confira alguns vídeos que mostram de perto nosso trabalho e nossa essência.",
+  sectionId = "videos",
+}: VideoShowcaseSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isMuted, setIsMuted] = useState(true)
   const [isFullscreen, setIsFullscreen] = useState(false)
@@ -258,6 +270,13 @@ export function VideoShowcaseSection() {
   }, [isFullscreen])
 
   /*
+   * Se não houver vídeos para essa seção, não renderiza nada.
+   */
+  if (videos.length === 0) {
+    return null
+  }
+
+  /*
    * Modal.
    *
    * createPortal coloca o modal diretamente no body,
@@ -372,8 +391,8 @@ export function VideoShowcaseSection() {
   return (
     <>
       <section
-        id="videos"
-        aria-labelledby="videos-title"
+        id={sectionId}
+        aria-labelledby={`${sectionId}-title`}
         className="
           flex min-h-[90vh] w-full
           items-center justify-center
@@ -390,9 +409,9 @@ export function VideoShowcaseSection() {
         >
           {/* Título */}
           <SectionTitle
-            id="videos-title"
-            title="Conheça o Grupo Italy em Vídeos"
-            description="Confira alguns vídeos que mostram de perto o trabalho e a essência do Grupo Italy."
+            id={`${sectionId}-title`}
+            title={title}
+            description={description}
           />
 
           {/* Carrossel */}
@@ -558,7 +577,7 @@ export function VideoShowcaseSection() {
             </div>
 
             {/* Anterior */}
-            {!isFullscreen && (
+            {!isFullscreen && videos.length > 1 && (
               <button
                 type="button"
                 onClick={previous}
@@ -584,7 +603,7 @@ export function VideoShowcaseSection() {
             )}
 
             {/* Próximo */}
-            {!isFullscreen && (
+            {!isFullscreen && videos.length > 1 && (
               <button
                 type="button"
                 onClick={next}
@@ -611,7 +630,7 @@ export function VideoShowcaseSection() {
           </div>
 
           {/* Indicadores */}
-          {!isFullscreen && (
+          {!isFullscreen && videos.length > 1 && (
             <div className="flex items-center justify-center gap-2">
               {videos.map((video, index) => (
                 <button
