@@ -4,6 +4,7 @@ import { Links } from "../pages/Links"
 import { Companies } from "../pages/Companies"
 import { AboutUs } from "../pages/AboutUs"
 import { CompanyPage } from "../pages/PageCompany"
+import { PrivacyPolicy } from "../pages/PrivacyPolicy"
 
 export const router = createBrowserRouter([
   {
@@ -25,5 +26,9 @@ export const router = createBrowserRouter([
   {
     path: "/empresas/:target",
     element: <CompanyPage />
+  },
+  {
+    path: "/politica-de-privacidade",
+    element: <PrivacyPolicy />
   }
 ])
