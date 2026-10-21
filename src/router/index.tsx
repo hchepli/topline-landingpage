@@ -5,6 +5,8 @@ import { Companies } from "../pages/Companies"
 import { AboutUs } from "../pages/AboutUs"
 import { CompanyPage } from "../pages/PageCompany"
 import { PrivacyPolicy } from "../pages/PrivacyPolicy"
+import { DistributionPage } from "../pages/DistributionPage"
+import { SalesForcePage } from "../pages/SalesForcePage"
 
 export const router = createBrowserRouter([
   {
@@ -30,5 +32,13 @@ export const router = createBrowserRouter([
   {
     path: "/politica-de-privacidade",
     element: <PrivacyPolicy />
+  },
+  {
+    path: "/distribuicao",
+    element: <DistributionPage />
+  },
+  {
+    path: "forca",
+    element: <SalesForcePage />
   }
 ])

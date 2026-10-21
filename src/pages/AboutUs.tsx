@@ -1,6 +1,7 @@
 import { Target, ShieldCheck, TrendingUp, Handshake } from "lucide-react"
-import chepliLogo from "../assets/img/logo/chepli.svg"
+import chepliLogo from "../assets/img/img-sobre-nos.svg"
 import escritorioLogo from "../assets/img/logo/escritorio.svg"
+import chpLogo from "../assets/img/logo/logo-chp.svg"
 import { Header } from "../components/sections/Header"
 import { Footer } from "../components/sections/Footer"
 import { LayoutContainer } from "../components/ui/layout/LayoutContainer"
@@ -81,9 +82,11 @@ export function AboutUs() {
             <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Sobre Nós
             </span>
-            <h1 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl">
-              CHP Smart
-            </h1>
+            <img
+              src={chpLogo}
+              alt="CHP Smart"
+              className="h-14 w-auto m-auto md:h-24"
+            />
             <p className="mt-6 text-lg leading-relaxed text-gray-600">
               Se o HUB comercial não é estruturado, não há controle da operação — e isso é
               risco. Venda sem validação técnica vira retrabalho, custo escondido e cliente
@@ -97,7 +100,7 @@ export function AboutUs() {
             <img
               src={chepliLogo}
               alt="CHP Smart"
-              className="h-18 w-auto object-contain sm:h-24"
+              className="h-18 w-auto object-contain border border-black-200 rounded-lg sm:h-[400px]"
             />
             <div className="h-10 w-px bg-gray-200 sm:h-16" />
             <img

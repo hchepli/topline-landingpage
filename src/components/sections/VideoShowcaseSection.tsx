@@ -3,6 +3,7 @@ import { createPortal } from "react-dom"
 import {
   ChevronLeft,
   ChevronRight,
+  ExternalLink,
   Maximize2,
   Volume2,
   VolumeX,
@@ -12,13 +13,63 @@ import {
 import { SectionTitle } from "../ui/layout/SectionTitle"
 import { VideoItem } from "../../data/videos"
 
-const VIDEO_DURATION = 6000
+const SLIDE_DURATION = 6000
 
 interface VideoShowcaseSectionProps {
   videos: VideoItem[]
   title?: string
   description?: string
   sectionId?: string
+}
+
+interface MediaElementProps {
+  item: VideoItem
+  className?: string
+  refCallback?: (element: HTMLVideoElement | null) => void
+  muted?: boolean
+  preload?: "auto" | "metadata"
+  controls?: boolean
+  autoPlay?: boolean
+}
+
+/*
+ * Renderiza <video> ou <img> conforme o tipo do item.
+ * Para imagens, o ref do vídeo fica sempre null.
+ */
+function MediaElement({
+  item,
+  className,
+  refCallback,
+  muted,
+  preload,
+  controls,
+  autoPlay,
+}: MediaElementProps) {
+  if (item.type === "image") {
+    return (
+      <img
+        ref={() => refCallback?.(null)}
+        src={item.src}
+        alt=""
+        draggable={false}
+        className={className}
+      />
+    )
+  }
+
+  return (
+    <video
+      ref={refCallback}
+      src={item.src}
+      poster={item.poster}
+      muted={muted}
+      playsInline
+      preload={preload}
+      controls={controls}
+      autoPlay={autoPlay}
+      className={className}
+    />
+  )
 }
 
 export function VideoShowcaseSection({
@@ -34,6 +85,15 @@ export function VideoShowcaseSection({
 
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
   const fullscreenVideoRef = useRef<HTMLVideoElement | null>(null)
+
+  /*
+   * Guarda o ponto onde o vídeo do modal parou, porque quando o
+   * modal fecha o elemento já foi removido do DOM.
+   */
+  const lastFullscreenTimeRef = useRef(0)
+
+  const activeItem = videos[activeIndex]
+  const isActiveVideo = activeItem?.type !== "image"
 
   /*
    * Necessário para o createPortal funcionar corretamente
@@ -61,7 +121,7 @@ export function VideoShowcaseSection({
   /*
    * Carrossel automático.
    *
-   * Quando o vídeo está em foco, o timer fica parado.
+   * Quando o item está em foco (modal), o timer fica parado.
    */
   useEffect(() => {
     if (isFullscreen || videos.length <= 1) {
@@ -70,7 +130,7 @@ export function VideoShowcaseSection({
 
     const timer = window.setTimeout(() => {
       next()
-    }, VIDEO_DURATION)
+    }, SLIDE_DURATION)
 
     return () => {
       window.clearTimeout(timer)
@@ -80,7 +140,8 @@ export function VideoShowcaseSection({
   /*
    * Controle dos vídeos do carrossel.
    *
-   * Somente o vídeo ativo toca.
+   * Somente o vídeo ativo toca. Imagens não possuem ref de vídeo,
+   * então o "if (!video) return" ignora elas.
    */
   useEffect(() => {
     if (isFullscreen) {
@@ -108,11 +169,7 @@ export function VideoShowcaseSection({
   }, [activeIndex, isMuted, isFullscreen])
 
   /*
-   * Abre o vídeo em foco.
-   *
-   * Primeiro pausamos o vídeo do carrossel.
-   * Depois abrimos o vídeo do modal exatamente
-   * no mesmo ponto em que o usuário estava.
+   * Abre o item em foco.
    */
   const openFullscreen = () => {
     const currentVideo = videoRefs.current[activeIndex]
@@ -126,11 +183,13 @@ export function VideoShowcaseSection({
 
   /*
    * Fecha o foco e retorna para o carrossel.
+   * Guarda o tempo atual antes de o modal ser desmontado.
    */
   const closeFullscreen = () => {
     const fullscreenVideo = fullscreenVideoRef.current
 
     if (fullscreenVideo) {
+      lastFullscreenTimeRef.current = fullscreenVideo.currentTime
       fullscreenVideo.pause()
     }
 
@@ -138,8 +197,8 @@ export function VideoShowcaseSection({
   }
 
   /*
-   * Quando o modal abriu, sincronizamos o vídeo
-   * do modal com o vídeo que estava no carrossel.
+   * Quando o modal abre, sincroniza o vídeo do modal
+   * com o ponto em que o vídeo do carrossel estava.
    */
   useEffect(() => {
     if (!isFullscreen) {
@@ -147,20 +206,13 @@ export function VideoShowcaseSection({
     }
 
     const currentVideo = videoRefs.current[activeIndex]
-
-    if (!currentVideo) {
-      return
-    }
-
-    const startTime = currentVideo.currentTime
-
     const fullscreenVideo = fullscreenVideoRef.current
 
-    if (!fullscreenVideo) {
+    if (!currentVideo || !fullscreenVideo) {
       return
     }
 
-    fullscreenVideo.currentTime = startTime
+    fullscreenVideo.currentTime = currentVideo.currentTime
     fullscreenVideo.muted = isMuted
 
     const playPromise = fullscreenVideo.play()
@@ -171,35 +223,28 @@ export function VideoShowcaseSection({
   }, [isFullscreen, activeIndex])
 
   /*
-   * Quando fechar o foco, sincronizamos novamente
-   * o vídeo original com a posição em que o modal parou.
+   * Quando o modal fecha, devolve ao vídeo do carrossel
+   * a posição em que o modal parou.
    */
   useEffect(() => {
     if (isFullscreen) {
       return
     }
 
-    const fullscreenVideo = fullscreenVideoRef.current
     const carouselVideo = videoRefs.current[activeIndex]
 
-    if (!fullscreenVideo || !carouselVideo) {
+    if (!carouselVideo || lastFullscreenTimeRef.current <= 0) {
       return
     }
 
-    /*
-     * Só sincroniza se o vídeo do modal tiver sido utilizado.
-     */
-    if (fullscreenVideo.currentTime > 0) {
-      carouselVideo.currentTime =
-        fullscreenVideo.currentTime
+    carouselVideo.currentTime = lastFullscreenTimeRef.current
+    carouselVideo.muted = isMuted
+    lastFullscreenTimeRef.current = 0
 
-      carouselVideo.muted = isMuted
+    const playPromise = carouselVideo.play()
 
-      const playPromise = carouselVideo.play()
-
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {})
-      }
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {})
     }
   }, [isFullscreen])
 
@@ -253,8 +298,7 @@ export function VideoShowcaseSection({
   }, [isFullscreen, activeIndex])
 
   /*
-   * Bloqueia o scroll da página enquanto o vídeo
-   * estiver em foco.
+   * Bloqueia o scroll da página enquanto o item estiver em foco.
    */
   useEffect(() => {
     if (!isFullscreen) {
@@ -270,7 +314,7 @@ export function VideoShowcaseSection({
   }, [isFullscreen])
 
   /*
-   * Se não houver vídeos para essa seção, não renderiza nada.
+   * Se não houver itens para essa seção, não renderiza nada.
    */
   if (videos.length === 0) {
     return null
@@ -315,12 +359,12 @@ export function VideoShowcaseSection({
                 event.stopPropagation()
               }}
             >
-              <video
-                ref={fullscreenVideoRef}
-                src={videos[activeIndex].src}
-                poster={videos[activeIndex].poster}
+              <MediaElement
+                item={activeItem}
+                refCallback={(element) => {
+                  fullscreenVideoRef.current = element
+                }}
                 muted={isMuted}
-                playsInline
                 autoPlay
                 controls
                 className="
@@ -335,7 +379,7 @@ export function VideoShowcaseSection({
               <button
                 type="button"
                 onClick={closeFullscreen}
-                aria-label="Fechar vídeo"
+                aria-label="Fechar"
                 className="
                   absolute right-4 top-4
                   z-20
@@ -353,35 +397,60 @@ export function VideoShowcaseSection({
                 <X size={20} />
               </button>
 
-              {/* Áudio */}
-              <button
-                type="button"
-                onClick={toggleAudio}
-                aria-label={
-                  isMuted
-                    ? "Ativar áudio"
-                    : "Silenciar áudio"
-                }
-                className="
-                  absolute bottom-5 left-5
-                  z-20
-                  flex h-11 w-11
-                  items-center justify-center
-                  rounded-full
-                  bg-black/60
-                  text-white
-                  backdrop-blur-md
-                  transition-all
-                  hover:scale-105
-                  hover:bg-black/80
-                "
-              >
-                {isMuted ? (
-                  <VolumeX size={20} />
-                ) : (
-                  <Volume2 size={20} />
-                )}
-              </button>
+              {/* Áudio (somente vídeo) */}
+              {isActiveVideo && (
+                <button
+                  type="button"
+                  onClick={toggleAudio}
+                  aria-label={
+                    isMuted ? "Ativar áudio" : "Silenciar áudio"
+                  }
+                  className="
+                    absolute bottom-5 left-5
+                    z-20
+                    flex h-11 w-11
+                    items-center justify-center
+                    rounded-full
+                    bg-black/60
+                    text-white
+                    backdrop-blur-md
+                    transition-all
+                    hover:scale-105
+                    hover:bg-black/80
+                  "
+                >
+                  {isMuted ? (
+                    <VolumeX size={20} />
+                  ) : (
+                    <Volume2 size={20} />
+                  )}
+                </button>
+              )}
+
+              {/* Link para o Instagram */}
+              {activeItem.link && (
+                <a
+                  href={activeItem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    absolute left-4 top-4
+                    z-20
+                    flex items-center gap-2
+                    rounded-full
+                    bg-black/60
+                    px-4 py-2
+                    text-sm font-medium text-white
+                    backdrop-blur-md
+                    transition-all
+                    hover:scale-105
+                    hover:bg-black/80
+                  "
+                >
+                  Ver no Instagram
+                  <ExternalLink size={14} />
+                </a>
+              )}
             </div>
           </div>,
           document.body,
@@ -432,8 +501,7 @@ export function VideoShowcaseSection({
                     videos.length
 
                 const isNext =
-                  index ===
-                  (activeIndex + 1) % videos.length
+                  index === (activeIndex + 1) % videos.length
 
                 const shouldShow =
                   isActive || isPrevious || isNext
@@ -441,6 +509,8 @@ export function VideoShowcaseSection({
                 if (!shouldShow) {
                   return null
                 }
+
+                const isVideo = video.type !== "image"
 
                 return (
                   <article
@@ -479,20 +549,13 @@ export function VideoShowcaseSection({
                     `}
                   >
                     <div className="relative aspect-[9/16]">
-                      <video
-                        ref={(element) => {
-                          videoRefs.current[index] =
-                            element
+                      <MediaElement
+                        item={video}
+                        refCallback={(element) => {
+                          videoRefs.current[index] = element
                         }}
-                        src={video.src}
-                        poster={video.poster}
                         muted={isMuted}
-                        playsInline
-                        preload={
-                          isActive
-                            ? "auto"
-                            : "metadata"
-                        }
+                        preload={isActive ? "auto" : "metadata"}
                         className="
                           h-full w-full
                           object-cover
@@ -534,40 +597,42 @@ export function VideoShowcaseSection({
                             <Maximize2 size={17} />
                           </div>
 
-                          {/* Áudio */}
-                          <button
-                            type="button"
-                            onClick={(event) => {
-                              event.stopPropagation()
-                              toggleAudio()
-                            }}
-                            aria-label={
-                              isMuted
-                                ? "Ativar áudio"
-                                : "Silenciar áudio"
-                            }
-                            className="
-                              absolute left-1/2 top-1/2
-                              flex h-14 w-14
-                              -translate-x-1/2
-                              -translate-y-1/2
-                              items-center justify-center
-                              rounded-full
-                              border border-white/30
-                              bg-black/25
-                              text-white
-                              backdrop-blur-md
-                              transition-all duration-300
-                              hover:scale-110
-                              hover:bg-black/40
-                            "
-                          >
-                            {isMuted ? (
-                              <VolumeX size={24} />
-                            ) : (
-                              <Volume2 size={24} />
-                            )}
-                          </button>
+                          {/* Áudio (somente vídeo) */}
+                          {isVideo && (
+                            <button
+                              type="button"
+                              onClick={(event) => {
+                                event.stopPropagation()
+                                toggleAudio()
+                              }}
+                              aria-label={
+                                isMuted
+                                  ? "Ativar áudio"
+                                  : "Silenciar áudio"
+                              }
+                              className="
+                                absolute left-1/2 top-1/2
+                                flex h-14 w-14
+                                -translate-x-1/2
+                                -translate-y-1/2
+                                items-center justify-center
+                                rounded-full
+                                border border-white/30
+                                bg-black/25
+                                text-white
+                                backdrop-blur-md
+                                transition-all duration-300
+                                hover:scale-110
+                                hover:bg-black/40
+                              "
+                            >
+                              {isMuted ? (
+                                <VolumeX size={24} />
+                              ) : (
+                                <Volume2 size={24} />
+                              )}
+                            </button>
+                          )}
                         </>
                       )}
                     </div>
@@ -581,7 +646,7 @@ export function VideoShowcaseSection({
               <button
                 type="button"
                 onClick={previous}
-                aria-label="Vídeo anterior"
+                aria-label="Anterior"
                 className="
                   absolute left-2 top-1/2 z-30
                   flex h-10 w-10
@@ -607,7 +672,7 @@ export function VideoShowcaseSection({
               <button
                 type="button"
                 onClick={next}
-                aria-label="Próximo vídeo"
+                aria-label="Próximo"
                 className="
                   absolute right-2 top-1/2 z-30
                   flex h-10 w-10
@@ -637,9 +702,7 @@ export function VideoShowcaseSection({
                   key={video.id}
                   type="button"
                   onClick={() => goTo(index)}
-                  aria-label={`Ir para o vídeo ${
-                    index + 1
-                  }`}
+                  aria-label={`Ir para o item ${index + 1}`}
                   className={`
                     h-2 rounded-full
                     transition-all duration-300

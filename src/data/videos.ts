@@ -5,8 +5,11 @@ export interface VideoItem {
   companyTarget: string
   /** Aparece na seleção geral da Home. */
   featured?: boolean
+  /** Padrão: "video". Use "image" para stories em foto. */
+  type?: "video" | "image"
+  /** Opcional: link do post/perfil no Instagram (aparece no modal). */
+  link?: string
 }
-
 export const videos: VideoItem[] = [
   {
     id: "video-01",

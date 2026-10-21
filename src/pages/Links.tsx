@@ -14,7 +14,7 @@ import {
   Youtube,
   type LucideIcon,
 } from "lucide-react"
-import logo from "../assets/img/logo/topline.webp"
+import logo from "../assets/img/logo/logo-chp.svg"
 import ivmLogo from "../assets/img/logo/ivmitaly.webp"
 import forthyLogo from "../assets/img/logo/forthy.webp"
 import brvLogo from "../assets/img/logo/brv.webp"
@@ -106,9 +106,8 @@ export function Links() {
             <img
               src={logo}
               alt="Logo da CHP Smart"
-              className="h-24 w-24 rounded-full border border-black/10 bg-white object-contain p-3 shadow-md"
+              className="h-auto w-48 rounded-full border border-black/10 bg-white object-contain p-3 shadow-md"
             />
-            <h1 className="mt-4 text-2xl font-bold text-[rgb(var(--text-primary))]">CHP Smart</h1>
             <p className="mt-2 max-w-xs text-xs leading-relaxed text-[rgb(var(--text-secondary)/60%)]">
               Inteligência que conecta negócios. Conectamos gestão estratégica e tecnologia para
               impulsionar empresas parceiras.

@@ -78,8 +78,7 @@ export function Header() {
             px-4
             py-3
             shadow-md
-            md:w-full
-            md:max-w-6xl
+            md:min-w-7xl
             md:px-6
           "
         >
