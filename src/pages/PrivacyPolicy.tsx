@@ -9,16 +9,8 @@ import { Reveal } from "../components/animations/Reveal"
 const CONTACT_EMAIL = "chepli@chpsmart.com.br"
 const CONTACT_PHONE = "+55 (11) 91102-1278"
 const COMPANY_CNPJ = "45.455.738/0001-81"
-const LAST_UPDATE = "13 de outubro de 2026"
+const LAST_UPDATE = "21 de outubro de 2026"
 
-/** Destaca no texto os pontos que ainda precisam ser confirmados/preenchidos. */
-function Pending({ children }: { children: ReactNode }) {
-  return (
-    <mark className="rounded bg-yellow-100 px-1.5 font-medium text-yellow-900">
-      {children}
-    </mark>
-  )
-}
 
 function P({ children }: { children: ReactNode }) {
   return <p className="mt-4 leading-relaxed text-gray-600">{children}</p>
@@ -72,7 +64,7 @@ const sections: PolicySectionData[] = [
       <>
         <P>
           Esta Política explica como a <strong className={strong}>CHP Smart</strong>{" "}
-          (<Pending>[RAZÃO SOCIAL]</Pending>, CNPJ {COMPANY_CNPJ}, com sede em São Paulo/SP) trata os
+          (Razão Social: Top Line Ltda, CNPJ {COMPANY_CNPJ}, com sede em São Paulo/SP) trata os
           dados pessoais coletados por meio do site{" "}
           <strong className={strong}>chpsmart.com.br</strong>.
         </P>
@@ -192,12 +184,12 @@ const sections: PolicySectionData[] = [
               "Serviço que envia o conteúdo do formulário do site para a caixa de e-mail da CHP Smart.",
             ],
             [
-              <Pending key="mail">[Provedor de e-mail corporativo]</Pending>,
+              <strong key="mail" className={strong}>chepli@chpsmart.com.br</strong>,
               "Receber e armazenar as mensagens enviadas.",
             ],
             [
               <>
-                Vercel <Pending>[confirmar]</Pending>
+                Vercel
               </>,
               "Hospedagem do site e registros técnicos de segurança.",
             ],
@@ -207,10 +199,9 @@ const sections: PolicySectionData[] = [
             ],
             [
               <>
-                Marcas do grupo (IVM Italy, Forthy, BRV Válvulas e Roddex){" "}
-                <Pending>[confirmar]</Pending>
+                Marcas do grupo (Conceitto e HidroSmart)
               </>,
-              "Encaminhamento da sua mensagem à marca correspondente ao assunto.",
+              "Encaminhamento da sua mensagem à marca correspondente ao assunto, caso necessário.",
             ],
             [
               "WhatsApp (Meta)",
@@ -246,7 +237,7 @@ const sections: PolicySectionData[] = [
       <P>
         Mantemos seus dados apenas pelo tempo necessário para cumprir as finalidades descritas nesta
         Política. Como regra, as mensagens do formulário são guardadas por{" "}
-        <Pending>[ex.: até 24 meses após o último contato]</Pending>, salvo se houver relacionamento
+        até 24 meses após o último contato, salvo se houver relacionamento
         comercial em andamento ou se a lei exigir prazo maior. Depois disso, os dados são eliminados
         ou anonimizados.
       </P>
@@ -353,7 +344,7 @@ const sections: PolicySectionData[] = [
             <strong className={strong}>Telefone:</strong> {CONTACT_PHONE}
           </p>
           <p>
-            <strong className={strong}>Encarregado (DPO):</strong> <Pending>[NOME, se houver]</Pending>
+            <strong className={strong}>Encarregado (DPO):</strong> Valdenilson Chepli
           </p>
         </address>
         <P>

@@ -10,7 +10,7 @@ export function Logo() {
       <img
         src={logo}
         alt="CHP Smart"
-        className="w-7 md:w-[190px] h-auto"
+        className="w-[130px] md:w-[190px] h-auto"
       />
     </a>
   )
