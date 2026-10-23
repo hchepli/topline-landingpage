@@ -17,9 +17,11 @@ export function SectionHeader({ title, description }: SectionHeaderProps) {
           <span className="h-[2px] flex-1 shrink-0 bg-[rgb(var(--brand-secondary))]" />
         </div>
 
-        <p className="text-sm text-neutral-500 lg:text-base">
-          {description}
-        </p>
+        {description && (
+          <p className="text-sm text-neutral-500 lg:text-base">
+            {description}
+          </p>
+        )}
       </div>
     </Reveal>
   )

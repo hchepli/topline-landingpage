@@ -198,6 +198,15 @@ export function Footer() {
             <small className="leading-relaxed">
               © 2026 CHP Smart - CNPJ: 45.455.738/0001-81
             </small>
+
+            <small className="leading-relaxed">
+              <a
+                href="/politica-de-privacidade"
+                className="underline underline-offset-2 transition-colors hover:text-[rgb(var(--text-primary))]"
+              >
+                Política de Privacidade
+              </a>
+            </small>
           </div>
         </div>
 

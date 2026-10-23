@@ -13,6 +13,7 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 export function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" })
   const [loading, setLoading] = useState(false)
+  const [acceptedPrivacy, setAcceptedPrivacy] = useState(false)
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }))
@@ -21,6 +22,11 @@ export function ContactSection() {
   async function handleSubmit() {
     if (!form.name || !form.email || !form.message) {
       toast.warning("Preencha todos os campos.")
+      return
+    }
+
+    if (!acceptedPrivacy) {
+      toast.warning("Aceite a Política de Privacidade para enviar a mensagem.")
       return
     }
 
@@ -40,6 +46,7 @@ export function ContactSection() {
       )
       toast.success("Mensagem enviada! Retornaremos em breve.")
       setForm({ name: "", email: "", message: "" })
+      setAcceptedPrivacy(false)
     } catch (err: any) {
       toast.error("Ops, algo deu errado. Tente novamente ou fale pelo WhatsApp.")
     } finally {
@@ -135,6 +142,28 @@ export function ContactSection() {
                   placeholder="Escreva sua mensagem aqui..."
                   className="w-full h-36 resize-none rounded-lg border border-black/30 bg-white px-4 py-3 text-sm outline-none focus:border-black transition"
                 />
+              </div>
+
+              <div className="flex items-start gap-3 text-left">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  checked={acceptedPrivacy}
+                  onChange={(e) => setAcceptedPrivacy(e.target.checked)}
+                  className="mt-1 h-4 w-4 shrink-0 cursor-pointer accent-black"
+                />
+                <label htmlFor="privacy" className="text-sm leading-relaxed text-black/70">
+                  Li e concordo com a{" "}
+                  <a
+                    href="/politica-de-privacidade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[rgb(var(--brand-secondary))] underline underline-offset-2 hover:opacity-80"
+                  >
+                    Política de Privacidade
+                  </a>
+                  . <span className="text-red-500">*</span>
+                </label>
               </div>
 
               <div className="w-full flex justify-end pt-2">

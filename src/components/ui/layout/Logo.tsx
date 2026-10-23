@@ -1,4 +1,4 @@
-import logo from "../../../assets/img/logo/topline.webp"
+import logo from "../../../assets/img/logo/logo-chp.svg"
 
 export function Logo() {
   return (
@@ -10,18 +10,8 @@ export function Logo() {
       <img
         src={logo}
         alt="CHP Smart"
-        className="w-7 md:w-10 h-auto"
+        className="w-[130px] md:w-[190px] h-auto"
       />
-
-      <strong
-        className="
-          text-xl md:text-2xl
-          font-extrabold
-          text-[rgb(var(--gray-900))]
-        "
-      >
-        CHP Smart
-      </strong>
     </a>
   )
 }

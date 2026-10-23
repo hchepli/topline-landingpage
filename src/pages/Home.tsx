@@ -7,6 +7,7 @@ import { LayoutContainer } from "../components/ui/layout/LayoutContainer"
 import { ServicesSection } from "../components/sections/ServicesSection"
 import { VideoShowcaseSection } from "../components/sections/VideoShowcaseSection"
 import { getFeaturedVideos } from "../data/videos"
+import { getFeaturedStories } from "../data/stories"
 
 
 export function Home() {
@@ -16,6 +17,12 @@ export function Home() {
       <Hero />
       <LayoutContainer>
         <ServicesSection />
+              <VideoShowcaseSection
+  sectionId="stories"
+  videos={getFeaturedStories()}
+  title="Acompanhe nossos Stories"
+  description="Bastidores e novidades direto do nosso Instagram."
+/>
         <BrandGroupSection />
               <VideoShowcaseSection
         videos={getFeaturedVideos()}

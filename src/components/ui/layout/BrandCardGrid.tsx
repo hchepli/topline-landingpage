@@ -1,8 +1,8 @@
 import { Reveal } from "../../animations/Reveal"
 import { BrandCard } from "../cards/BrandCard"
-import { companies } from "../../../data/companies"
+import { italyGroup } from "../../../data/companies"
 
-const duplicated = [...companies, ...companies]
+const duplicated = [...italyGroup, ...italyGroup]
 
 export function BrandCardGrid() {
   return (
@@ -22,29 +22,29 @@ export function BrandCardGrid() {
 
       <ul
         className="marquee-track flex items-stretch gap-10 md:gap-[3rem] w-max"
-        aria-label="Empresas do Grupo TF"
+        aria-label="Empresas do Grupo Italy"
       >
-{duplicated.map((company, i) => (
-  <li key={`${company.name}-${i}`} className="shrink-0">
-    {i < companies.length ? (
-      <Reveal delay={0.3 + i * 0.2} direction="up">
-        <BrandCard
-          img={company.image}
-          name={company.name}
-          url={company.href}
-          target={company.target}
-        />
-      </Reveal>
-    ) : (
-      <BrandCard
-        img={company.image}
-        name={company.name}
-        url={company.href}
-        target={company.target}
-      />
-    )}
-  </li>
-))}
+        {duplicated.map((company, i) => (
+          <li key={`${company.name}-${i}`} className="shrink-0">
+            {i < italyGroup.length ? (
+              <Reveal delay={0.3 + i * 0.2} direction="up">
+                <BrandCard
+                  img={company.image}
+                  name={company.name}
+                  url={company.href}
+                  target={company.target}
+                />
+              </Reveal>
+            ) : (
+              <BrandCard
+                img={company.image}
+                name={company.name}
+                url={company.href}
+                target={company.target}
+              />
+            )}
+          </li>
+        ))}
       </ul>
     </div>
   )
