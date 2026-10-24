@@ -867,51 +867,6 @@ export const companies: Company[] = [
     ],
   },
 
-  /* ============================ ACQUA SYSTEM ============================ */
-  {
-    target: "acquasystem",
-    name: "Acqua System",
-    kind: "brand",
-    image: "", // TODO: logo da Acqua System
-    description:
-      "A Acqua System PPR é um sistema de tubos e conexões em polipropileno copolímero random (PP-R), desenvolvido para instalações hidráulicas prediais de água quente e fria, com união por termofusão.",
-    headline: "Acqua System PPR: água quente e fria",
-    about: [
-      "Sistema de tubos e conexões em polipropileno copolímero random (PP-R), desenvolvido para instalações hidráulicas prediais.",
-      "Com união por termofusão, resistência à corrosão e superfície interna lisa, é indicado para redes de água quente e fria em projetos residenciais, comerciais e empreendimentos de engenharia.",
-      "Conheça as soluções e consulte os catálogos técnicos para selecionar o sistema adequado ao seu projeto.",
-    ],
-    buttonLabel: "Conhecer Acqua System PPR",
-    href: "http://tecnofluidos.com.br/", // TODO: trocar pelo link específico da Acqua System, se existir
-    representation: ["conceitto"],
-    distribution: [],
-    cards: [
-      {
-        title: "Água Quente e Fria",
-        description:
-          "Tubos e conexões em PP-R para instalações hidráulicas prediais.",
-        icon: Droplet,
-        featured: true,
-        products: [
-          {
-            image: "",
-            title: "Tubos PP-R",
-            description: "Superfície interna lisa e resistência à corrosão.",
-          },
-          {
-            image: "",
-            title: "Conexões e Acessórios",
-            description: "Variedade de peças para diferentes projetos.",
-          },
-          {
-            image: "",
-            title: "União por Termofusão",
-            description: "Junções seguras para redes de água quente e fria.",
-          },
-        ],
-      },
-    ],
-  },
 ]
 
 /* ------------------------------ HELPERS ------------------------------ */
