@@ -74,7 +74,7 @@ export function DistributionIntro({
       </a>
     ) : (
       <Link
-        to={`/${brand.target}`}
+        to={`/empresas/${brand.target}`}
         aria-label={`Conhecer ${brand.name}`}
         tabIndex={isClone ? -1 : undefined}
         className={brandLinkClassName}
@@ -145,7 +145,10 @@ export function DistributionIntro({
                 aria-label="Ações principais"
                 className="flex w-full flex-col gap-3 sm:flex-row"
               >
-                <PrimaryCTA />
+                {/* Leva para a página /empresas */}
+                <PrimaryCTA to="/empresas" label="Ver empresas" />
+
+                {/* Rola suavemente até o catálogo (id="catalogo") */}
                 <NavCTA
                   title={ctaTitle}
                   scrollTarget={ctaTarget}

@@ -16,7 +16,7 @@ const NAV_ITEMS = [
 
 export function Nav({ variant = 'desktop', onNavigate }: NavProps) {
   const baseLink = `
-    relative text-sm font-medium cursor-pointer
+    relative text-sm font-medium cursor-pointer whitespace-nowrap
     transition-colors duration-200
     after:absolute
     after:left-0
@@ -32,7 +32,7 @@ export function Nav({ variant = 'desktop', onNavigate }: NavProps) {
     <ul
       className={
         variant === 'desktop'
-          ? 'hidden md:flex items-center gap-8'
+          ? 'hidden lg:flex items-center gap-5 xl:gap-8'
           : 'flex flex-col items-center gap-10'
       }
     >

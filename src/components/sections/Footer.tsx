@@ -12,9 +12,10 @@ import {
 import { scrollToSection } from "../../lib/scroll"
 
 const NAV_ITEMS = [
-  { label: 'Home', target: 'hero', type: 'section' },
-  { label: 'Serviços', target: 'services', type: 'section' },
-  { label: 'Empresas', target: 'empresas', type: 'section' },
+  { label: 'Home', href: '/', type: 'page' },
+  { label: 'Empresas', href: '/empresas', type: 'page' },
+  { label: 'Distribuição', href: '/distribuicao', type: 'page' },
+  { label: 'Força de Vendas', href: '/forca', type: 'page' },
   { label: 'Sobre Nós', href: '/sobre', type: 'page' },
   { label: 'Contato', target: 'contact', type: 'section' },
 ]

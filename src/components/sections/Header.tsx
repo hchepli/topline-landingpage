@@ -55,13 +55,13 @@ export function Header() {
           transition-transform
           duration-300
           ease-out
-          md:pt-6
-          md:translate-y-0
+          lg:pt-6
+          lg:translate-y-0
           ${
             open
               ? "translate-y-0"
               : hidden
-                ? "-translate-y-full md:translate-y-0"
+                ? "-translate-y-full lg:translate-y-0"
                 : "translate-y-0"
           }
         `}
@@ -70,16 +70,17 @@ export function Header() {
           className="
             mx-auto
             flex
-            w-3/4
+            w-[92%]
+            max-w-7xl
             items-center
             justify-between
+            gap-4
             rounded-full
             bg-white
             px-4
             py-3
             shadow-md
-            md:min-w-7xl
-            md:px-6
+            lg:px-6
           "
         >
           <Reveal delay={0.3} direction="left">
@@ -87,21 +88,21 @@ export function Header() {
           </Reveal>
 
           {/* Desktop Nav */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Reveal delay={0.3} direction="up">
               <Nav />
             </Reveal>
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden shrink-0 items-center lg:flex">
             <Reveal delay={0.3} direction="right">
               <HeaderCTA />
             </Reveal>
           </div>
 
           {/* Mobile Toggle */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <MenuToggle open={open} onToggle={() => setOpen(!open)} />
           </div>
         </div>

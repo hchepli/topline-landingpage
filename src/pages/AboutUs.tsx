@@ -75,7 +75,7 @@ export function AboutUs() {
     <>
     <Header />
     <LayoutContainer>
-    <section className="w-full bg-white py-20 mt-10">
+    <section className="w-full py-20 mt-10">
       <div className="mx-auto max-w-6xl px-6">
         {/* Header */}
           <Reveal direction="up" delay={0.1} className="mx-auto max-w-3xl text-center">

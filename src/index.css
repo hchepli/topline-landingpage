@@ -27,6 +27,8 @@
 
 body{
     font-family: "Poppins", sans-serif; 
+    background-color: var(--page-bg);
+
 }
 
 ::-webkit-scrollbar {
@@ -71,7 +73,7 @@ body{
   ========================== */
   --color-black: 0 0 0;
   --color-white: 255 255 255;
-
+--page-bg: #F3F4F6;
   /* =========================
      Brand
   ========================== */

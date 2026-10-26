@@ -1,6 +1,8 @@
-export function scrollToSection(className: string) {
-  const section = document.querySelector(`.${className}`)
+export function scrollToSection(target: string) {
+  const section =
+    document.getElementById(target) ?? document.querySelector(`.${target}`)
+
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    section.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 }

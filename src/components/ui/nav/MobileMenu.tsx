@@ -18,6 +18,7 @@ export function MobileMenu({ open, onNavigate }: Props) {
         flex flex-col items-center justify-center gap-10
         bg-white
         transition-transform duration-500 ease-in-out
+        lg:hidden
         ${open ? "translate-x-0" : "translate-x-full"}
       `}
     >

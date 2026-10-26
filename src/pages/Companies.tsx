@@ -1,9 +1,7 @@
 // src/pages/Companies.tsx
-import { Link } from "react-router-dom"
-import { ArrowUpRight } from "lucide-react"
 import { SectionHeader } from "../components/ui/layout/SectionHeader"
 import { LayoutContainer } from "../components/ui/layout/LayoutContainer"
-import { CompanyLogo } from "../components/ui/CompanyLogo"
+import { CompanyCard } from "../components/ui/CompanyCard"
 import { Header } from "../components/sections/Header"
 import { Footer } from "../components/sections/Footer"
 import { ContactSection } from "../components/sections/ContactSection"
@@ -13,59 +11,8 @@ import {
   distributionCompanies,
   representationCompanies,
   partnerBrands,
-  type Channel,
   type Company,
 } from "../data/companies"
-
-const channelLabel: Record<Channel, { representation: string; distribution: string }> = {
-  conceitto: {
-    representation: "Representada pela Conceitto",
-    distribution: "Distribuída pela Conceitto",
-  },
-  hidrosmart: {
-    representation: "Representada pela HidroSmart",
-    distribution: "Distribuída pela HidroSmart",
-  },
-}
-
-function CompanyCard({ company }: { company: Company }) {
-  const tags = [
-    ...company.representation.map((c) => channelLabel[c].representation),
-    ...company.distribution.map((c) => channelLabel[c].distribution),
-  ]
-
-  return (
-    <Link
-      to={`/empresas/${company.target}`}
-      className="relative flex h-full flex-col items-center gap-4 rounded-2xl border border-[rgb(var(--brand-secondary))] p-6 text-center transition-all hover:-translate-y-1 hover:shadow-lg"
-    >
-      <div className="absolute right-3 top-3 flex items-center gap-1 text-xs font-medium text-[rgb(var(--brand-secondary))]">
-        <span>Ver mais</span>
-        <ArrowUpRight size={16} />
-      </div>
-
-      <div className="mt-4 flex h-20 items-center">
-        <CompanyLogo image={company.image} name={company.name} className="h-20" />
-      </div>
-
-      <h3 className="text-lg font-semibold text-[#1f2937]">{company.name}</h3>
-      <p className="line-clamp-3 text-sm text-gray-600">{company.description}</p>
-
-      {tags.length > 0 && (
-        <ul className="mt-auto flex flex-wrap justify-center gap-2 pt-2">
-          {tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
-      )}
-    </Link>
-  )
-}
 
 type CompaniesSectionProps = {
   id: string
@@ -85,7 +32,7 @@ function CompaniesSection({ id, title, description, items }: CompaniesSectionPro
     >
       <SectionHeader id={`${id}-title`} title={title} description={description} />
 
-      <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((company) => (
           <li key={company.target}>
             <CompanyCard company={company} />

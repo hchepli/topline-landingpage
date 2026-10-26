@@ -11,7 +11,7 @@ export function MenuToggle({ open, onToggle }: Props) {
       onClick={onToggle}
       delay={0.7}
       direction="right"
-      className="relative z-[70] flex h-auto w-8 items-center justify-start md:hidden"
+      className="relative z-[70] flex h-auto w-8 items-center justify-start lg:hidden"
     >
       {/* Linha 1 */}
       <span

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { ArrowDown } from "lucide-react"
 import { companies, type Company } from "../../data/companies"
 import { CompanyLogo } from "../ui/CompanyLogo"
+import { scrollToSection } from "../../lib/scroll"
 
 /** Quantas vezes a lista é repetida. Garante que nunca apareça um "buraco" na faixa. */
 const COPIES = 4
@@ -49,16 +50,22 @@ function Strip({ items, direction, delay }: StripProps) {
   } as CSSProperties
 
   return (
-    <div className="chp-strip h-full overflow-hidden">
+    // Mobile/tablet: faixa horizontal ocupando a largura toda
+    // Desktop (lg+): faixa vertical com a altura do container
+    <div className="chp-strip w-full overflow-hidden lg:h-full lg:w-auto">
       <ul
-        className={`chp-track flex flex-col ${
+        className={`chp-track flex w-max flex-row lg:w-auto lg:flex-col ${
           direction === "up" ? "chp-scroll-up" : "chp-scroll-down"
         }`}
         style={trackStyle}
       >
         {Array.from({ length: COPIES }).flatMap((_, copy) =>
           items.map((company) => (
-            <li key={`${copy}-${company.target}`} aria-hidden={copy > 0}>
+            <li
+              key={`${copy}-${company.target}`}
+              aria-hidden={copy > 0}
+              className="shrink-0"
+            >
               <StripCard company={company} hidden={copy > 0} />
             </li>
           ))
@@ -78,18 +85,44 @@ export function CompaniesHero() {
       className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-10 mt-10 lg:grid-cols-2 lg:py-20"
     >
       <style>{`
-        @keyframes chp-scroll-up {
+        /* Horizontal (padrão: mobile/tablet) */
+        @keyframes chp-left {
+          from { transform: translate3d(0, 0, 0) }
+          to   { transform: translate3d(calc(-100% / var(--copies)), 0, 0) }
+        }
+        @keyframes chp-right {
+          from { transform: translate3d(calc(-100% / var(--copies)), 0, 0) }
+          to   { transform: translate3d(0, 0, 0) }
+        }
+
+        /* Vertical (desktop) */
+        @keyframes chp-up {
           from { transform: translate3d(0, 0, 0) }
           to   { transform: translate3d(0, calc(-100% / var(--copies)), 0) }
         }
-        @keyframes chp-scroll-down {
+        @keyframes chp-down {
           from { transform: translate3d(0, calc(-100% / var(--copies)), 0) }
           to   { transform: translate3d(0, 0, 0) }
         }
+
         .chp-track { will-change: transform; backface-visibility: hidden }
-        .chp-scroll-up   { animation: chp-scroll-up 25s linear infinite }
-        .chp-scroll-down { animation: chp-scroll-down 25s linear infinite }
+
+        .chp-scroll-up,
+        .chp-scroll-down {
+          animation-duration: 25s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        .chp-scroll-up   { animation-name: chp-left }
+        .chp-scroll-down { animation-name: chp-right }
+
+        @media (min-width: 1024px) {
+          .chp-scroll-up   { animation-name: chp-up }
+          .chp-scroll-down { animation-name: chp-down }
+        }
+
         .chp-strip:hover .chp-track { animation-play-state: paused }
+
         @media (prefers-reduced-motion: reduce) {
           .chp-scroll-up, .chp-scroll-down { animation: none }
         }
@@ -110,25 +143,22 @@ export function CompaniesHero() {
           Marcas, distribuição e força de vendas trabalhando juntas para levar
           soluções hidráulicas e de controle de fluidos a todo o Brasil.
         </p>
-        <a
-          href="#grupo-italy"
+        <button
+          type="button"
+          onClick={() => scrollToSection("grupo-italy")}
           className="inline-flex items-center gap-2 rounded-full bg-[rgb(var(--brand-secondary))] px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
         >
           Conhecer as empresas
           <ArrowDown size={18} />
-        </a>
+        </button>
       </div>
 
-      {/* Faixas levemente inclinadas */}
+      {/* Faixas: horizontais no mobile/tablet, verticais no desktop */}
       <div
-        className="relative h-[460px] overflow-hidden lg:h-[640px]"
+        className="relative overflow-hidden lg:h-[640px]"
         aria-label="Empresas do ecossistema"
       >
-        {/* Fade em cima e embaixo (fora da área inclinada, para não borrar as imagens) */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b from-white to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-white to-transparent" />
-
-        <div className="mx-auto flex h-full w-fit gap-6">
+        <div className="flex w-full flex-col gap-2 lg:mx-auto lg:h-full lg:w-fit lg:flex-row lg:gap-6">
           <Strip items={left} direction="up" />
           <Strip items={right} direction="down" delay="-10s" />
         </div>
