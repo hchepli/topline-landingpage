@@ -98,7 +98,7 @@ export function CompanyCatalog({ company }: { company: Company }) {
           visibleProducts.map((product, index) => (
             <div
               key={`${product.title}-${index}`}
-              className="group flex flex-col gap-3 rounded-xl border p-4 transition hover:border-[rgb(var(--brand-secondary))] hover:shadow-md"
+              className="group flex flex-col bg-white gap-3 rounded-xl border p-4 transition hover:border-[rgb(var(--brand-secondary))] hover:shadow-md"
             >
               {product.image ? (
                 <img

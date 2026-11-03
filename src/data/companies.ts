@@ -12,7 +12,7 @@ import bermad from "../assets/img/logo/Layer_11.svg"
 import hidrosmartLogo from "../assets/img/logo/images.jpg"
 // TODO: adicionar os logos quando tiver os arquivos
 import tecnofluidosLogo from "../assets/img/logo/tecnofluidos.png"
-import conceittoLogo from "../assets/img/logo/conceitto.svg"
+import conceittoLogo from "../assets/img/logo/topline.svg"
 
 /* ------------------------------ BRV ------------------------------ */
 import brvGasEsferaAngular from "../assets/img/products/brv/gas/esfera-angular.webp"
@@ -75,7 +75,7 @@ import bermad735 from "../assets/img/products/bermad/modelo735.webp"
 /* ------------------------------ TYPES ------------------------------ */
 
 /** Quem representa / distribui a empresa. */
-export type Channel = "conceitto" | "hidrosmart"
+export type Channel = "conceitto" | "hidrosmart" | "topline"
 
 /**
  * brand        -> marca/fabricante (IVM, Forthy, BRV, Roddex, Bermad, TecnoFluidos)
@@ -233,13 +233,13 @@ export const companies: Company[] = [
 
   /* ============================ CONCEITTO ============================ */
   {
-    target: "conceitto",
-    name: "Conceitto",
+    target: "topline",
+    name: "TopLine",
     kind: "sales-force",
     image: conceittoLogo, // TODO: logo da Conceitto
     description:
       "Força de vendas do ecossistema CHP Smart, representando marcas líderes em soluções hidráulicas e de controle de fluidos.",
-    buttonLabel: "Conhecer a Conceitto",
+    buttonLabel: "Conhecer a TopLine",
     href: "#",
     representation: [],
     distribution: [],
@@ -264,7 +264,7 @@ export const companies: Company[] = [
     ],
     buttonLabel: "Conhecer Linha Industrial e Saneamento",
     href: "https://italy.com.br",
-    representation: ["conceitto"],
+    representation: ["topline"],
     distribution: ["hidrosmart"],
     cards: [
       {
@@ -376,7 +376,7 @@ export const companies: Company[] = [
     ],
     buttonLabel: "Ver Kits Cavalete e Soluções",
     href: "https://www.forthy.com.br",
-    representation: ["conceitto"],
+    representation: ["topline"],
     distribution: ["hidrosmart"],
     cards: [
       {
@@ -701,7 +701,7 @@ export const companies: Company[] = [
     ],
     buttonLabel: "Conhecer Soluções BERMAD",
     href: "https://bermad.com.br/",
-    representation: ["conceitto"],
+    representation: ["topline"],
     distribution: ["hidrosmart"],
     cards: [
       {
@@ -814,7 +814,7 @@ export const companies: Company[] = [
     ],
     buttonLabel: "Conhecer Sistemas de Condução",
     href: "http://tecnofluidos.com.br/",
-    representation: ["conceitto"],
+    representation: ["topline"],
     distribution: [],
     cards: [
       {
@@ -900,7 +900,7 @@ export const getCompany = (target: string) =>
   companies.find((c) => c.target === target)
 
 /* Atalhos que substituem os antigos arquivos conceitto.ts / hidrosmart.ts */
-export const conceittoCompany = getCompany("conceitto")!
+export const conceittoCompany = getCompany("topline")!
 export const hidrosmartCompany = getCompany("hidrosmart")!
-export const conceittoRepresentations = getRepresentedBy("conceitto")
+export const conceittoRepresentations = getRepresentedBy("topline")
 export const hidrosmartDistribution = getDistributedBy("hidrosmart")

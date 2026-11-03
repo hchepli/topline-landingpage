@@ -1,8 +1,10 @@
 import { useParams, Navigate } from "react-router-dom"
 import { CompanyIntro } from "../components/ui/layout/CompanyIntro"
 import { CompanyCatalog } from "../components/ui/layout/CompanyCatalog"
+import { CompanyDownloads } from "../components/ui/layout/CompanyDownloads"
 import { companies } from "../data/companies"
 import { getVideosByCompany } from "../data/videos"
+import { getPdfsByCompany } from "../data/pdf"
 import { Header } from "../components/sections/Header"
 import { Footer } from "../components/sections/Footer"
 import { LayoutContainer } from "../components/ui/layout/LayoutContainer"
@@ -19,6 +21,7 @@ export function CompanyPage() {
 
   const companyVideos = getVideosByCompany(company.target)
   const hasVideos = companyVideos.length > 0
+  const companyPdfs = getPdfsByCompany(company.target)
 
   return (
     <>
@@ -31,6 +34,10 @@ export function CompanyPage() {
             titleId={`company-${company.name}-title`}
           />
           <CompanyCatalog company={company} />
+          <CompanyDownloads
+            pdfs={companyPdfs}
+            companyName={company.name}
+          />
         </section>
 
         {hasVideos && (
@@ -39,8 +46,8 @@ export function CompanyPage() {
             <VideoShowcaseSection
               videos={companyVideos}
               sectionId={`${company.target}-videos`}
-              title={`Conheça a ${company.name} em Vídeos`}
-              description={`Confira alguns vídeos que mostram de perto o trabalho e a essência da ${company.name}.`}
+              title={`Conheça a ${company.name} em Vídeos e Imagens`}
+              description={`Confira vídeos e imagens que mostram de perto o trabalho e a essência da ${company.name}.`}
             />
           </>
         )}

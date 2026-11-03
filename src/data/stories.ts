@@ -2,17 +2,21 @@ import { VideoItem } from "./videos"
 
 export const stories: VideoItem[] = [
   {
-    id: "story-01",
+    id: "story-03",
     type: "video",
-    src: "/videos/video-01.mp4",
+    src: "/stories/stories-1.mp4",
     companyTarget: "italy",
-    link: "https://www.instagram.com/hchepli/",
   },
   {
-    id: "story-02",
+    id: "story-04",
     type: "video",
-    src: "/videos/video-01.mp4",
-    poster: "/stories/story-02.jpg",
+    src: "/stories/stories-2.mp4",
+    companyTarget: "italy",
+  },
+  {
+    id: "story-05",
+    type: "video",
+    src: "/stories/stories-3.mp4",
     companyTarget: "italy",
   },
 ]
