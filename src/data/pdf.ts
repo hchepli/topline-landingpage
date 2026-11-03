@@ -30,13 +30,6 @@ export const pdfs: PdfItem[] = [
     companyTarget: "brv",
   },
   {
-    id: "forthy-gas-catalogo",
-    title: "Catálogo Forthy Gás",
-    description: "Soluções Forthy para instalações de gás.",
-    href: "/pdfs/CATÁLALOGO-FOTHY GÁS.pdf",
-    companyTarget: "forthy",
-  },
-  {
     id: "italy-catalogo-2025",
     title: "Catálogo IVM Italy 2025",
     description: "Válvulas, registros e soluções hidráulicas para saneamento e gás.",
