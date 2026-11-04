@@ -10,7 +10,6 @@ import brv from "../assets/img/logo/brv.webp"
 import roddex from "../assets/img/logo/roddex.webp"
 import bermad from "../assets/img/logo/Layer_11.svg"
 import hidrosmartLogo from "../assets/img/logo/images.jpg"
-// TODO: adicionar os logos quando tiver os arquivos
 import tecnofluidosLogo from "../assets/img/logo/tecnofluidos.png"
 import conceittoLogo from "../assets/img/logo/topline.svg"
 
@@ -72,19 +71,24 @@ import bermadIR420 from "../assets/img/products/bermad/modelo-IR-420.webp"
 import bermadIR900M0 from "../assets/img/products/bermad/modelo-IR-900-M0.webp"
 import bermad735 from "../assets/img/products/bermad/modelo735.webp"
 
+/* ------------------------------ TECNOFLUIDOS ------------------------------ */
+import tecnofluidosMagnumPN20 from "../assets/img/products/tecnofluidos/acquasistem/magnum-pn20.webp"
+import tecnofluidosMagnumPN25 from "../assets/img/products/tecnofluidos/acquasistem/magnum-pn25.webp"
+import tecnofluidosLuminumXTreme from "../assets/img/products/tecnofluidos/acquasistem/luminum-x-treme.webp"
+import tecnofluidosTeNormal from "../assets/img/products/tecnofluidos/acquasistem/te-normal.webp"
+import tecnofluidosCotovelo90Femea from "../assets/img/products/tecnofluidos/acquasistem/cotovelo-90-com-rosca-femea.webp"
+import tecnofluidosUniaoDupla from "../assets/img/products/tecnofluidos/acquasistem/uniao-dupla.webp"
+import tecnofluidosSgtTubo from "../assets/img/products/tecnofluidos/sigas/sgt-tubo-20-e-25.webp"
+import tecnofluidosSgtLuva from "../assets/img/products/tecnofluidos/sigas/sgt-luva.webp"
+import tecnofluidosSgtTeNormal from "../assets/img/products/tecnofluidos/sigas/sgt-te-normal.webp"
+import tecnofluidosSgtValvulaEsferica from "../assets/img/products/tecnofluidos/sigas/valvula-esferica.webp"
+
 /* ------------------------------ TYPES ------------------------------ */
 
-/** Quem representa / distribui a empresa. */
 export type Channel = "conceitto" | "hidrosmart" | "topline"
 
-/**
- * brand        -> marca/fabricante (IVM, Forthy, BRV, Roddex, Bermad, TecnoFluidos)
- * distributor  -> HidroSmart
- * sales-force  -> Conceitto
- */
 export type CompanyKind = "brand" | "distributor" | "sales-force"
 
-/** Grupos corporativos. Hoje só existe o Grupo Italy. */
 export type Group = "italy"
 
 export type Product = {
@@ -105,20 +109,14 @@ export type Company = {
   target: string
   name: string
   kind: CompanyKind
-
-  /** Grupo ao qual a empresa pertence (ex.: "italy"). Vazio = parceira. */
   group?: Group
   image: string
   description: string
-  /** Título de destaque da página da empresa (opcional) */
   headline?: string
-  /** Parágrafos de texto institucional (opcional) */
   about?: string[]
   buttonLabel: string
   href: string
-  /** Quem representa esta marca. Ex.: ["conceitto"] */
   representation: Channel[]
-  /** Quem distribui esta marca. Ex.: ["hidrosmart"] */
   distribution: Channel[]
   cards: CompanyCard[]
 }
@@ -236,7 +234,7 @@ export const companies: Company[] = [
     target: "topline",
     name: "TopLine",
     kind: "sales-force",
-    image: conceittoLogo, // TODO: logo da Conceitto
+    image: conceittoLogo,
     description:
       "Força de vendas do ecossistema CHP Smart, representando marcas líderes em soluções hidráulicas e de controle de fluidos.",
     buttonLabel: "Conhecer a TopLine",
@@ -408,7 +406,6 @@ export const companies: Company[] = [
         icon: Settings,
         products: [
           {
-            // TODO: DN25XDN20.jpg está importado mas não usado; trocar "" por forthyKitReducaoDN25XDN20 se quiser exibir
             image: "",
             title: "Kit Cavalete Simples com Redução DN25 x DN20 1″ x 3/4″ V6",
             description: "Ideal para adaptações em ligações de água.",
@@ -803,7 +800,7 @@ export const companies: Company[] = [
     target: "tecnofluidos",
     name: "TecnoFluidos",
     kind: "brand",
-    image: tecnofluidosLogo, // TODO: logo da TecnoFluidos
+    image: tecnofluidosLogo,
     description:
       "A TecnoFluidos oferece sistemas para condução de água quente e fria, gás, esgoto, drenagem, águas pluviais e calefação. Seu portfólio reúne tubos, conexões e soluções integradas para instalações prediais e projetos de construção civil.",
     headline: "Tecnologia e confiabilidade para instalações hidráulicas e de gás",
@@ -820,53 +817,99 @@ export const companies: Company[] = [
       {
         title: "Acqua System PPR",
         description:
-          "Tubos e conexões em PP-R para instalações prediais de água quente e fria.",
+          "Tubos e componentes para sistemas de condução de água quente e fria.",
         icon: Droplet,
         featured: true,
         products: [
           {
-            image: "",
-            title: "União por Termofusão",
-            description: "Junções homogêneas para redes de água quente e fria.",
+            image: tecnofluidosMagnumPN20,
+            title: "TUBO ACQUA SYSTEM® MAGNUM PN20",
+            description: "Tubulação em PPR para instalações de água quente e fria.",
           },
           {
-            image: "",
-            title: "Resistência à Corrosão",
-            description: "Superfície interna lisa e maior durabilidade da rede.",
+            image: tecnofluidosMagnumPN25,
+            title: "TUBO ACQUA SYSTEM® MAGNUM PN25",
+            description: "Tubulação em PPR para instalações hidráulicas.",
           },
           {
-            image: "",
-            title: "Conexões e Acessórios",
-            description: "Variedade de peças para diferentes projetos.",
+            image: tecnofluidosLuminumXTreme,
+            title: "TUBO ACQUA LÚMINUM® X-TREME",
+            description: "Tubo com alma de alumínio para instalações aparentes.",
+          },
+        ],
+      },
+      {
+        title: "Conexões Acqua System",
+        description:
+          "Conexões e componentes para montagem de instalações hidráulicas.",
+        icon: Wrench,
+        products: [
+          {
+            image: tecnofluidosTeNormal,
+            title: "Tê normal",
+            description: "Conexão para derivações em sistemas hidráulicos.",
+          },
+          {
+            image: tecnofluidosCotovelo90Femea,
+            title: "Cotovelo 90º com rosca fêmea",
+            description: "Conexão para mudanças de direção e transições roscadas.",
+          },
+          {
+            image: tecnofluidosUniaoDupla,
+            title: "União dupla com flange",
+            description: "Componente para união e manutenção de tubulações.",
           },
         ],
       },
       {
         title: "SIGAS Termofusão",
         description:
-          "Tubos e conexões para condução de GN e GLP, conforme projeto e normas aplicáveis.",
+          "Tubos e conexões para instalações de distribuição interna de gás.",
         icon: Flame,
+        featured: true,
         products: [
           {
-            image: "",
-            title: "Tubos para Gás",
-            description: "Tecnologia de união por termofusão para instalações de gás.",
+            image: tecnofluidosSgtTubo,
+            title: "SGT TUBO 20 mm 4 METROS",
+            description: "Tubo para condução de gás.",
           },
           {
-            image: "",
-            title: "Conexões para Gás",
-            description: "Proteção contra corrosão em instalações prediais.",
+            image: tecnofluidosSgtTubo,
+            title: "SGT TUBO 25 mm 4 METROS",
+            description: "Tubulação para sistemas de distribuição de gás.",
           },
           {
-            image: "",
-            title: "Soluções Prediais",
-            description: "Segurança e confiabilidade quando corretamente especificado e instalado.",
+            image: tecnofluidosSgtTubo,
+            title: "SGT TUBO 32 mm 4 METROS",
+            description: "Tubo para instalações de gás por termofusão.",
+          },
+        ],
+      },
+      {
+        title: "Conexões SIGAS",
+        description:
+          "Componentes de união, derivação e controle para sistemas de gás.",
+        icon: Settings,
+        products: [
+          {
+            image: tecnofluidosSgtLuva,
+            title: "SGT LUVA",
+            description: "Conexão para união de tubos por termofusão.",
+          },
+          {
+            image: tecnofluidosSgtTeNormal,
+            title: "SGT TÊ NORMAL",
+            description: "Conexão para derivações em redes de gás.",
+          },
+          {
+            image: tecnofluidosSgtValvulaEsferica,
+            title: "SGT VÁLVULA ESFÉRICA",
+            description: "Componente para controle do fluxo de gás.",
           },
         ],
       },
     ],
   },
-
 ]
 
 /* ------------------------------ HELPERS ------------------------------ */
@@ -874,19 +917,23 @@ export const companies: Company[] = [
 /** Apenas marcas/fabricantes (o que a página /empresas deve listar). */
 export const brands = companies.filter((c) => c.kind === "brand")
 
-/* Seções da página /empresas */
-
 /** "Grupo Italy": marcas do grupo */
 export const italyGroup = companies.filter((c) => c.group === "italy")
 
 /** "Nossa Distribuição": HidroSmart */
-export const distributionCompanies = companies.filter((c) => c.kind === "distributor")
+export const distributionCompanies = companies.filter(
+  (c) => c.kind === "distributor"
+)
 
 /** "Nossa Representação": Conceitto */
-export const representationCompanies = companies.filter((c) => c.kind === "sales-force")
+export const representationCompanies = companies.filter(
+  (c) => c.kind === "sales-force"
+)
 
 /** "Outras empresas parceiras": marcas que não são do Grupo Italy */
-export const partnerBrands = companies.filter((c) => c.kind === "brand" && !c.group)
+export const partnerBrands = companies.filter(
+  (c) => c.kind === "brand" && !c.group
+)
 
 /** Marcas representadas por um canal. Ex.: getRepresentedBy("conceitto") */
 export const getRepresentedBy = (channel: Channel) =>
