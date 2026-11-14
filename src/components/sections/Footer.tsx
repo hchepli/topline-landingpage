@@ -29,9 +29,9 @@ export function Footer() {
         <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <Logo />
 
-          <p className="max-w-xl text-sm text-[rgb(var(--text-secondary)/60%)]">
-            Gestão que sustenta decisões. Estratégia que sustenta crescimento.
-          </p>
+<p className="max-w-xl text-sm font-medium tracking-wide text-[rgb(var(--text-secondary)/60%)]">
+  CHP: Conexão Hub Performance — Inteligência que conecta negócios.
+</p>
         </header>
 
         {/* GRID */}
@@ -159,14 +159,14 @@ export function Footer() {
                 <Instagram size={16} />
               </a>
 
-              <a
-                href="https://www.facebook.com/topline.chp.si"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80"
-              >
-                <Facebook size={16} />
-              </a>
+<a
+  href="https://www.facebook.com/profile.php?id=61596260074664"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex h-9 w-9 items-center justify-center rounded-md bg-[rgb(var(--brand-secondary))] text-white transition hover:opacity-80"
+>
+  <Facebook size={16} />
+</a>
 
               <a
                 href="https://www.linkedin.com/in/chp-smart/"

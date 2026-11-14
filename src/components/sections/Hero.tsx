@@ -48,22 +48,22 @@ export function Hero() {
         {/* TEXTO */}
         <div className="flex w-full max-w-xl flex-col gap-5 min-[1100px]:w-[45%] lg:max-w-none">
           <Reveal delay={0.3} direction="right">
-            <h1
-              id="hero-title"
-              className="font-black uppercase text-white text-3xl leading-snug tracking-[.09rem] xl:text-5xl"
-            >
-              <span className="block min-[400px]:inline min-[1100px]:block">
-                CHP Smart{" "}
-              </span>
+<div>
+  <span className="block mb-3 text-sm font-bold tracking-[.25rem] text-[rgb(var(--brand-primary))]">
+    CHP - CONEXÃO HUB PERFORMANCE
+  </span>
 
-              <span className="block min-[400px]:inline min-[1100px]:block">
-                Inteligência <span className="text-[rgb(var(--brand-primary))]"> que</span>
-              </span>
-
-              <span className="block text-[rgb(var(--brand-primary))]">
-                 conecta negócios.
-              </span>
-            </h1>
+  <h1
+    id="hero-title"
+    className="font-black uppercase text-white text-3xl leading-snug tracking-[.09rem] xl:text-5xl"
+  >
+    Inteligência{" "}
+    <span className="text-[rgb(var(--brand-primary))]">que</span>
+    <span className="block text-[rgb(var(--brand-primary))]">
+      conecta negócios.
+    </span>
+  </h1>
+</div>
           </Reveal>
 
           <Reveal delay={0.4} direction="right">
